@@ -5,29 +5,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { CheckCircle2, AlertCircle, XCircle, TrendingUp, DollarSign } from "lucide-react";
 
 interface CostField {
   value: string;
-  vat: string;
+  tax: string;
 }
-
-const VAT_OPTIONS = [
-  { value: "0", label: "None" },
-  { value: "5", label: "5%" },
-  { value: "10", label: "10%" },
-  { value: "15", label: "15%" },
-  { value: "20", label: "20%" },
-  { value: "25", label: "25%" },
-];
 
 function parseCurrency(value: string): number {
   const cleaned = value.replace(/[^\d.]/g, "");
@@ -44,9 +28,9 @@ function formatCurrency(value: number): string {
   }).format(value);
 }
 
-function calculateExclVAT(value: number, vatPercent: number): number {
-  if (vatPercent === 0) return value;
-  return value / (1 + vatPercent / 100);
+function calculateExclTax(value: number, taxPercent: number): number {
+  if (isNaN(taxPercent) || taxPercent === 0) return value;
+  return value / (1 + taxPercent / 100);
 }
 
 interface ProfitabilityStatus {
@@ -98,26 +82,45 @@ function getProfitabilityStatus(roas: number): ProfitabilityStatus {
 }
 
 export default function Calculator() {
+  const [masterTax, setMasterTax] = useState<string>("");
+
   const [costOfGoods, setCostOfGoods] = useState<CostField>({
     value: "",
-    vat: "0",
+    tax: "",
   });
   const [shippingCosts, setShippingCosts] = useState<CostField>({
     value: "",
-    vat: "0",
+    tax: "",
   });
   const [transactionCosts, setTransactionCosts] = useState<CostField>({
     value: "",
-    vat: "0",
+    tax: "",
   });
   const [otherCosts, setOtherCosts] = useState<CostField>({
     value: "",
-    vat: "0",
+    tax: "",
   });
   const [revenue, setRevenue] = useState<CostField>({
     value: "",
-    vat: "0",
+    tax: "",
   });
+
+  const handleMasterTaxChange = (newValue: string) => {
+    // Only allow numbers and one decimal point
+    const cleaned = newValue.replace(/[^\d.]/g, "");
+    const parts = cleaned.split(".");
+    const formatted =
+      parts.length > 2 ? parts[0] + "." + parts.slice(1).join("") : cleaned;
+    
+    setMasterTax(formatted);
+    
+    // Update all individual tax fields
+    setCostOfGoods((prev) => ({ ...prev, tax: formatted }));
+    setShippingCosts((prev) => ({ ...prev, tax: formatted }));
+    setTransactionCosts((prev) => ({ ...prev, tax: formatted }));
+    setOtherCosts((prev) => ({ ...prev, tax: formatted }));
+    setRevenue((prev) => ({ ...prev, tax: formatted }));
+  };
 
   const handleInputChange = (
     field: CostField,
@@ -133,29 +136,29 @@ export default function Calculator() {
   };
 
   const totalCosts = useMemo(() => {
-    const costOfGoodsExcl = calculateExclVAT(
+    const costOfGoodsExcl = calculateExclTax(
       parseCurrency(costOfGoods.value),
-      parseFloat(costOfGoods.vat)
+      parseFloat(costOfGoods.tax) || 0
     );
-    const shippingExcl = calculateExclVAT(
+    const shippingExcl = calculateExclTax(
       parseCurrency(shippingCosts.value),
-      parseFloat(shippingCosts.vat)
+      parseFloat(shippingCosts.tax) || 0
     );
-    const transactionExcl = calculateExclVAT(
+    const transactionExcl = calculateExclTax(
       parseCurrency(transactionCosts.value),
-      parseFloat(transactionCosts.vat)
+      parseFloat(transactionCosts.tax) || 0
     );
-    const otherExcl = calculateExclVAT(
+    const otherExcl = calculateExclTax(
       parseCurrency(otherCosts.value),
-      parseFloat(otherCosts.vat)
+      parseFloat(otherCosts.tax) || 0
     );
     return costOfGoodsExcl + shippingExcl + transactionExcl + otherExcl;
   }, [costOfGoods, shippingCosts, transactionCosts, otherCosts]);
 
   const totalRevenue = useMemo(() => {
-    return calculateExclVAT(
+    return calculateExclTax(
       parseCurrency(revenue.value),
-      parseFloat(revenue.vat)
+      parseFloat(revenue.tax) || 0
     );
   }, [revenue]);
 
@@ -184,18 +187,32 @@ export default function Calculator() {
   const profitabilityStatus = getProfitabilityStatus(breakEvenROAS);
 
   const handleReset = () => {
-    setCostOfGoods({ value: "", vat: "0" });
-    setShippingCosts({ value: "", vat: "0" });
-    setTransactionCosts({ value: "", vat: "0" });
-    setOtherCosts({ value: "", vat: "0" });
-    setRevenue({ value: "", vat: "0" });
+    setMasterTax("");
+    setCostOfGoods({ value: "", tax: "" });
+    setShippingCosts({ value: "", tax: "" });
+    setTransactionCosts({ value: "", tax: "" });
+    setOtherCosts({ value: "", tax: "" });
+    setRevenue({ value: "", tax: "" });
+  };
+
+  const handleTaxChange = (
+    field: CostField,
+    setter: React.Dispatch<React.SetStateAction<CostField>>,
+    newValue: string
+  ) => {
+    // Only allow numbers and one decimal point
+    const cleaned = newValue.replace(/[^\d.]/g, "");
+    const parts = cleaned.split(".");
+    const formatted =
+      parts.length > 2 ? parts[0] + "." + parts.slice(1).join("") : cleaned;
+    setter({ ...field, tax: formatted });
   };
 
   const renderCostField = (
     label: string,
     field: CostField,
     setter: React.Dispatch<React.SetStateAction<CostField>>,
-    vatDescription?: string
+    taxDescription?: string
   ) => (
     <div className="space-y-2">
       <Label className="font-medium">{label}</Label>
@@ -213,24 +230,22 @@ export default function Calculator() {
             className="pl-7"
           />
         </div>
-        <Select
-          value={field.vat}
-          onValueChange={(value) => setter({ ...field, vat: value })}
-        >
-          <SelectTrigger className="w-[100px]">
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            {VAT_OPTIONS.map((option) => (
-              <SelectItem key={option.value} value={option.value}>
-                {option.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+        <div className="relative w-[100px]">
+          <Input
+            type="text"
+            inputMode="decimal"
+            placeholder="0"
+            value={field.tax}
+            onChange={(e) => handleTaxChange(field, setter, e.target.value)}
+            className="pr-7"
+          />
+          <span className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+            %
+          </span>
+        </div>
       </div>
-      {vatDescription && (
-        <p className="text-xs text-muted-foreground">{vatDescription}</p>
+      {taxDescription && (
+        <p className="text-xs text-muted-foreground">{taxDescription}</p>
       )}
     </div>
   );
@@ -243,32 +258,55 @@ export default function Calculator() {
           <CardTitle className="text-lg">Costs (per product)</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
+          {/* Master Tax Input */}
+          <div className="space-y-2">
+            <Label className="font-medium">Tax rate (applies to all)</Label>
+            <div className="relative w-[120px]">
+              <Input
+                type="text"
+                inputMode="decimal"
+                placeholder="0"
+                value={masterTax}
+                onChange={(e) => handleMasterTaxChange(e.target.value)}
+                className="pr-7"
+              />
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+                %
+              </span>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Set a default tax rate for all fields. You can customize each field individually below.
+            </p>
+          </div>
+
+          <Separator />
+
           {renderCostField(
             "Cost of goods",
             costOfGoods,
             setCostOfGoods,
-            "If you receive VAT back on the cost of goods, you can select it here."
+            "If you receive tax back on the cost of goods, you can set it here."
           )}
 
           {renderCostField(
             "Shipping costs",
             shippingCosts,
             setShippingCosts,
-            "If you receive VAT back on the shipping costs, you can select it here."
+            "If you receive tax back on the shipping costs, you can set it here."
           )}
 
           {renderCostField(
             "Transaction costs",
             transactionCosts,
             setTransactionCosts,
-            "If you receive VAT back on the transaction costs, you can select it here."
+            "If you receive tax back on the transaction costs, you can set it here."
           )}
 
           {renderCostField(
             "Other costs",
             otherCosts,
             setOtherCosts,
-            "If you receive VAT back on other costs, you can select it here."
+            "If you receive tax back on other costs, you can set it here."
           )}
 
           <Separator />
@@ -294,7 +332,7 @@ export default function Calculator() {
               "Revenue",
               revenue,
               setRevenue,
-              "If you have to pay VAT over the revenue, you can select it here."
+              "If you have to pay tax over the revenue, you can set it here."
             )}
 
             <Separator />
