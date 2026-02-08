@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { CurrencyCombobox } from "@/components/ui/currency-combobox";
+import { currencies } from "@/lib/currencies";
 import { CheckCircle2, AlertCircle, XCircle, TrendingUp, DollarSign } from "lucide-react";
 
 interface CostField {
@@ -17,15 +19,6 @@ function parseCurrency(value: string): number {
   const cleaned = value.replace(/[^\d.]/g, "");
   const num = parseFloat(cleaned);
   return isNaN(num) ? 0 : num;
-}
-
-function formatCurrency(value: number): string {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
 }
 
 function calculateExclTax(value: number, taxPercent: number): number {
@@ -82,6 +75,7 @@ function getProfitabilityStatus(roas: number): ProfitabilityStatus {
 }
 
 export default function Calculator() {
+  const [selectedCurrency, setSelectedCurrency] = useState<string>("USD");
   const [masterTax, setMasterTax] = useState<string>("");
 
   const [costOfGoods, setCostOfGoods] = useState<CostField>({
@@ -105,8 +99,21 @@ export default function Calculator() {
     tax: "",
   });
 
+  const currencySymbol = useMemo(() => {
+    const currency = currencies.currencies.find(c => c.code === selectedCurrency);
+    return currency?.symbol || "$";
+  }, [selectedCurrency]);
+
+  const formatCurrency = (value: number): string => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: selectedCurrency,
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  };
+
   const handleMasterTaxChange = (newValue: string) => {
-    // Only allow numbers and one decimal point
     const cleaned = newValue.replace(/[^\d.]/g, "");
     const parts = cleaned.split(".");
     const formatted =
@@ -114,7 +121,6 @@ export default function Calculator() {
     
     setMasterTax(formatted);
     
-    // Update all individual tax fields
     setCostOfGoods((prev) => ({ ...prev, tax: formatted }));
     setShippingCosts((prev) => ({ ...prev, tax: formatted }));
     setTransactionCosts((prev) => ({ ...prev, tax: formatted }));
@@ -127,7 +133,6 @@ export default function Calculator() {
     setter: React.Dispatch<React.SetStateAction<CostField>>,
     newValue: string
   ) => {
-    // Only allow numbers and one decimal point
     const cleaned = newValue.replace(/[^\d.]/g, "");
     const parts = cleaned.split(".");
     const formatted =
@@ -179,8 +184,6 @@ export default function Calculator() {
   }, [profitPerUnit, totalRevenue]);
 
   const maxAdSpendForBreakEven = useMemo(() => {
-    // At break even: Revenue = Costs + Ad Spend
-    // So: Ad Spend = Revenue - Costs = Profit
     return profitPerUnit;
   }, [profitPerUnit]);
 
@@ -200,7 +203,6 @@ export default function Calculator() {
     setter: React.Dispatch<React.SetStateAction<CostField>>,
     newValue: string
   ) => {
-    // Only allow numbers and one decimal point
     const cleaned = newValue.replace(/[^\d.]/g, "");
     const parts = cleaned.split(".");
     const formatted =
@@ -219,7 +221,7 @@ export default function Calculator() {
       <div className="flex gap-2">
         <div className="relative flex-1">
           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
-            $
+            {currencySymbol}
           </span>
           <Input
             type="text"
@@ -258,6 +260,18 @@ export default function Calculator() {
           <CardTitle className="text-lg">Costs (per product)</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
+          {/* Currency Selector */}
+          <div className="space-y-2">
+            <Label className="font-medium">Currency</Label>
+            <CurrencyCombobox
+              currencies={currencies.currencies}
+              value={selectedCurrency}
+              onChange={setSelectedCurrency}
+            />
+          </div>
+
+          <Separator />
+
           {/* Master Tax Input */}
           <div className="space-y-2">
             <Label className="font-medium">Tax rate (applies to all)</Label>
