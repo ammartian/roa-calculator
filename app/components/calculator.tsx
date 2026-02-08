@@ -75,6 +75,7 @@ function getProfitabilityStatus(roas: number): ProfitabilityStatus {
 }
 
 export default function Calculator() {
+  // Should be dynamic for multi language soon. Bahasa Malaysia = MYR & English = USD.
   const [selectedCurrency, setSelectedCurrency] = useState<string>("USD");
   const [masterTax, setMasterTax] = useState<string>("");
 
@@ -219,8 +220,8 @@ export default function Calculator() {
     <div className="space-y-2">
       <Label className="font-medium">{label}</Label>
       <div className="flex gap-2">
-        <div className="relative flex-1">
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+        <div className="flex items-center gap-2 flex-1 border rounded-md px-3 bg-background focus-within:ring-2 focus-within:ring-ring">
+          <span className="text-muted-foreground whitespace-nowrap font-medium">
             {currencySymbol}
           </span>
           <Input
@@ -229,7 +230,7 @@ export default function Calculator() {
             placeholder="0.00"
             value={field.value}
             onChange={(e) => handleInputChange(field, setter, e.target.value)}
-            className="pl-7"
+            className="border-0 bg-transparent px-0 focus-visible:ring-0 shadow-none"
           />
         </div>
         <div className="relative w-[100px]">
