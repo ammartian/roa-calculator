@@ -233,7 +233,7 @@ export default function Calculator() {
             className="border-0 bg-transparent px-0 focus-visible:ring-0 shadow-none"
           />
         </div>
-        <div className="relative w-[100px]">
+        <div className="relative w-[80px]">
           <Input
             type="text"
             inputMode="decimal"
@@ -276,7 +276,7 @@ export default function Calculator() {
           {/* Master Tax Input */}
           <div className="space-y-2">
             <Label className="font-medium">Tax rate (applies to all)</Label>
-            <div className="relative w-[120px]">
+            <div className="relative w-[80px]">
               <Input
                 type="text"
                 inputMode="decimal"
