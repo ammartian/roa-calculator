@@ -1,4 +1,4 @@
-import Calculator from "./components/calculator";
+import Calculator from "./components/calculator/index";
 import EducationalContent from "./components/educational-content";
 import Footer from "./components/footer";
 

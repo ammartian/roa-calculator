@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Check, ChevronsUpDown } from "lucide-react"
-
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { Check, ChevronsUpDown } from "lucide-react";
+import type { Currency } from "@/types";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -12,28 +12,21 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command"
+} from "@/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
-
-interface Currency {
-  code: string
-  name: string
-  symbol: string
-  country: string
-}
+} from "@/components/ui/popover";
 
 interface CurrencyComboboxProps {
-  currencies: Currency[]
-  value: string
-  onChange: (value: string) => void
+  currencies: Currency[];
+  value: string;
+  onChange: (value: string) => void;
 }
 
 export function CurrencyCombobox({ currencies, value, onChange }: CurrencyComboboxProps) {
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false);
   
   const selectedCurrency = currencies.find((c) => c.code === value)
 

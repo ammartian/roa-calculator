@@ -1,5 +1,4 @@
-export const currencies = {
-  "currencies": [
+export const currencies = [
     {
       "code": "MYR",
       "name": "Malaysian Ringgit",
@@ -877,4 +876,4 @@ export const currencies = {
       "country": "Suriname"
     }
   ]
-}
+;
