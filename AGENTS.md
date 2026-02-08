@@ -89,6 +89,44 @@ npm run lint
 - Maintain focus management
 - Test with screen readers
 
+## Design Principles
+
+### SOLID
+
+- **Single Responsibility**: Each component/function does one thing well
+  - Split large components into smaller focused ones
+  - Extract reusable logic into custom hooks
+  - Keep business logic separate from UI components
+- **Open/Closed**: Extend behavior without modifying existing code
+  - Use composition over configuration
+  - Leverage polymorphic `asChild` pattern for flexible components
+- **Liskov Substitution**: Subtypes must be substitutable for base types
+  - Ensure component props extend base HTML props correctly
+  - Maintain consistent behavior in component variants
+- **Interface Segregation**: Split large interfaces into smaller ones
+  - Define minimal props interfaces per component
+  - Use discriminated unions for variant-specific props
+- **Dependency Inversion**: Depend on abstractions, not concretions
+  - Inject dependencies via props
+  - Use context for shared state rather than prop drilling
+
+### YAGNI (You Aren't Gonna Need It)
+
+- Don't implement features until they're actually needed
+- Avoid premature abstraction - start simple, refactor when patterns emerge
+- Don't add configuration options for hypothetical use cases
+- Skip complex state management until truly necessary
+- Build for current requirements, not imagined future ones
+
+### KISS (Keep It Simple, Stupid)
+
+- Favor simple solutions over clever ones
+- Use built-in React/Next.js features before reaching for libraries
+- Avoid unnecessary dependencies - check if problem is solvable with native APIs
+- Keep component hierarchies flat when possible
+- Prefer explicit code over implicit magic
+- If explaining it requires a comment, it might be too complex
+
 ## Project Structure
 
 ```
