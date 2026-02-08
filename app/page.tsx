@@ -1,4 +1,5 @@
 import Calculator from "./components/calculator";
+import EducationalContent from "./components/educational-content";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
           </p>
         </div>
         <Calculator />
+        <EducationalContent />
       </div>
     </main>
   );
