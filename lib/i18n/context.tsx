@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, ReactNode, useCallback } from "react";
+import { createContext, useContext, useEffect, useState, ReactNode, useCallback, useRef } from "react";
 import type { Language, Translations } from "./types";
 import en from "./translations/en.json";
 import ms from "./translations/ms.json";
@@ -35,24 +35,33 @@ interface LanguageProviderProps {
 }
 
 export function LanguageProvider({ children }: LanguageProviderProps) {
-  // Use lazy initialization to avoid hydration mismatch
-  const [language, setLanguageState] = useState<Language>(() => {
-    // During SSR, always return default
-    if (typeof window === "undefined") return "en";
-    // During client render, check localStorage immediately
-    return getStoredLanguage() ?? "en";
-  });
+  // Always start with default to match SSR
+  const [language, setLanguageState] = useState<Language>("en");
+  const hasSyncedRef = useRef(false);
 
-  // Persist to localStorage and update HTML lang attribute on change
+  // Sync with localStorage on mount (after hydration), then persist changes
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (!hasSyncedRef.current) {
+      // Initial mount: read from localStorage if available
+      hasSyncedRef.current = true;
+      const stored = getStoredLanguage();
+      if (stored && stored !== language) {
+        // Use queueMicrotask to avoid synchronous setState in effect body
+        queueMicrotask(() => {
+          setLanguageState(stored);
+        });
+      }
+    } else {
+      // Subsequent changes: persist to localStorage
       try {
         localStorage.setItem(STORAGE_KEY, language);
       } catch {
         // localStorage not available
       }
-      document.documentElement.lang = language;
     }
+
+    // Always update HTML lang attribute
+    document.documentElement.lang = language;
   }, [language]);
 
   const setLanguage = useCallback((lang: Language) => {
