@@ -110,5 +110,17 @@
   },
   "footer": {
     "copyright": "Kalkulator ROA. Produk Lima Angka."
+  },
+  "grossProfitCalculator": {
+    "title": "Kalkulator Keuntungan Kasar",
+    "currency": "Mata Wang",
+    "cogs": "Kos Barang Terjual (COGS)",
+    "sellingPrice": "Harga Jualan",
+    "results": "Keputusan",
+    "grossProfit": "Keuntungan Kasar",
+    "markup": "Markup (%)",
+    "grossMargin": "Margin Kasar (%)",
+    "enterValues": "Masukkan COGS dan Harga Jualan untuk melihat keputusan",
+    "reset": "Tetapkan Semula"
   }
 }

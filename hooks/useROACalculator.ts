@@ -25,7 +25,7 @@ function calculateCostExclTax(costField: CostField): number {
   );
 }
 
-export function useCalculator() {
+export function useROACalculator() {
   const { language } = useLanguage();
   const [selectedCurrency, setSelectedCurrency] = useState<string>(() => getDefaultCurrency(language));
   const hasManuallyChangedCurrency = useRef(false);

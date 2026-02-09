@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { currencies } from "@/lib/currencies";
-import { useCalculator } from "@/hooks/useCalculator";
+import { useROACalculator } from "@/hooks/useROACalculator";
 import { formatCurrency, getCurrencySymbol } from "@/lib/calculations";
 import { useLanguage } from "@/lib/i18n/context";
 import { CostSection } from "./CostSection";
@@ -34,7 +34,7 @@ export default function Calculator() {
     maxCustomCosts,
     results,
     handleReset,
-  } = useCalculator();
+  } = useROACalculator();
 
   const currencySymbol = useMemo(
     () => getCurrencySymbol(currencies, selectedCurrency),

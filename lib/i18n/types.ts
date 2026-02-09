@@ -113,4 +113,16 @@ export interface Translations {
   footer: {
     copyright: string;
   };
+  grossProfitCalculator: {
+    title: string;
+    currency: string;
+    cogs: string;
+    sellingPrice: string;
+    results: string;
+    grossProfit: string;
+    markup: string;
+    grossMargin: string;
+    enterValues: string;
+    reset: string;
+  };
 }

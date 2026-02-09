@@ -110,5 +110,17 @@
   },
   "footer": {
     "copyright": "ROA Calculator. Product of Lima Angka."
+  },
+  "grossProfitCalculator": {
+    "title": "Gross Profit Calculator",
+    "currency": "Currency",
+    "cogs": "Cost of Goods Sold (COGS)",
+    "sellingPrice": "Selling Price",
+    "results": "Results",
+    "grossProfit": "Gross Profit",
+    "markup": "Markup (%)",
+    "grossMargin": "Gross Margin (%)",
+    "enterValues": "Enter COGS and Selling Price to see results",
+    "reset": "Reset"
   }
 }
