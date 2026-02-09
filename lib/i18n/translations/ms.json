@@ -122,5 +122,35 @@
     "grossMargin": "Margin Kasar (%)",
     "enterValues": "Masukkan COGS dan Harga Jualan untuk melihat keputusan",
     "reset": "Tetapkan Semula"
+  },
+  "basicCalculators": {
+    "gross-profit": {
+      "title": "Kalkulator Keuntungan Kasar",
+      "description": "Kira keuntungan kasar, markup, dan margin kasar"
+    },
+    "profit-margin": {
+      "title": "Kalkulator Margin Keuntungan",
+      "description": "Kira margin keuntungan dan peratusan markup"
+    },
+    "static-cost": {
+      "title": "Kalkulator Kos Statik",
+      "description": "Kira kos tetap dan titik break-even"
+    },
+    "variable-cost": {
+      "title": "Kalkulator Kos Berubah",
+      "description": "Analisis kos yang berubah dengan volum pengeluaran"
+    },
+    "break-even": {
+      "title": "Kalkulator Break-Even",
+      "description": "Tentukan titik di mana hasil sama dengan kos"
+    },
+    "shipping": {
+      "title": "Kalkulator Kos Penghantaran",
+      "description": "Anggar kos penghantaran dan logistik"
+    },
+    "tax": {
+      "title": "Kalkulator Cukai",
+      "description": "Kira cukai dan jumlah selepas cukai"
+    }
   }
 }

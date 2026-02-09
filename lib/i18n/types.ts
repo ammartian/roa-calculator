@@ -125,4 +125,34 @@ export interface Translations {
     enterValues: string;
     reset: string;
   };
+  basicCalculators: {
+    "gross-profit": {
+      title: string;
+      description: string;
+    };
+    "profit-margin": {
+      title: string;
+      description: string;
+    };
+    "static-cost": {
+      title: string;
+      description: string;
+    };
+    "variable-cost": {
+      title: string;
+      description: string;
+    };
+    "break-even": {
+      title: string;
+      description: string;
+    };
+    shipping: {
+      title: string;
+      description: string;
+    };
+    tax: {
+      title: string;
+      description: string;
+    };
+  };
 }

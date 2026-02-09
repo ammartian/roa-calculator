@@ -122,5 +122,35 @@
     "grossMargin": "Gross Margin (%)",
     "enterValues": "Enter COGS and Selling Price to see results",
     "reset": "Reset"
+  },
+  "basicCalculators": {
+    "gross-profit": {
+      "title": "Gross Profit Calculator",
+      "description": "Calculate gross profit, markup, and gross margin"
+    },
+    "profit-margin": {
+      "title": "Profit Margin Calculator",
+      "description": "Calculate profit margins and markup percentages"
+    },
+    "static-cost": {
+      "title": "Static Cost Calculator",
+      "description": "Calculate fixed costs and break-even points"
+    },
+    "variable-cost": {
+      "title": "Variable Cost Calculator",
+      "description": "Analyze costs that change with production volume"
+    },
+    "break-even": {
+      "title": "Break-Even Calculator",
+      "description": "Determine the point where revenue equals costs"
+    },
+    "shipping": {
+      "title": "Shipping Cost Calculator",
+      "description": "Estimate shipping and logistics costs"
+    },
+    "tax": {
+      "title": "Tax Calculator",
+      "description": "Calculate taxes and after-tax amounts"
+    }
   }
 }
