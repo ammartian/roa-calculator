@@ -10,7 +10,7 @@ import {
   TrendingUp,
   DollarSign,
 } from "lucide-react";
-import type { CalculatorResults } from "@/types";
+import type { CalculatorResults, ProfitabilityStatus } from "@/types";
 import type { Translations } from "@/lib/i18n/types";
 
 interface ResultsSectionProps {
@@ -18,13 +18,6 @@ interface ResultsSectionProps {
   results: CalculatorResults;
   formatCurrency: (value: number) => string;
   onReset: () => void;
-}
-
-interface ProfitabilityStatus {
-  label: string;
-  color: string;
-  icon: React.ReactNode;
-  description: string;
 }
 
 function getProfitabilityStatus(roas: number, translations: Translations["calculator"]["results"]["status"]): ProfitabilityStatus {

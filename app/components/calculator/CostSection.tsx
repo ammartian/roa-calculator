@@ -8,10 +8,11 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { CurrencyCombobox } from "@/components/ui/currency-combobox";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
-import { HelpCircle, Plus, X } from "lucide-react";
+import { HelpCircle, Plus } from "lucide-react";
 import { currencies } from "@/lib/currencies";
 import { CostField } from "./CostField";
-import type { CostField as CostFieldType, CustomCostField } from "@/types";
+import { CustomCostField } from "./CustomCostField";
+import type { CostField as CostFieldType, CustomCostField as CustomCostFieldType } from "@/types";
 import type { Translations } from "@/lib/i18n/types";
 
 interface CostSectionProps {
@@ -32,10 +33,10 @@ interface CostSectionProps {
   otherCosts: CostFieldType;
   onOtherCostsValueChange: (value: string) => void;
   onOtherCostsTaxChange: (value: string) => void;
-  customCosts: CustomCostField[];
+  customCosts: CustomCostFieldType[];
   onAddCustomCost: (title: string) => void;
   onRemoveCustomCost: (id: string) => void;
-  onUpdateCustomCost: (id: string, field: keyof CustomCostField, value: string) => void;
+  onUpdateCustomCost: (id: string, field: keyof CustomCostFieldType, value: string) => void;
   maxCustomCosts: number;
   totalCosts: number;
   currencySymbol: string;
@@ -196,49 +197,14 @@ export function CostSection({
           taxInputTooltip={translations.taxInputTooltip}
         />
 
-        {/* Custom Costs */}
         {customCosts.map((customCost) => (
-          <div key={customCost.id}>
-            <div className="flex justify-between items-center">
-              <Label className="font-medium">{customCost.title}</Label>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => onRemoveCustomCost(customCost.id)}
-                className="h-8 w-8 text-muted-foreground hover:text-destructive"
-              >
-                <X className="h-4 w-4" />
-              </Button>
-            </div>
-            <div className="flex gap-2">
-              <div className="flex items-center gap-2 flex-1 border rounded-md px-3 bg-background focus-within:ring-2 focus-within:ring-ring">
-                <span className="text-muted-foreground whitespace-nowrap font-medium">
-                  {currencySymbol}
-                </span>
-                <Input
-                  type="text"
-                  inputMode="decimal"
-                  placeholder="0.00"
-                  value={customCost.value}
-                  onChange={(e) => onUpdateCustomCost(customCost.id, "value", e.target.value)}
-                  className="border-0 bg-transparent px-0 focus-visible:ring-0 shadow-none"
-                />
-              </div>
-              <div className="relative w-[80px]">
-                <Input
-                  type="text"
-                  inputMode="decimal"
-                  placeholder="0"
-                  value={customCost.tax}
-                  onChange={(e) => onUpdateCustomCost(customCost.id, "tax", e.target.value)}
-                  className="pr-7"
-                />
-                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground">
-                  %
-                </span>
-              </div>
-            </div>
-          </div>
+          <CustomCostField
+            key={customCost.id}
+            customCost={customCost}
+            currencySymbol={currencySymbol}
+            onUpdate={onUpdateCustomCost}
+            onRemove={onRemoveCustomCost}
+          />
         ))}
 
         <div className="space-y-2">

@@ -1,5 +1,3 @@
-import type { ReactNode } from "react";
-
 export interface Currency {
   code: string;
   name: string;
@@ -20,7 +18,7 @@ export interface CustomCostField extends CostField {
 export interface ProfitabilityStatus {
   label: string;
   color: string;
-  icon: ReactNode;
+  icon: React.ReactNode | null;
   description: string;
 }
 

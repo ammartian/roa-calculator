@@ -18,6 +18,13 @@ function getDefaultCurrency(language: string): string {
   return language === "ms" ? "MYR" : "USD";
 }
 
+function calculateCostExclTax(costField: CostField): number {
+  return calculateExclTax(
+    parseCurrency(costField.value),
+    parseFloat(costField.tax) || 0
+  );
+}
+
 export function useCalculator() {
   const { language } = useLanguage();
   const [selectedCurrency, setSelectedCurrency] = useState<string>(() => getDefaultCurrency(language));
@@ -74,16 +81,6 @@ export function useCalculator() {
     []
   );
 
-  const resetCustomCostValues = useCallback(() => {
-    setCustomCosts((prev) =>
-      prev.map((cost) => ({
-        ...cost,
-        value: "",
-        tax: masterTax,
-      }))
-    );
-  }, [masterTax]);
-
   const handleMasterTaxChange = useCallback((newValue: string) => {
     const formatted = formatDecimalInput(newValue);
     setMasterTax(formatted);
@@ -107,31 +104,12 @@ export function useCalculator() {
   );
 
   const results: CalculatorResults = useMemo(() => {
-    const costOfGoodsExcl = calculateExclTax(
-      parseCurrency(costOfGoods.value),
-      parseFloat(costOfGoods.tax) || 0
-    );
-    const shippingExcl = calculateExclTax(
-      parseCurrency(shippingCosts.value),
-      parseFloat(shippingCosts.tax) || 0
-    );
-    const transactionExcl = calculateExclTax(
-      parseCurrency(transactionCosts.value),
-      parseFloat(transactionCosts.tax) || 0
-    );
-    const otherExcl = calculateExclTax(
-      parseCurrency(otherCosts.value),
-      parseFloat(otherCosts.tax) || 0
-    );
+    const costOfGoodsExcl = calculateCostExclTax(costOfGoods);
+    const shippingExcl = calculateCostExclTax(shippingCosts);
+    const transactionExcl = calculateCostExclTax(transactionCosts);
+    const otherExcl = calculateCostExclTax(otherCosts);
 
-    // Calculate custom costs total
-    const customCostsTotal = customCosts.reduce((sum, cost) => {
-      const costExcl = calculateExclTax(
-        parseCurrency(cost.value),
-        parseFloat(cost.tax) || 0
-      );
-      return sum + costExcl;
-    }, 0);
+    const customCostsTotal = customCosts.reduce((sum, cost) => sum + calculateCostExclTax(cost), 0);
 
     const baseTotalCosts = calculateTotalCosts(
       costOfGoodsExcl,
@@ -141,24 +119,16 @@ export function useCalculator() {
     );
 
     const totalCosts = baseTotalCosts + customCostsTotal;
-
-    const totalRevenue = calculateExclTax(
-      parseCurrency(revenue.value),
-      parseFloat(revenue.tax) || 0
-    );
-
+    const totalRevenue = calculateCostExclTax(revenue);
     const profitPerUnit = totalRevenue - totalCosts;
-    const breakEvenROAS = calculateBreakEvenROAS(totalRevenue, totalCosts);
-    const profitMarginPercent = calculateProfitMargin(profitPerUnit, totalRevenue);
-    const maxAdSpendForBreakEven = profitPerUnit;
 
     return {
       totalCosts,
       totalRevenue,
-      breakEvenROAS,
+      breakEvenROAS: calculateBreakEvenROAS(totalRevenue, totalCosts),
       profitPerUnit,
-      profitMarginPercent,
-      maxAdSpendForBreakEven,
+      profitMarginPercent: calculateProfitMargin(profitPerUnit, totalRevenue),
+      maxAdSpendForBreakEven: profitPerUnit,
     };
   }, [costOfGoods, shippingCosts, transactionCosts, otherCosts, customCosts, revenue]);
 
@@ -201,7 +171,6 @@ export function useCalculator() {
     addCustomCost,
     removeCustomCost,
     updateCustomCost,
-    resetCustomCostValues,
     maxCustomCosts: MAX_CUSTOM_COSTS,
     results,
     handleReset,
