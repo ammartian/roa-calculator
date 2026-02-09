@@ -24,6 +24,14 @@
       "transactionCostsTaxDescription": "Jika anda menerima cukai balik untuk kos transaksi, anda boleh menetapkannya di sini.",
       "otherCosts": "Kos lain",
       "otherCostsTaxDescription": "Jika anda menerima cukai balik untuk kos lain, anda boleh menetapkannya di sini.",
+      "addCustomCost": "Tambah kos tersuai",
+      "removeCustomCost": "Buang",
+      "customCostTitle": "Nama kos",
+      "customCostTitlePlaceholder": "cth., Pembungkus, Insurans",
+      "customCostRequired": "Nama kos diperlukan",
+      "customCostsLimit": "Maksimum 10 kos tersuai dibenarkan",
+      "customCostsNote": "Tambah kos tambahan yang khusus untuk perniagaan anda. Setiap kos akan dimasukkan dalam jumlah pengiraan.",
+      "cancel": "Batal",
       "totalCosts": "Jumlah kos"
     },
     "revenue": {

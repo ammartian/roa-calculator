@@ -19,6 +19,7 @@ export default function Calculator() {
     shippingCosts,
     transactionCosts,
     otherCosts,
+    customCosts,
     revenue,
     handleMasterTaxChange,
     handleFieldChange,
@@ -27,6 +28,10 @@ export default function Calculator() {
     setTransactionCosts,
     setOtherCosts,
     setRevenue,
+    addCustomCost,
+    removeCustomCost,
+    updateCustomCost,
+    maxCustomCosts,
     results,
     handleReset,
   } = useCalculator();
@@ -65,6 +70,11 @@ export default function Calculator() {
         otherCosts={otherCosts}
         onOtherCostsValueChange={handleFieldChange(setOtherCosts, "value")}
         onOtherCostsTaxChange={handleFieldChange(setOtherCosts, "tax")}
+        customCosts={customCosts}
+        onAddCustomCost={addCustomCost}
+        onRemoveCustomCost={removeCustomCost}
+        onUpdateCustomCost={updateCustomCost}
+        maxCustomCosts={maxCustomCosts}
         totalCosts={results.totalCosts}
         currencySymbol={currencySymbol}
         formatCurrency={formatCurrencyWithSelected}

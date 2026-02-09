@@ -26,6 +26,14 @@ export interface Translations {
       transactionCostsTaxDescription: string;
       otherCosts: string;
       otherCostsTaxDescription: string;
+      addCustomCost: string;
+      removeCustomCost: string;
+      customCostTitle: string;
+      customCostTitlePlaceholder: string;
+      customCostRequired: string;
+      customCostsLimit: string;
+      customCostsNote: string;
+      cancel: string;
       totalCosts: string;
     };
     revenue: {

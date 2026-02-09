@@ -24,6 +24,14 @@
       "transactionCostsTaxDescription": "If you receive tax back on the transaction costs, you can set it here.",
       "otherCosts": "Other costs",
       "otherCostsTaxDescription": "If you receive tax back on other costs, you can set it here.",
+      "addCustomCost": "Add custom cost",
+      "removeCustomCost": "Remove",
+      "customCostTitle": "Cost name",
+      "customCostTitlePlaceholder": "e.g., Packaging, Insurance",
+      "customCostRequired": "Cost name is required",
+      "customCostsLimit": "Maximum 10 custom costs allowed",
+      "customCostsNote": "Add additional costs specific to your business. Each cost will be included in the total calculation.",
+      "cancel": "Cancel",
       "totalCosts": "Total costs"
     },
     "revenue": {

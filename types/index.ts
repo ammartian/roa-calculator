@@ -12,6 +12,11 @@ export interface CostField {
   tax: string;
 }
 
+export interface CustomCostField extends CostField {
+  id: string;
+  title: string;
+}
+
 export interface ProfitabilityStatus {
   label: string;
   color: string;
@@ -26,6 +31,7 @@ export interface CalculatorState {
   shippingCosts: CostField;
   transactionCosts: CostField;
   otherCosts: CostField;
+  customCosts: CustomCostField[];
   revenue: CostField;
 }
 
