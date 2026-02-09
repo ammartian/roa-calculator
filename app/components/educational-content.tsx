@@ -110,10 +110,10 @@ export default function EducationalContent() {
           
           <div className="bg-muted rounded-lg p-4 text-center">
             <p className="font-mono text-sm sm:text-base">
-              <strong>Total Revenue</strong> per product / (
-              <strong>Total Revenue</strong> per product -{" "}
-              <strong>Total Costs</strong> per product) ={" "}
-              <strong>Break Even ROAS</strong>
+              <strong>{t.educational.formula.totalRevenue}</strong> {t.educational.formula.perProduct} / (
+              <strong>{t.educational.formula.totalRevenue}</strong> {t.educational.formula.perProduct} -{" "}
+              <strong>{t.educational.formula.totalCosts}</strong> {t.educational.formula.perProduct}) ={" "}
+              <strong>{t.educational.formula.breakEvenROAS}</strong>
             </p>
           </div>
 

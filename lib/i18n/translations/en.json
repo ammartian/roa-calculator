@@ -78,6 +78,10 @@
     "formula": {
       "title": "The Break Even ROAS Formula",
       "description": "First of all, you have to add up all your costs together. Then by using the formula below you can calculate the ROAS at which a campaign, ad set/ad group or ad is profitable.",
+      "totalRevenue": "Total Revenue",
+      "totalCosts": "Total Costs",
+      "breakEvenROAS": "Break Even ROAS",
+      "perProduct": "per product",
       "exampleTitle": "Example:",
       "exampleDescription": "Suppose you sell a product for $30, cost of goods are $8 & the shipping costs are $2.",
       "exampleResult": "This means that for every campaign, ad set/ad group or ad that has a ROAS higher than 1.5, you make a profit."

@@ -80,6 +80,10 @@ export interface Translations {
     formula: {
       title: string;
       description: string;
+      totalRevenue: string;
+      totalCosts: string;
+      breakEvenROAS: string;
+      perProduct: string;
       exampleTitle: string;
       exampleDescription: string;
       exampleResult: string;

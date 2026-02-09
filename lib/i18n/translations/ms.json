@@ -78,6 +78,10 @@
     "formula": {
       "title": "Formula Break Even ROAS",
       "description": "Pertama sekali, anda perlu menjumlahkan semua kos anda bersama. Kemudian dengan menggunakan formula di bawah anda boleh mengira ROAS di mana kempen, set iklan/kumpulan iklan atau iklan adalah menguntungkan.",
+      "totalRevenue": "Jumlah Hasil",
+      "totalCosts": "Jumlah Kos",
+      "breakEvenROAS": "Break Even ROAS",
+      "perProduct": "setiap produk",
       "exampleTitle": "Contoh:",
       "exampleDescription": "Andaikan anda menjual produk seharga $30, kos barang adalah $8 & kos penghantaran adalah $2.",
       "exampleResult": "Ini bermakna untuk setiap kempen, set iklan/kumpulan iklan atau iklan yang mempunyai ROAS lebih tinggi daripada 1.5, anda memperoleh keuntungan."
