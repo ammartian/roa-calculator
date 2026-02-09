@@ -1,6 +1,9 @@
 "use client";
 
+import { useState } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Calculator from "./components/calculator/index";
+import BasicCalculators from "./components/basic-calculators/index";
 import EducationalContent from "./components/educational-content";
 import Footer from "./components/footer";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
@@ -8,6 +11,7 @@ import { useLanguage } from "@/lib/i18n/context";
 
 export default function Home() {
   const { t } = useLanguage();
+  const [activeTab, setActiveTab] = useState("roa");
 
   return (
     <main className="min-h-screen bg-background py-8 px-4 sm:py-12 sm:px-6 lg:px-8">
@@ -17,14 +21,29 @@ export default function Home() {
         </div>
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-            {t.page.title}
+            {t.tabs[activeTab as keyof typeof t.tabs].title}
           </h1>
           <p className="mt-2 text-muted-foreground">
-            {t.page.subtitle}
+            {t.tabs[activeTab as keyof typeof t.tabs].description}
           </p>
         </div>
-        <Calculator />
-        <EducationalContent />
+
+        <Tabs defaultValue="roa" className="w-full" onValueChange={setActiveTab}>
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
+            <TabsTrigger value="roa">{t.tabs.roa.title}</TabsTrigger>
+            <TabsTrigger value="basic">{t.tabs.basic.title}</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="roa" className="mt-0">
+            <Calculator />
+            <EducationalContent />
+          </TabsContent>
+
+          <TabsContent value="basic" className="mt-0">
+            <BasicCalculators />
+          </TabsContent>
+        </Tabs>
+
         <Footer />
       </div>
     </main>

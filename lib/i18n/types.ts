@@ -100,6 +100,16 @@ export interface Translations {
       exampleResult: string;
     };
   };
+  tabs: {
+    roa: {
+      title: string;
+      description: string;
+    };
+    basic: {
+      title: string;
+      description: string;
+    };
+  };
   footer: {
     copyright: string;
   };

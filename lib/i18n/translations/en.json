@@ -98,6 +98,16 @@
       "exampleResult": "This means that for every campaign, ad set/ad group or ad that has a ROAS higher than 1.5, you make a profit."
     }
   },
+  "tabs": {
+    "roa": {
+      "title": "ROA Calculator",
+      "description": "Calculate Return on Assets (ROA) easily and quickly."
+    },
+    "basic": {
+      "title": "Basic Calculators",
+      "description": "Essential business calculation tools for everyday use."
+    }
+  },
   "footer": {
     "copyright": "ROA Calculator. Product of Lima Angka."
   }

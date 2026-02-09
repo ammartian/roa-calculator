@@ -98,6 +98,16 @@
       "exampleResult": "Ini bermakna untuk setiap kempen, set iklan/kumpulan iklan atau iklan yang mempunyai ROAS lebih tinggi daripada 1.5, anda memperoleh keuntungan."
     }
   },
+  "tabs": {
+    "roa": {
+      "title": "Kalkulator ROA",
+      "description": "Kira Pulangan Atas Aset (ROA) dengan mudah dan pantas."
+    },
+    "basic": {
+      "title": "Kalkulator Asas",
+      "description": "Alat pengiraan perniagaan penting untuk kegunaan harian."
+    }
+  },
   "footer": {
     "copyright": "Kalkulator ROA. Produk Lima Angka."
   }

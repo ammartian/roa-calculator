@@ -1,0 +1,77 @@
+"use client";
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Calculator, TrendingUp, DollarSign, Package, Truck, Receipt } from "lucide-react";
+
+const calculators = [
+  {
+    id: "profit-margin",
+    title: "Profit Margin Calculator",
+    description: "Calculate profit margins and markup percentages",
+    icon: TrendingUp,
+  },
+  {
+    id: "static-cost",
+    title: "Static Cost Calculator",
+    description: "Calculate fixed costs and break-even points",
+    icon: DollarSign,
+  },
+  {
+    id: "variable-cost",
+    title: "Variable Cost Calculator",
+    description: "Analyze costs that change with production volume",
+    icon: Package,
+  },
+  {
+    id: "break-even",
+    title: "Break-Even Calculator",
+    description: "Determine the point where revenue equals costs",
+    icon: Calculator,
+  },
+  {
+    id: "shipping",
+    title: "Shipping Cost Calculator",
+    description: "Estimate shipping and logistics costs",
+    icon: Truck,
+  },
+  {
+    id: "tax",
+    title: "Tax Calculator",
+    description: "Calculate taxes and after-tax amounts",
+    icon: Receipt,
+  },
+];
+
+export default function BasicCalculators() {
+  return (
+    <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {calculators.map((calc) => {
+          const Icon = calc.icon;
+          return (
+            <Card key={calc.id} className="hover:shadow-md transition-shadow">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <Icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">{calc.title}</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {calc.description}
+                </p>
+                <div className="p-8 border-2 border-dashed border-muted rounded-lg flex items-center justify-center">
+                  <p className="text-sm text-muted-foreground">
+                    Coming soon
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
