@@ -2,6 +2,8 @@
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
+import { HelpCircle } from "lucide-react";
 import type { CostField as CostFieldType } from "@/types";
 
 interface CostFieldProps {
@@ -11,6 +13,7 @@ interface CostFieldProps {
   onTaxChange: (value: string) => void;
   currencySymbol: string;
   taxDescription?: string;
+  taxInputTooltip?: string;
 }
 
 export function CostField({
@@ -20,10 +23,25 @@ export function CostField({
   onTaxChange,
   currencySymbol,
   taxDescription,
+  taxInputTooltip,
 }: CostFieldProps) {
   return (
     <div className="space-y-2">
-      <Label className="font-medium">{label}</Label>
+      <div className="flex justify-between items-center">
+        <Label className="font-medium">{label}</Label>
+        {taxInputTooltip && (
+          <div className="w-[80px] flex justify-end">
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <HelpCircle className="h-4 w-4 text-muted-foreground" />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{taxInputTooltip}</p>
+              </TooltipContent>
+            </Tooltip>
+          </div>
+        )}
+      </div>
       <div className="flex gap-2">
         <div className="flex items-center gap-2 flex-1 border rounded-md px-3 bg-background focus-within:ring-2 focus-within:ring-ring">
           <span className="text-muted-foreground whitespace-nowrap font-medium">
@@ -53,7 +71,10 @@ export function CostField({
         </div>
       </div>
       {taxDescription && (
-        <p className="text-xs text-muted-foreground">{taxDescription}</p>
+        <div className="flex gap-2">
+          <p className="text-xs text-muted-foreground flex-1">{taxDescription}</p>
+          <div className="w-[80px]" />
+        </div>
       )}
     </div>
   );

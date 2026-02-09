@@ -13,7 +13,9 @@
       "title": "Costs (per product)",
       "currency": "Currency",
       "taxRate": "Tax rate (applies to all)",
+      "taxRateTooltip": "to be added later",
       "taxRateDescription": "Set a default tax rate for all fields. You can customize each field individually below.",
+      "taxInputTooltip": "to be added later",
       "costOfGoods": "Cost of goods",
       "costOfGoodsTaxDescription": "If you receive tax back on the cost of goods, you can set it here.",
       "shippingCosts": "Shipping costs",
@@ -28,6 +30,7 @@
       "title": "Revenue (per product)",
       "revenue": "Revenue",
       "revenueTaxDescription": "If you have to pay tax over the revenue, you can set it here.",
+      "taxInputTooltip": "to be added later",
       "totalRevenue": "Total revenue"
     },
     "results": {

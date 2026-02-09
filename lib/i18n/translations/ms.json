@@ -13,7 +13,9 @@
       "title": "Kos (setiap produk)",
       "currency": "Mata Wang",
       "taxRate": "Kadar cukai (berlaku untuk semua)",
+      "taxRateTooltip": "akan ditambah kemudian",
       "taxRateDescription": "Tetapkan kadar cukai lalai untuk semua medan. Anda boleh menyesuaikan setiap medan secara individu di bawah.",
+      "taxInputTooltip": "akan ditambah kemudian",
       "costOfGoods": "Kos barang",
       "costOfGoodsTaxDescription": "Jika anda menerima cukai balik untuk kos barang, anda boleh menetapkannya di sini.",
       "shippingCosts": "Kos penghantaran",
@@ -28,6 +30,7 @@
       "title": "Hasil (setiap produk)",
       "revenue": "Hasil",
       "revenueTaxDescription": "Jika anda perlu membayar cukai ke atas hasil, anda boleh menetapkannya di sini.",
+      "taxInputTooltip": "akan ditambah kemudian",
       "totalRevenue": "Jumlah hasil"
     },
     "results": {

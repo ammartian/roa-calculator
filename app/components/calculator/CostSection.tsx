@@ -5,6 +5,8 @@ import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { CurrencyCombobox } from "@/components/ui/currency-combobox";
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
+import { HelpCircle } from "lucide-react";
 import { currencies } from "@/lib/currencies";
 import { CostField } from "./CostField";
 import type { CostField as CostFieldType } from "@/types";
@@ -73,19 +75,29 @@ export function CostSection({
         <Separator />
 
         <div className="space-y-2">
-          <Label className="font-medium">{translations.taxRate}</Label>
-          <div className="relative w-[80px]">
-            <Input
-              type="text"
-              inputMode="decimal"
-              placeholder="0"
-              value={masterTax}
-              onChange={(e) => onMasterTaxChange(e.target.value)}
-              className="pr-7"
-            />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground">
-              %
-            </span>
+          <div className="flex items-center gap-2">
+            <Label className="font-medium">{translations.taxRate}</Label>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <HelpCircle className="h-4 w-4 text-muted-foreground" />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{translations.taxRateTooltip}</p>
+              </TooltipContent>
+            </Tooltip>
+          </div>
+            <div className="relative w-[80px]">
+              <Input
+                type="text"
+                inputMode="decimal"
+                placeholder="0"
+                value={masterTax}
+                onChange={(e) => onMasterTaxChange(e.target.value)}
+                className="pr-7"
+              />
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+                %
+              </span>
           </div>
           <p className="text-xs text-muted-foreground">
             {translations.taxRateDescription}
@@ -101,6 +113,7 @@ export function CostSection({
           onTaxChange={onCostOfGoodsTaxChange}
           currencySymbol={currencySymbol}
           taxDescription={translations.costOfGoodsTaxDescription}
+          taxInputTooltip={translations.taxInputTooltip}
         />
 
         <CostField
@@ -110,6 +123,7 @@ export function CostSection({
           onTaxChange={onShippingCostsTaxChange}
           currencySymbol={currencySymbol}
           taxDescription={translations.shippingCostsTaxDescription}
+          taxInputTooltip={translations.taxInputTooltip}
         />
 
         <CostField
@@ -119,6 +133,7 @@ export function CostSection({
           onTaxChange={onTransactionCostsTaxChange}
           currencySymbol={currencySymbol}
           taxDescription={translations.transactionCostsTaxDescription}
+          taxInputTooltip={translations.taxInputTooltip}
         />
 
         <CostField
@@ -128,6 +143,7 @@ export function CostSection({
           onTaxChange={onOtherCostsTaxChange}
           currencySymbol={currencySymbol}
           taxDescription={translations.otherCostsTaxDescription}
+          taxInputTooltip={translations.taxInputTooltip}
         />
 
         <Separator />

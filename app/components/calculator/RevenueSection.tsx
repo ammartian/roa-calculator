@@ -38,6 +38,7 @@ export function RevenueSection({
           onTaxChange={onRevenueTaxChange}
           currencySymbol={currencySymbol}
           taxDescription={translations.revenueTaxDescription}
+          taxInputTooltip={translations.taxInputTooltip}
         />
 
         <Separator />

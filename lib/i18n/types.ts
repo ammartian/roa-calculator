@@ -15,7 +15,9 @@ export interface Translations {
       title: string;
       currency: string;
       taxRate: string;
+      taxRateTooltip: string;
       taxRateDescription: string;
+      taxInputTooltip: string;
       costOfGoods: string;
       costOfGoodsTaxDescription: string;
       shippingCosts: string;
@@ -30,6 +32,7 @@ export interface Translations {
       title: string;
       revenue: string;
       revenueTaxDescription: string;
+      taxInputTooltip: string;
       totalRevenue: string;
     };
     results: {
