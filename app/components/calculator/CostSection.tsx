@@ -8,8 +8,10 @@ import { CurrencyCombobox } from "@/components/ui/currency-combobox";
 import { currencies } from "@/lib/currencies";
 import { CostField } from "./CostField";
 import type { CostField as CostFieldType } from "@/types";
+import type { Translations } from "@/lib/i18n/types";
 
 interface CostSectionProps {
+  translations: Translations["calculator"]["costs"];
   selectedCurrency: string;
   onCurrencyChange: (value: string) => void;
   masterTax: string;
@@ -32,6 +34,7 @@ interface CostSectionProps {
 }
 
 export function CostSection({
+  translations,
   selectedCurrency,
   onCurrencyChange,
   masterTax,
@@ -55,11 +58,11 @@ export function CostSection({
   return (
     <Card className="h-fit">
       <CardHeader>
-        <CardTitle className="text-lg">Costs (per product)</CardTitle>
+        <CardTitle className="text-lg">{translations.title}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="space-y-2">
-          <Label className="font-medium">Currency</Label>
+          <Label className="font-medium">{translations.currency}</Label>
           <CurrencyCombobox
             currencies={currencies}
             value={selectedCurrency}
@@ -70,7 +73,7 @@ export function CostSection({
         <Separator />
 
         <div className="space-y-2">
-          <Label className="font-medium">Tax rate (applies to all)</Label>
+          <Label className="font-medium">{translations.taxRate}</Label>
           <div className="relative w-[80px]">
             <Input
               type="text"
@@ -85,52 +88,52 @@ export function CostSection({
             </span>
           </div>
           <p className="text-xs text-muted-foreground">
-            Set a default tax rate for all fields. You can customize each field individually below.
+            {translations.taxRateDescription}
           </p>
         </div>
 
         <Separator />
 
         <CostField
-          label="Cost of goods"
+          label={translations.costOfGoods}
           field={costOfGoods}
           onValueChange={onCostOfGoodsValueChange}
           onTaxChange={onCostOfGoodsTaxChange}
           currencySymbol={currencySymbol}
-          taxDescription="If you receive tax back on the cost of goods, you can set it here."
+          taxDescription={translations.costOfGoodsTaxDescription}
         />
 
         <CostField
-          label="Shipping costs"
+          label={translations.shippingCosts}
           field={shippingCosts}
           onValueChange={onShippingCostsValueChange}
           onTaxChange={onShippingCostsTaxChange}
           currencySymbol={currencySymbol}
-          taxDescription="If you receive tax back on the shipping costs, you can set it here."
+          taxDescription={translations.shippingCostsTaxDescription}
         />
 
         <CostField
-          label="Transaction costs"
+          label={translations.transactionCosts}
           field={transactionCosts}
           onValueChange={onTransactionCostsValueChange}
           onTaxChange={onTransactionCostsTaxChange}
           currencySymbol={currencySymbol}
-          taxDescription="If you receive tax back on the transaction costs, you can set it here."
+          taxDescription={translations.transactionCostsTaxDescription}
         />
 
         <CostField
-          label="Other costs"
+          label={translations.otherCosts}
           field={otherCosts}
           onValueChange={onOtherCostsValueChange}
           onTaxChange={onOtherCostsTaxChange}
           currencySymbol={currencySymbol}
-          taxDescription="If you receive tax back on other costs, you can set it here."
+          taxDescription={translations.otherCostsTaxDescription}
         />
 
         <Separator />
 
         <div className="flex justify-between items-center">
-          <span className="font-semibold">Total costs</span>
+          <span className="font-semibold">{translations.totalCosts}</span>
           <span className="font-semibold text-lg">{formatCurrency(totalCosts)}</span>
         </div>
       </CardContent>

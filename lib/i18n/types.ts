@@ -1,0 +1,91 @@
+export type Language = "en" | "ms";
+
+export interface Translations {
+  common: {
+    language: string;
+    english: string;
+    malay: string;
+  };
+  page: {
+    title: string;
+    subtitle: string;
+  };
+  calculator: {
+    costs: {
+      title: string;
+      currency: string;
+      taxRate: string;
+      taxRateDescription: string;
+      costOfGoods: string;
+      costOfGoodsTaxDescription: string;
+      shippingCosts: string;
+      shippingCostsTaxDescription: string;
+      transactionCosts: string;
+      transactionCostsTaxDescription: string;
+      otherCosts: string;
+      otherCostsTaxDescription: string;
+      totalCosts: string;
+    };
+    revenue: {
+      title: string;
+      revenue: string;
+      revenueTaxDescription: string;
+      totalRevenue: string;
+    };
+    results: {
+      title: string;
+      profitPerUnit: string;
+      profitMargin: string;
+      maxAdSpend: string;
+      maxAdSpendDescription: string;
+      reset: string;
+      status: {
+        enterValues: string;
+        enterValuesDescription: string;
+        losingMoney: string;
+        losingMoneyDescription: string;
+        lowMargin: string;
+        lowMarginDescription: string;
+        profitable: string;
+        profitableDescription: string;
+        highlyProfitable: string;
+        highlyProfitableDescription: string;
+      };
+    };
+  };
+  educational: {
+    howItWorks: {
+      title: string;
+      step1: string;
+      step2: string;
+      step3: string;
+      step4: string;
+    };
+    whatIsBreakEven: {
+      title: string;
+      description1: string;
+      description2: string;
+      profitable: string;
+      losing: string;
+      breakEven: string;
+    };
+    whyImportant: {
+      title: string;
+      description1: string;
+      description2: string;
+      description3: string;
+      description4: string;
+      description5: string;
+    };
+    formula: {
+      title: string;
+      description: string;
+      exampleTitle: string;
+      exampleDescription: string;
+      exampleResult: string;
+    };
+  };
+  footer: {
+    copyright: string;
+  };
+}

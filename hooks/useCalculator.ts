@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect, useRef } from "react";
 import type { CostField, CalculatorResults } from "@/types";
 import {
   parseCurrency,
@@ -10,11 +10,32 @@ import {
   calculateProfitMargin,
 } from "@/lib/calculations";
 import { formatDecimalInput } from "@/lib/calculations";
+import { useLanguage } from "@/lib/i18n/context";
 
 const INITIAL_COST_FIELD: CostField = { value: "", tax: "" };
 
+function getDefaultCurrency(language: string): string {
+  return language === "ms" ? "MYR" : "USD";
+}
+
 export function useCalculator() {
-  const [selectedCurrency, setSelectedCurrency] = useState<string>("USD");
+  const { language } = useLanguage();
+  const [selectedCurrency, setSelectedCurrency] = useState<string>(() => getDefaultCurrency(language));
+  const hasManuallyChangedCurrency = useRef(false);
+
+  // Update currency when language changes (unless user manually selected)
+  useEffect(() => {
+    if (!hasManuallyChangedCurrency.current) {
+      const defaultCurrency = getDefaultCurrency(language);
+      queueMicrotask(() => setSelectedCurrency(defaultCurrency));
+    }
+  }, [language]);
+
+  const handleCurrencyChange = useCallback((currency: string) => {
+    hasManuallyChangedCurrency.current = true;
+    setSelectedCurrency(currency);
+  }, []);
+
   const [masterTax, setMasterTax] = useState<string>("");
   const [costOfGoods, setCostOfGoods] = useState<CostField>(INITIAL_COST_FIELD);
   const [shippingCosts, setShippingCosts] = useState<CostField>(INITIAL_COST_FIELD);
@@ -87,17 +108,19 @@ export function useCalculator() {
   }, [costOfGoods, shippingCosts, transactionCosts, otherCosts, revenue]);
 
   const handleReset = useCallback(() => {
+    hasManuallyChangedCurrency.current = false;
+    setSelectedCurrency(getDefaultCurrency(language));
     setMasterTax("");
     setCostOfGoods(INITIAL_COST_FIELD);
     setShippingCosts(INITIAL_COST_FIELD);
     setTransactionCosts(INITIAL_COST_FIELD);
     setOtherCosts(INITIAL_COST_FIELD);
     setRevenue(INITIAL_COST_FIELD);
-  }, []);
+  }, [language]);
 
   return {
     selectedCurrency,
-    setSelectedCurrency,
+    setSelectedCurrency: handleCurrencyChange,
     masterTax,
     costOfGoods,
     shippingCosts,

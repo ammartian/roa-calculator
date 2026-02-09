@@ -4,11 +4,13 @@ import { useMemo } from "react";
 import { currencies } from "@/lib/currencies";
 import { useCalculator } from "@/hooks/useCalculator";
 import { formatCurrency, getCurrencySymbol } from "@/lib/calculations";
+import { useLanguage } from "@/lib/i18n/context";
 import { CostSection } from "./CostSection";
 import { RevenueSection } from "./RevenueSection";
 import { ResultsSection } from "./ResultsSection";
 
 export default function Calculator() {
+  const { t } = useLanguage();
   const {
     selectedCurrency,
     setSelectedCurrency,
@@ -40,6 +42,7 @@ export default function Calculator() {
   return (
     <div className="w-full max-w-xl md:max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
       <CostSection
+        translations={t.calculator.costs}
         selectedCurrency={selectedCurrency}
         onCurrencyChange={setSelectedCurrency}
         masterTax={masterTax}
@@ -69,6 +72,7 @@ export default function Calculator() {
 
       <div className="space-y-6">
         <RevenueSection
+          translations={t.calculator.revenue}
           revenue={revenue}
           onRevenueValueChange={handleFieldChange(setRevenue, "value")}
           onRevenueTaxChange={handleFieldChange(setRevenue, "tax")}
@@ -78,6 +82,7 @@ export default function Calculator() {
         />
 
         <ResultsSection
+          translations={t.calculator.results}
           results={results}
           formatCurrency={formatCurrencyWithSelected}
           onReset={handleReset}

@@ -11,8 +11,10 @@ import {
   DollarSign,
 } from "lucide-react";
 import type { CalculatorResults } from "@/types";
+import type { Translations } from "@/lib/i18n/types";
 
 interface ResultsSectionProps {
+  translations: Translations["calculator"]["results"];
   results: CalculatorResults;
   formatCurrency: (value: number) => string;
   onReset: () => void;
@@ -25,48 +27,49 @@ interface ProfitabilityStatus {
   description: string;
 }
 
-function getProfitabilityStatus(roas: number): ProfitabilityStatus {
+function getProfitabilityStatus(roas: number, translations: Translations["calculator"]["results"]["status"]): ProfitabilityStatus {
   if (roas === 0) {
     return {
-      label: "Enter values",
+      label: translations.enterValues,
       color: "text-muted-foreground",
       icon: null,
-      description: "Fill in costs and revenue to see results",
+      description: translations.enterValuesDescription,
     };
   }
   if (roas <= 1) {
     return {
-      label: "Losing Money",
+      label: translations.losingMoney,
       color: "text-red-500",
       icon: <XCircle className="h-5 w-5" />,
-      description: "Your costs exceed or match your revenue",
+      description: translations.losingMoneyDescription,
     };
   }
   if (roas <= 1.5) {
     return {
-      label: "Low Margin",
+      label: translations.lowMargin,
       color: "text-yellow-500",
       icon: <AlertCircle className="h-5 w-5" />,
-      description: "Thin profit margin - optimize costs or increase prices",
+      description: translations.lowMarginDescription,
     };
   }
   if (roas <= 2.5) {
     return {
-      label: "Profitable",
+      label: translations.profitable,
       color: "text-green-500",
       icon: <CheckCircle2 className="h-5 w-5" />,
-      description: "Good profit margin - typical for most industries",
+      description: translations.profitableDescription,
     };
   }
   return {
-    label: "Highly Profitable",
+    label: translations.highlyProfitable,
     color: "text-emerald-500",
     icon: <TrendingUp className="h-5 w-5" />,
-    description: "Excellent profit margin - scale your campaigns!",
+    description: translations.highlyProfitableDescription,
   };
 }
 
 export function ResultsSection({
+  translations,
   results,
   formatCurrency,
   onReset,
@@ -80,12 +83,12 @@ export function ResultsSection({
     totalCosts,
   } = results;
 
-  const profitabilityStatus = getProfitabilityStatus(breakEvenROAS);
+  const profitabilityStatus = getProfitabilityStatus(breakEvenROAS, translations.status);
 
   return (
     <Card className="bg-primary/5 border-primary/20">
       <CardHeader>
-        <CardTitle className="text-lg text-center">Break Even ROAS</CardTitle>
+        <CardTitle className="text-lg text-center">{translations.title}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="text-center">
@@ -118,7 +121,7 @@ export function ResultsSection({
           <div className="bg-background rounded-lg p-3 text-center">
             <div className="flex items-center justify-center gap-1 text-muted-foreground text-sm mb-1">
               <DollarSign className="h-4 w-4" />
-              Profit per Unit
+              {translations.profitPerUnit}
             </div>
             <span
               className={`text-xl font-semibold ${
@@ -132,7 +135,7 @@ export function ResultsSection({
           <div className="bg-background rounded-lg p-3 text-center">
             <div className="flex items-center justify-center gap-1 text-muted-foreground text-sm mb-1">
               <TrendingUp className="h-4 w-4" />
-              Profit Margin
+              {translations.profitMargin}
             </div>
             <span
               className={`text-xl font-semibold ${
@@ -148,14 +151,14 @@ export function ResultsSection({
           <div className="bg-background rounded-lg p-4">
             <div className="flex items-center justify-between">
               <span className="text-sm text-muted-foreground">
-                Max ad spend to break even (per sale):
+                {translations.maxAdSpend}
               </span>
               <span className="font-semibold text-lg">
                 {formatCurrency(maxAdSpendForBreakEven)}
               </span>
             </div>
             <p className="text-xs text-muted-foreground mt-1">
-              Spend less than this per conversion to remain profitable
+              {translations.maxAdSpendDescription}
             </p>
           </div>
         )}
@@ -171,7 +174,7 @@ export function ResultsSection({
 
         <div className="text-center">
           <Button onClick={onReset} variant="outline" size="lg">
-            Reset
+            {translations.reset}
           </Button>
         </div>
       </CardContent>
