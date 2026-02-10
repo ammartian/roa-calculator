@@ -34,12 +34,13 @@ export default function Home() {
                         <TabsTrigger value="basic">{t.tabs.basic.title}</TabsTrigger>
                     </TabsList>
 
-                    <TabsContent value="roa" className="mt-0">
+                    {/* forceMount to persist data when switching tabs */}
+                    <TabsContent value="roa" forceMount className="mt-0 hidden data-[state=active]:block" >
                         <Calculator />
                         <EducationalContent />
                     </TabsContent>
 
-                    <TabsContent value="basic" className="mt-0">
+                    <TabsContent value="basic" forceMount className="mt-0 hidden data-[state=active]:block">
                         <BasicCalculators />
                     </TabsContent>
                 </Tabs>
