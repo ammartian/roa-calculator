@@ -170,6 +170,19 @@
         "importantNotice": "Important Notice:",
         "noticeDescription": "Ensure that no costs are missed or overlooked. Review all inputs carefully. Check, double check, and triple check to ensure the accuracy of the total cost per unit."
     },
+    "sellingPriceCalculator": {
+        "currency": "Currency",
+        "totalCostPerUnit": "Total Cost per Unit",
+        "desiredProfit": "Desired Profit per Unit",
+        "safetyMargin": "Safety / Contingency Margin per Unit",
+        "results": "Results",
+        "minimumSellingPrice": "Minimum Selling Price",
+        "recommendedSellingPrice": "Recommended Selling Price",
+        "netProfit": "Net Profit",
+        "netMargin": "Net Margin (%)",
+        "enterValues": "Enter total cost per unit to see results",
+        "reset": "Reset"
+    },
     "basicCalculators": {
         "gross-profit": {
             "title": "Gross Profit Calculator",

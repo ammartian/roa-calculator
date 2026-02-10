@@ -172,6 +172,19 @@ export interface Translations {
         importantNotice: string;
         noticeDescription: string;
     };
+    sellingPriceCalculator: {
+        currency: string;
+        totalCostPerUnit: string;
+        desiredProfit: string;
+        safetyMargin: string;
+        results: string;
+        minimumSellingPrice: string;
+        recommendedSellingPrice: string;
+        netProfit: string;
+        netMargin: string;
+        enterValues: string;
+        reset: string;
+    };
     basicCalculators: {
         "gross-profit": {
             title: string;

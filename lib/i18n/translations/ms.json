@@ -170,6 +170,19 @@
         "importantNotice": "Notis Penting:",
         "noticeDescription": "Pastikan tiada kos yang terlepas atau terabaikan. Semak semua input dengan teliti. Periksa, periksa semula, dan periksa sekali lagi untuk memastikan ketepatan jumlah kos seunit."
     },
+    "sellingPriceCalculator": {
+        "currency": "Mata Wang",
+        "totalCostPerUnit": "Jumlah Kos Seunit",
+        "desiredProfit": "Keuntungan Dikehendaki Seunit",
+        "safetyMargin": "Margin Keselamatan / Kecemasan Seunit",
+        "results": "Keputusan",
+        "minimumSellingPrice": "Harga Jualan Minimum",
+        "recommendedSellingPrice": "Harga Jualan Disyorkan",
+        "netProfit": "Keuntungan Bersih",
+        "netMargin": "Margin Bersih (%)",
+        "enterValues": "Masukkan jumlah kos seunit untuk melihat keputusan",
+        "reset": "Tetapkan Semula"
+    },
     "basicCalculators": {
         "gross-profit": {
             "title": "Kalkulator Keuntungan Kasar",

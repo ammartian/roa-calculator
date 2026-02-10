@@ -6,6 +6,7 @@ import { GrossProfitCalculator } from "./GrossProfitCalculator";
 import { FixedCostCalculator } from "./FixedCostCalculator";
 import { VariableCostCalculator } from "./VariableCostCalculator";
 import { CostPerUnitCalculator } from "./CostPerUnitCalculator";
+import { SellingPriceCalculator } from "./SellingPriceCalculator";
 import { useLanguage } from "@/lib/i18n/context";
 
 const calculatorMetadata = [
@@ -32,7 +33,7 @@ const calculatorMetadata = [
     {
         id: "selling-price-profit",
         icon: TrendingUp,
-        component: null,
+        component: SellingPriceCalculator,
     },
     {
         id: "sales-target-profit",
