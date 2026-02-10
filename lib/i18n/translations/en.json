@@ -123,6 +123,25 @@
         "enterValues": "Enter COGS and Selling Price to see results",
         "reset": "Reset"
     },
+    "fixedCostCalculator": {
+        "currency": "Currency",
+        "fixedCostsSection": "Fixed Costs",
+        "premisesRent": "Premises Rent",
+        "staffSalaries": "Permanent Staff Salaries",
+        "internetBill": "Internet Bill",
+        "addAdditionalCost": "Add Additional Fixed Cost",
+        "maxReached": "Max 20",
+        "unitsSold": "Units Sold",
+        "unitsSoldLabel": "Units Sold",
+        "results": "Results",
+        "totalFixedCosts": "Total Fixed Costs",
+        "fixedCostPerUnit": "Fixed Cost per Unit",
+        "enterValues": "Enter fixed costs and units sold to see results",
+        "reset": "Reset",
+        "costNamePlaceholder": "e.g., Utilities, Insurance",
+        "cancel": "Cancel",
+        "add": "Add"
+    },
     "basicCalculators": {
         "gross-profit": {
             "title": "Gross Profit Calculator",

@@ -123,6 +123,25 @@
         "enterValues": "Masukkan COGS dan Harga Jualan untuk melihat keputusan",
         "reset": "Tetapkan Semula"
     },
+    "fixedCostCalculator": {
+        "currency": "Mata Wang",
+        "fixedCostsSection": "Kos Tetap",
+        "premisesRent": "Sewa Premis",
+        "staffSalaries": "Gaji Kakitangan Tetap",
+        "internetBill": "Bil Internet",
+        "addAdditionalCost": "Tambah Kos Tetap Tambahan",
+        "maxReached": "Maks 20",
+        "unitsSold": "Unit Terjual",
+        "unitsSoldLabel": "Unit Terjual",
+        "results": "Keputusan",
+        "totalFixedCosts": "Jumlah Kos Tetap",
+        "fixedCostPerUnit": "Kos Tetap Seunit",
+        "enterValues": "Masukkan kos tetap dan unit terjual untuk melihat keputusan",
+        "reset": "Tetapkan Semula",
+        "costNamePlaceholder": "cth., Utiliti, Insurans",
+        "cancel": "Batal",
+        "add": "Tambah"
+    },
     "basicCalculators": {
         "gross-profit": {
             "title": "Kalkulator Keuntungan Kasar",

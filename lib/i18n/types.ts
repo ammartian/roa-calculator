@@ -125,6 +125,25 @@ export interface Translations {
         enterValues: string;
         reset: string;
     };
+    fixedCostCalculator: {
+        currency: string;
+        fixedCostsSection: string;
+        premisesRent: string;
+        staffSalaries: string;
+        internetBill: string;
+        addAdditionalCost: string;
+        maxReached: string;
+        unitsSold: string;
+        unitsSoldLabel: string;
+        results: string;
+        totalFixedCosts: string;
+        fixedCostPerUnit: string;
+        enterValues: string;
+        reset: string;
+        costNamePlaceholder: string;
+        cancel: string;
+        add: string;
+    };
     basicCalculators: {
         "gross-profit": {
             title: string;

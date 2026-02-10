@@ -3,6 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PieChart, DollarSign, Package, Calculator, TrendingUp, Target } from "lucide-react";
 import { GrossProfitCalculator } from "./GrossProfitCalculator";
+import { FixedCostCalculator } from "./FixedCostCalculator";
 import { useLanguage } from "@/lib/i18n/context";
 
 const calculatorMetadata = [
@@ -14,7 +15,7 @@ const calculatorMetadata = [
     {
         id: "fixed-cost",
         icon: DollarSign,
-        component: null,
+        component: FixedCostCalculator,
     },
     {
         id: "variable-cost",
