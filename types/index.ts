@@ -15,6 +15,12 @@ export interface CustomCostField extends CostField {
     title: string;
 }
 
+export interface DynamicCostItemData {
+    id: string;
+    title: string;
+    amount: string;
+}
+
 import type { ReactNode } from "react";
 
 export interface ProfitabilityStatus {

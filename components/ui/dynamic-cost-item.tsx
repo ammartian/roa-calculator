@@ -4,17 +4,16 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
+import { sanitizeDecimalInput } from "@/lib/formatting";
 
-export interface DynamicCostItemData {
-    id: string;
-    title: string;
-    amount: string;
-}
+import type { DynamicCostItemData } from "@/types";
+
+export type { DynamicCostItemData };
 
 interface DynamicCostItemProps {
     cost: DynamicCostItemData;
     currencySymbol: string;
-    onUpdate: (id: string, field: keyof DynamicCostItemData, value: string) => void;
+    onUpdate: (id: string, value: string) => void;
     onRemove: (id: string) => void;
 }
 
@@ -24,6 +23,10 @@ export function DynamicCostItem({
     onUpdate,
     onRemove,
 }: DynamicCostItemProps) {
+    const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        onUpdate(cost.id, sanitizeDecimalInput(e.target.value));
+    };
+
     return (
         <div className="space-y-2">
             <div className="flex justify-between items-center">
@@ -46,7 +49,7 @@ export function DynamicCostItem({
                     inputMode="decimal"
                     placeholder="0.00"
                     value={cost.amount}
-                    onChange={(e) => onUpdate(cost.id, "amount", e.target.value)}
+                    onChange={handleAmountChange}
                     className="border-0 bg-transparent px-0 focus-visible:ring-0 shadow-none"
                 />
             </div>

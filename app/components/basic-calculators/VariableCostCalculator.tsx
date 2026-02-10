@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useMemo } from "react";
+import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { currencies } from "@/lib/currencies";
 import { useVariableCostCalculator } from "@/hooks/useVariableCostCalculator";
 import { formatCurrency, getCurrencySymbol } from "@/lib/calculations";
@@ -12,6 +12,70 @@ import { CurrencyCombobox } from "@/components/ui/currency-combobox";
 import { CurrencyInput } from "@/components/ui/currency-input";
 import { DynamicCostItem } from "@/components/ui/dynamic-cost-item";
 import { Package, Truck, Percent, Target, Plus, RotateCcw } from "lucide-react";
+
+interface AddCostFormProps {
+    onAdd: (title: string) => void;
+    onCancel: () => void;
+    placeholder: string;
+    addLabel: string;
+    cancelLabel: string;
+}
+
+function AddCostForm({ onAdd, onCancel, placeholder, addLabel, cancelLabel }: AddCostFormProps) {
+    const [title, setTitle] = useState("");
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        inputRef.current?.focus();
+    }, []);
+
+    const handleSubmit = useCallback(() => {
+        const trimmed = title.trim();
+        if (trimmed) {
+            onAdd(trimmed);
+        }
+    }, [title, onAdd]);
+
+    const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            handleSubmit();
+        } else if (e.key === "Escape") {
+            onCancel();
+        }
+    }, [handleSubmit, onCancel]);
+
+    return (
+        <div className="space-y-2">
+            <Input
+                ref={inputRef}
+                type="text"
+                placeholder={placeholder}
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                onKeyDown={handleKeyDown}
+                className="w-full"
+            />
+            <div className="flex gap-2">
+                <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={onCancel}
+                    className="flex-1"
+                >
+                    {cancelLabel}
+                </Button>
+                <Button
+                    size="sm"
+                    onClick={handleSubmit}
+                    disabled={!title.trim()}
+                    className="flex-1"
+                >
+                    {addLabel}
+                </Button>
+            </div>
+        </div>
+    );
+}
 
 export function VariableCostCalculator() {
     const { t } = useLanguage();
@@ -36,41 +100,14 @@ export function VariableCostCalculator() {
     } = useVariableCostCalculator();
 
     const [isAddingCost, setIsAddingCost] = useState(false);
-    const [newCostTitle, setNewCostTitle] = useState("");
-    const titleInputRef = useRef<HTMLInputElement>(null);
 
-    useEffect(() => {
-        if (isAddingCost && titleInputRef.current) {
-            titleInputRef.current.focus();
-        }
-    }, [isAddingCost]);
-
-    const handleStartAdding = () => {
-        setIsAddingCost(true);
-        setNewCostTitle("");
-    };
-
-    const handleCancel = () => {
+    const handleStartAdding = useCallback(() => setIsAddingCost(true), []);
+    const handleCancelAdding = useCallback(() => setIsAddingCost(false), []);
+    
+    const handleAddCost = useCallback((title: string) => {
+        handleAddAdditionalCost(title);
         setIsAddingCost(false);
-        setNewCostTitle("");
-    };
-
-    const handleSubmit = () => {
-        if (newCostTitle.trim()) {
-            handleAddAdditionalCost(newCostTitle.trim());
-            setIsAddingCost(false);
-            setNewCostTitle("");
-        }
-    };
-
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === "Enter" && newCostTitle.trim()) {
-            handleSubmit();
-        }
-        if (e.key === "Escape") {
-            handleCancel();
-        }
-    };
+    }, [handleAddAdditionalCost]);
 
     const currencySymbol = useMemo(
         () => getCurrencySymbol(currencies, selectedCurrency),
@@ -165,35 +202,13 @@ export function VariableCostCalculator() {
 
                     <div className="space-y-2">
                         {isAddingCost ? (
-                            <div className="space-y-2">
-                                <Input
-                                    ref={titleInputRef}
-                                    type="text"
-                                    placeholder={translations.costNamePlaceholder}
-                                    value={newCostTitle}
-                                    onChange={(e) => setNewCostTitle(e.target.value)}
-                                    onKeyDown={handleKeyDown}
-                                    className="w-full"
-                                />
-                                <div className="flex gap-2">
-                                    <Button
-                                        variant="outline"
-                                        size="sm"
-                                        onClick={handleCancel}
-                                        className="flex-1"
-                                    >
-                                        {translations.cancel}
-                                    </Button>
-                                    <Button
-                                        size="sm"
-                                        onClick={handleSubmit}
-                                        disabled={!newCostTitle.trim()}
-                                        className="flex-1"
-                                    >
-                                        {translations.add}
-                                    </Button>
-                                </div>
-                            </div>
+                            <AddCostForm
+                                onAdd={handleAddCost}
+                                onCancel={handleCancelAdding}
+                                placeholder={translations.costNamePlaceholder}
+                                addLabel={translations.add}
+                                cancelLabel={translations.cancel}
+                            />
                         ) : (
                             <Button
                                 variant="outline"

@@ -4,7 +4,7 @@ import { useState, useMemo, useCallback } from "react";
 import { parseCurrency } from "@/lib/calculations";
 import { sanitizeDecimalInput, sanitizeIntegerInput } from "@/lib/formatting";
 import { useCalculatorCurrency } from "./useCalculatorCurrency";
-import type { DynamicCostItemData } from "@/components/ui/dynamic-cost-item";
+import type { DynamicCostItemData } from "@/types";
 
 export interface FixedCostResults {
     totalFixedCosts: number;
@@ -28,11 +28,7 @@ export interface UseFixedCostCalculatorReturn {
     handleInternetBillChange: (value: string) => void;
     handleUnitsSoldChange: (value: string) => void;
     handleAddAdditionalCost: (title: string) => void;
-    handleUpdateAdditionalCost: (
-        id: string,
-        field: keyof DynamicCostItemData,
-        value: string
-    ) => void;
+    handleUpdateAdditionalCost: (id: string, value: string) => void;
     handleRemoveAdditionalCost: (id: string) => void;
     results: FixedCostResults;
     handleReset: () => void;
@@ -81,10 +77,10 @@ export function useFixedCostCalculator(): UseFixedCostCalculatorReturn {
     );
 
     const handleUpdateAdditionalCost = useCallback(
-        (id: string, field: keyof DynamicCostItemData, value: string) => {
+        (id: string, value: string) => {
             setAdditionalCosts((prev) =>
                 prev.map((cost) =>
-                    cost.id === id ? { ...cost, [field]: value } : cost
+                    cost.id === id ? { ...cost, amount: value } : cost
                 )
             );
         },
