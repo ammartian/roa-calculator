@@ -1,0 +1,8 @@
+{
+    // Force 4-space indentation globally
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    // Auto-format on save
+    "editor.formatOnSave": true,
+}

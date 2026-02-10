@@ -5,36 +5,36 @@ import { LanguageProvider } from "@/lib/i18n/context";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "ROA Calculator",
-  description: "Calculate Return on Assets (ROA) easily and quickly.",
+    title: "ROA Calculator",
+    description: "Calculate Return on Assets (ROA) easily and quickly.",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <LanguageProvider>
-          <TooltipProvider>
-            {children}
-          </TooltipProvider>
-        </LanguageProvider>
-      </body>
-    </html>
-  );
+    return (
+        <html>
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            >
+                <LanguageProvider>
+                    <TooltipProvider>
+                        {children}
+                    </TooltipProvider>
+                </LanguageProvider>
+            </body>
+        </html>
+    );
 }

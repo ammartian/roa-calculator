@@ -10,42 +10,42 @@ import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import { useLanguage } from "@/lib/i18n/context";
 
 export default function Home() {
-  const { t } = useLanguage();
-  const [activeTab, setActiveTab] = useState("roa");
+    const { t } = useLanguage();
+    const [activeTab, setActiveTab] = useState("roa");
 
-  return (
-    <main className="min-h-screen bg-background py-8 px-4 sm:py-12 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        <div className="flex justify-end mb-4">
-          <LanguageSwitcher />
-        </div>
-        <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-            {t.tabs[activeTab as keyof typeof t.tabs].title}
-          </h1>
-          <p className="mt-2 text-muted-foreground">
-            {t.tabs[activeTab as keyof typeof t.tabs].description}
-          </p>
-        </div>
+    return (
+        <main className="min-h-screen bg-background py-8 px-4 sm:py-12 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl">
+                <div className="flex justify-end mb-4">
+                    <LanguageSwitcher />
+                </div>
+                <div className="text-center mb-8 sm:mb-12">
+                    <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+                        {t.tabs[activeTab as keyof typeof t.tabs].title}
+                    </h1>
+                    <p className="mt-2 text-muted-foreground">
+                        {t.tabs[activeTab as keyof typeof t.tabs].description}
+                    </p>
+                </div>
 
-        <Tabs defaultValue="roa" className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
-            <TabsTrigger value="roa">{t.tabs.roa.title}</TabsTrigger>
-            <TabsTrigger value="basic">{t.tabs.basic.title}</TabsTrigger>
-          </TabsList>
+                <Tabs defaultValue="roa" className="w-full" onValueChange={setActiveTab}>
+                    <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
+                        <TabsTrigger value="roa">{t.tabs.roa.title}</TabsTrigger>
+                        <TabsTrigger value="basic">{t.tabs.basic.title}</TabsTrigger>
+                    </TabsList>
 
-          <TabsContent value="roa" className="mt-0">
-            <Calculator />
-            <EducationalContent />
-          </TabsContent>
+                    <TabsContent value="roa" className="mt-0">
+                        <Calculator />
+                        <EducationalContent />
+                    </TabsContent>
 
-          <TabsContent value="basic" className="mt-0">
-            <BasicCalculators />
-          </TabsContent>
-        </Tabs>
+                    <TabsContent value="basic" className="mt-0">
+                        <BasicCalculators />
+                    </TabsContent>
+                </Tabs>
 
-        <Footer />
-      </div>
-    </main>
-  );
+                <Footer />
+            </div>
+        </main>
+    );
 }

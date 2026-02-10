@@ -1,156 +1,156 @@
 {
-  "common": {
-    "language": "Bahasa",
-    "english": "English",
-    "malay": "Bahasa Malaysia"
-  },
-  "page": {
-    "title": "Kalkulator ROA",
-    "subtitle": "Kira Break Even ROAS anda dalam beberapa saat"
-  },
-  "calculator": {
-    "costs": {
-      "title": "Kos (setiap produk)",
-      "currency": "Mata Wang",
-      "taxRate": "Kadar cukai (berlaku untuk semua)",
-      "taxRateTooltip": "akan ditambah kemudian",
-      "taxRateDescription": "Tetapkan kadar cukai lalai untuk semua medan. Anda boleh menyesuaikan setiap medan secara individu di bawah.",
-      "taxInputTooltip": "akan ditambah kemudian",
-      "costOfGoods": "Kos barang",
-      "costOfGoodsTaxDescription": "Jika anda menerima cukai balik untuk kos barang, anda boleh menetapkannya di sini.",
-      "shippingCosts": "Kos penghantaran",
-      "shippingCostsTaxDescription": "Jika anda menerima cukai balik untuk kos penghantaran, anda boleh menetapkannya di sini.",
-      "transactionCosts": "Kos transaksi",
-      "transactionCostsTaxDescription": "Jika anda menerima cukai balik untuk kos transaksi, anda boleh menetapkannya di sini.",
-      "otherCosts": "Kos lain",
-      "otherCostsTaxDescription": "Jika anda menerima cukai balik untuk kos lain, anda boleh menetapkannya di sini.",
-      "addCustomCost": "Tambah kos tersuai",
-      "removeCustomCost": "Buang",
-      "customCostTitle": "Nama kos",
-      "customCostTitlePlaceholder": "cth., Pembungkus, Insurans",
-      "customCostRequired": "Nama kos diperlukan",
-      "customCostsLimit": "Maksimum 10 kos tersuai dibenarkan",
-      "customCostsNote": "Tambah kos tambahan yang khusus untuk perniagaan anda. Setiap kos akan dimasukkan dalam jumlah pengiraan.",
-      "cancel": "Batal",
-      "totalCosts": "Jumlah kos"
+    "common": {
+        "language": "Bahasa",
+        "english": "English",
+        "malay": "Bahasa Malaysia"
     },
-    "revenue": {
-      "title": "Hasil (setiap produk)",
-      "revenue": "Hasil",
-      "revenueTaxDescription": "Jika anda perlu membayar cukai ke atas hasil, anda boleh menetapkannya di sini.",
-      "taxInputTooltip": "akan ditambah kemudian",
-      "totalRevenue": "Jumlah hasil"
+    "page": {
+        "title": "Kalkulator ROA",
+        "subtitle": "Kira Break Even ROAS anda dalam beberapa saat"
     },
-    "results": {
-      "title": "Break Even ROAS",
-      "profitPerUnit": "Keuntungan Seunit",
-      "profitMargin": "Margin Keuntungan",
-      "maxAdSpend": "Perbelanjaan iklan maksimum untuk break even (setiap jualan)",
-      "maxAdSpendDescription": "Berbelanja kurang daripada ini setiap penukaran untuk kekal menguntungkan",
-      "reset": "Tetapkan Semula",
-      "status": {
-        "enterValues": "Masukkan nilai",
-        "enterValuesDescription": "Isi kos dan hasil untuk melihat keputusan",
-        "losingMoney": "Rugi Wang",
-        "losingMoneyDescription": "Kos anda melebihi atau sama dengan hasil anda",
-        "lowMargin": "Margin Rendah",
-        "lowMarginDescription": "Margin keuntungan nipis - optimakan kos atau naikkan harga",
-        "profitable": "Menguntungkan",
-        "profitableDescription": "Margin keuntungan yang baik - biasa untuk kebanyakan industri",
-        "highlyProfitable": "Sangat Menguntungkan",
-        "highlyProfitableDescription": "Margin keuntungan yang sangat baik - skalakan kempen anda!"
-      }
+    "calculator": {
+        "costs": {
+            "title": "Kos (setiap produk)",
+            "currency": "Mata Wang",
+            "taxRate": "Kadar cukai (berlaku untuk semua)",
+            "taxRateTooltip": "akan ditambah kemudian",
+            "taxRateDescription": "Tetapkan kadar cukai lalai untuk semua medan. Anda boleh menyesuaikan setiap medan secara individu di bawah.",
+            "taxInputTooltip": "akan ditambah kemudian",
+            "costOfGoods": "Kos barang",
+            "costOfGoodsTaxDescription": "Jika anda menerima cukai balik untuk kos barang, anda boleh menetapkannya di sini.",
+            "shippingCosts": "Kos penghantaran",
+            "shippingCostsTaxDescription": "Jika anda menerima cukai balik untuk kos penghantaran, anda boleh menetapkannya di sini.",
+            "transactionCosts": "Kos transaksi",
+            "transactionCostsTaxDescription": "Jika anda menerima cukai balik untuk kos transaksi, anda boleh menetapkannya di sini.",
+            "otherCosts": "Kos lain",
+            "otherCostsTaxDescription": "Jika anda menerima cukai balik untuk kos lain, anda boleh menetapkannya di sini.",
+            "addCustomCost": "Tambah kos tersuai",
+            "removeCustomCost": "Buang",
+            "customCostTitle": "Nama kos",
+            "customCostTitlePlaceholder": "cth., Pembungkus, Insurans",
+            "customCostRequired": "Nama kos diperlukan",
+            "customCostsLimit": "Maksimum 10 kos tersuai dibenarkan",
+            "customCostsNote": "Tambah kos tambahan yang khusus untuk perniagaan anda. Setiap kos akan dimasukkan dalam jumlah pengiraan.",
+            "cancel": "Batal",
+            "totalCosts": "Jumlah kos"
+        },
+        "revenue": {
+            "title": "Hasil (setiap produk)",
+            "revenue": "Hasil",
+            "revenueTaxDescription": "Jika anda perlu membayar cukai ke atas hasil, anda boleh menetapkannya di sini.",
+            "taxInputTooltip": "akan ditambah kemudian",
+            "totalRevenue": "Jumlah hasil"
+        },
+        "results": {
+            "title": "Break Even ROAS",
+            "profitPerUnit": "Keuntungan Seunit",
+            "profitMargin": "Margin Keuntungan",
+            "maxAdSpend": "Perbelanjaan iklan maksimum untuk break even (setiap jualan)",
+            "maxAdSpendDescription": "Berbelanja kurang daripada ini setiap penukaran untuk kekal menguntungkan",
+            "reset": "Tetapkan Semula",
+            "status": {
+                "enterValues": "Masukkan nilai",
+                "enterValuesDescription": "Isi kos dan hasil untuk melihat keputusan",
+                "losingMoney": "Rugi Wang",
+                "losingMoneyDescription": "Kos anda melebihi atau sama dengan hasil anda",
+                "lowMargin": "Margin Rendah",
+                "lowMarginDescription": "Margin keuntungan nipis - optimakan kos atau naikkan harga",
+                "profitable": "Menguntungkan",
+                "profitableDescription": "Margin keuntungan yang baik - biasa untuk kebanyakan industri",
+                "highlyProfitable": "Sangat Menguntungkan",
+                "highlyProfitableDescription": "Margin keuntungan yang sangat baik - skalakan kempen anda!"
+            }
+        }
+    },
+    "educational": {
+        "howItWorks": {
+            "title": "Bagaimanakah kalkulator ini berfungsi?",
+            "step1": "Dalam bahagian pertama kalkulator, anda mengisi semua kos, bersama dengan kategori VAT yang betul untuk produk anda.",
+            "step2": "Kemudian dalam bahagian kedua kalkulator anda melakukan perkara yang sama, tetapi dengan hasil.",
+            "step3": "Seterusnya, jumlah akan dijumlahkan dan Break Even ROAS akan muncul secara automatik di bahagian bawah.",
+            "step4": "Jika anda ingin melakukan pengiraan baharu, klik butang \"Tetapkan Semula\" dan anda boleh memasukkan data baharu."
+        },
+        "whatIsBreakEven": {
+            "title": "Apakah Break Even ROAS?",
+            "description1": "Dengan Break Even ROAS anda tahu dengan tepat berapa ROAS yang anda perlukan untuk iklan anda break even.",
+            "description2": "Jadi jika Break Even ROAS anda adalah 1.8 sebagai contoh:",
+            "profitable": "Setiap kempen, set iklan/kumpulan iklan atau iklan yang mempunyai ROAS lebih tinggi daripada 1.8 adalah menguntungkan.",
+            "losing": "Setiap kempen, set iklan/kumpulan iklan atau iklan yang mempunyai ROAS lebih rendah daripada 1.8 menyebabkan anda rugi wang.",
+            "breakEven": "Dan tentu sahaja pada setiap kempen, set iklan/kumpulan iklan atau iklan yang mempunyai ROAS 1.8 anda adalah break even."
+        },
+        "whyImportant": {
+            "title": "Mengapakah ia sangat penting?",
+            "description1": "Mengira Break Even ROAS adalah sangat penting.",
+            "description2": "Facebook, TikTok dan Snapchat sebagai contoh menunjukkan untuk setiap kempen, set iklan/kumpulan iklan dan iklan berapa ROASnya.",
+            "description3": "Ini bermakna anda boleh mengesan berkesannya bahagian kempen pengiklanan dalam talian anda pada semua peringkat yang berbeza.",
+            "description4": "ROAS 1 bermakna anda membelanjakan jumlah wang yang sama seperti yang anda peroleh daripada penukaran. Jika anda membelanjakan $10 untuk menjual produk $10, platform akan menunjukkan ROAS 1.",
+            "description5": "Ringkasnya, ini bermakna anda break even. Walau bagaimanapun, anda juga mesti mengambil kira kos lain seperti kos barang, kos penghantaran, kos transaksi, VAT, dan mungkin kos lain. Di sinilah Break Even ROAS berperanan."
+        },
+        "formula": {
+            "title": "Formula Break Even ROAS",
+            "description": "Pertama sekali, anda perlu menjumlahkan semua kos anda bersama. Kemudian dengan menggunakan formula di bawah anda boleh mengira ROAS di mana kempen, set iklan/kumpulan iklan atau iklan adalah menguntungkan.",
+            "totalRevenue": "Jumlah Hasil",
+            "totalCosts": "Jumlah Kos",
+            "breakEvenROAS": "Break Even ROAS",
+            "perProduct": "setiap produk",
+            "exampleTitle": "Contoh:",
+            "exampleDescription": "Andaikan anda menjual produk seharga $30, kos barang adalah $8 & kos penghantaran adalah $2.",
+            "exampleResult": "Ini bermakna untuk setiap kempen, set iklan/kumpulan iklan atau iklan yang mempunyai ROAS lebih tinggi daripada 1.5, anda memperoleh keuntungan."
+        }
+    },
+    "tabs": {
+        "roa": {
+            "title": "Kalkulator ROA",
+            "description": "Kira Pulangan Atas Aset (ROA) dengan mudah dan pantas."
+        },
+        "basic": {
+            "title": "Kalkulator Asas",
+            "description": "Alat pengiraan perniagaan penting untuk kegunaan harian."
+        }
+    },
+    "footer": {
+        "copyright": "Kalkulator ROA. Produk Lima Angka."
+    },
+    "grossProfitCalculator": {
+        "title": "Kalkulator Keuntungan Kasar",
+        "currency": "Mata Wang",
+        "cogs": "Kos Barang Terjual (COGS)",
+        "sellingPrice": "Harga Jualan",
+        "results": "Keputusan",
+        "grossProfit": "Keuntungan Kasar",
+        "markup": "Markup (%)",
+        "grossMargin": "Margin Kasar (%)",
+        "enterValues": "Masukkan COGS dan Harga Jualan untuk melihat keputusan",
+        "reset": "Tetapkan Semula"
+    },
+    "basicCalculators": {
+        "gross-profit": {
+            "title": "Kalkulator Keuntungan Kasar",
+            "description": "Kira keuntungan kasar, markup, dan margin kasar"
+        },
+        "profit-margin": {
+            "title": "Kalkulator Margin Keuntungan",
+            "description": "Kira margin keuntungan dan peratusan markup"
+        },
+        "static-cost": {
+            "title": "Kalkulator Kos Statik",
+            "description": "Kira kos tetap dan titik break-even"
+        },
+        "variable-cost": {
+            "title": "Kalkulator Kos Berubah",
+            "description": "Analisis kos yang berubah dengan volum pengeluaran"
+        },
+        "break-even": {
+            "title": "Kalkulator Break-Even",
+            "description": "Tentukan titik di mana hasil sama dengan kos"
+        },
+        "shipping": {
+            "title": "Kalkulator Kos Penghantaran",
+            "description": "Anggar kos penghantaran dan logistik"
+        },
+        "tax": {
+            "title": "Kalkulator Cukai",
+            "description": "Kira cukai dan jumlah selepas cukai"
+        }
     }
-  },
-  "educational": {
-    "howItWorks": {
-      "title": "Bagaimanakah kalkulator ini berfungsi?",
-      "step1": "Dalam bahagian pertama kalkulator, anda mengisi semua kos, bersama dengan kategori VAT yang betul untuk produk anda.",
-      "step2": "Kemudian dalam bahagian kedua kalkulator anda melakukan perkara yang sama, tetapi dengan hasil.",
-      "step3": "Seterusnya, jumlah akan dijumlahkan dan Break Even ROAS akan muncul secara automatik di bahagian bawah.",
-      "step4": "Jika anda ingin melakukan pengiraan baharu, klik butang \"Tetapkan Semula\" dan anda boleh memasukkan data baharu."
-    },
-    "whatIsBreakEven": {
-      "title": "Apakah Break Even ROAS?",
-      "description1": "Dengan Break Even ROAS anda tahu dengan tepat berapa ROAS yang anda perlukan untuk iklan anda break even.",
-      "description2": "Jadi jika Break Even ROAS anda adalah 1.8 sebagai contoh:",
-      "profitable": "Setiap kempen, set iklan/kumpulan iklan atau iklan yang mempunyai ROAS lebih tinggi daripada 1.8 adalah menguntungkan.",
-      "losing": "Setiap kempen, set iklan/kumpulan iklan atau iklan yang mempunyai ROAS lebih rendah daripada 1.8 menyebabkan anda rugi wang.",
-      "breakEven": "Dan tentu sahaja pada setiap kempen, set iklan/kumpulan iklan atau iklan yang mempunyai ROAS 1.8 anda adalah break even."
-    },
-    "whyImportant": {
-      "title": "Mengapakah ia sangat penting?",
-      "description1": "Mengira Break Even ROAS adalah sangat penting.",
-      "description2": "Facebook, TikTok dan Snapchat sebagai contoh menunjukkan untuk setiap kempen, set iklan/kumpulan iklan dan iklan berapa ROASnya.",
-      "description3": "Ini bermakna anda boleh mengesan berkesannya bahagian kempen pengiklanan dalam talian anda pada semua peringkat yang berbeza.",
-      "description4": "ROAS 1 bermakna anda membelanjakan jumlah wang yang sama seperti yang anda peroleh daripada penukaran. Jika anda membelanjakan $10 untuk menjual produk $10, platform akan menunjukkan ROAS 1.",
-      "description5": "Ringkasnya, ini bermakna anda break even. Walau bagaimanapun, anda juga mesti mengambil kira kos lain seperti kos barang, kos penghantaran, kos transaksi, VAT, dan mungkin kos lain. Di sinilah Break Even ROAS berperanan."
-    },
-    "formula": {
-      "title": "Formula Break Even ROAS",
-      "description": "Pertama sekali, anda perlu menjumlahkan semua kos anda bersama. Kemudian dengan menggunakan formula di bawah anda boleh mengira ROAS di mana kempen, set iklan/kumpulan iklan atau iklan adalah menguntungkan.",
-      "totalRevenue": "Jumlah Hasil",
-      "totalCosts": "Jumlah Kos",
-      "breakEvenROAS": "Break Even ROAS",
-      "perProduct": "setiap produk",
-      "exampleTitle": "Contoh:",
-      "exampleDescription": "Andaikan anda menjual produk seharga $30, kos barang adalah $8 & kos penghantaran adalah $2.",
-      "exampleResult": "Ini bermakna untuk setiap kempen, set iklan/kumpulan iklan atau iklan yang mempunyai ROAS lebih tinggi daripada 1.5, anda memperoleh keuntungan."
-    }
-  },
-  "tabs": {
-    "roa": {
-      "title": "Kalkulator ROA",
-      "description": "Kira Pulangan Atas Aset (ROA) dengan mudah dan pantas."
-    },
-    "basic": {
-      "title": "Kalkulator Asas",
-      "description": "Alat pengiraan perniagaan penting untuk kegunaan harian."
-    }
-  },
-  "footer": {
-    "copyright": "Kalkulator ROA. Produk Lima Angka."
-  },
-  "grossProfitCalculator": {
-    "title": "Kalkulator Keuntungan Kasar",
-    "currency": "Mata Wang",
-    "cogs": "Kos Barang Terjual (COGS)",
-    "sellingPrice": "Harga Jualan",
-    "results": "Keputusan",
-    "grossProfit": "Keuntungan Kasar",
-    "markup": "Markup (%)",
-    "grossMargin": "Margin Kasar (%)",
-    "enterValues": "Masukkan COGS dan Harga Jualan untuk melihat keputusan",
-    "reset": "Tetapkan Semula"
-  },
-  "basicCalculators": {
-    "gross-profit": {
-      "title": "Kalkulator Keuntungan Kasar",
-      "description": "Kira keuntungan kasar, markup, dan margin kasar"
-    },
-    "profit-margin": {
-      "title": "Kalkulator Margin Keuntungan",
-      "description": "Kira margin keuntungan dan peratusan markup"
-    },
-    "static-cost": {
-      "title": "Kalkulator Kos Statik",
-      "description": "Kira kos tetap dan titik break-even"
-    },
-    "variable-cost": {
-      "title": "Kalkulator Kos Berubah",
-      "description": "Analisis kos yang berubah dengan volum pengeluaran"
-    },
-    "break-even": {
-      "title": "Kalkulator Break-Even",
-      "description": "Tentukan titik di mana hasil sama dengan kos"
-    },
-    "shipping": {
-      "title": "Kalkulator Kos Penghantaran",
-      "description": "Anggar kos penghantaran dan logistik"
-    },
-    "tax": {
-      "title": "Kalkulator Cukai",
-      "description": "Kira cukai dan jumlah selepas cukai"
-    }
-  }
 }

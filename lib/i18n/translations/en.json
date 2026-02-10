@@ -1,156 +1,156 @@
 {
-  "common": {
-    "language": "Language",
-    "english": "English",
-    "malay": "Bahasa Malaysia"
-  },
-  "page": {
-    "title": "ROA Calculator",
-    "subtitle": "Calculate your Break Even ROAS in seconds"
-  },
-  "calculator": {
-    "costs": {
-      "title": "Costs (per product)",
-      "currency": "Currency",
-      "taxRate": "Tax rate (applies to all)",
-      "taxRateTooltip": "to be added later",
-      "taxRateDescription": "Set a default tax rate for all fields. You can customize each field individually below.",
-      "taxInputTooltip": "to be added later",
-      "costOfGoods": "Cost of goods",
-      "costOfGoodsTaxDescription": "If you receive tax back on the cost of goods, you can set it here.",
-      "shippingCosts": "Shipping costs",
-      "shippingCostsTaxDescription": "If you receive tax back on the shipping costs, you can set it here.",
-      "transactionCosts": "Transaction costs",
-      "transactionCostsTaxDescription": "If you receive tax back on the transaction costs, you can set it here.",
-      "otherCosts": "Other costs",
-      "otherCostsTaxDescription": "If you receive tax back on other costs, you can set it here.",
-      "addCustomCost": "Add custom cost",
-      "removeCustomCost": "Remove",
-      "customCostTitle": "Cost name",
-      "customCostTitlePlaceholder": "e.g., Packaging, Insurance",
-      "customCostRequired": "Cost name is required",
-      "customCostsLimit": "Maximum 10 custom costs allowed",
-      "customCostsNote": "Add additional costs specific to your business. Each cost will be included in the total calculation.",
-      "cancel": "Cancel",
-      "totalCosts": "Total costs"
+    "common": {
+        "language": "Language",
+        "english": "English",
+        "malay": "Bahasa Malaysia"
     },
-    "revenue": {
-      "title": "Revenue (per product)",
-      "revenue": "Revenue",
-      "revenueTaxDescription": "If you have to pay tax over the revenue, you can set it here.",
-      "taxInputTooltip": "to be added later",
-      "totalRevenue": "Total revenue"
+    "page": {
+        "title": "ROA Calculator",
+        "subtitle": "Calculate your Break Even ROAS in seconds"
     },
-    "results": {
-      "title": "Break Even ROAS",
-      "profitPerUnit": "Profit per Unit",
-      "profitMargin": "Profit Margin",
-      "maxAdSpend": "Max ad spend to break even (per sale)",
-      "maxAdSpendDescription": "Spend less than this per conversion to remain profitable",
-      "reset": "Reset",
-      "status": {
-        "enterValues": "Enter values",
-        "enterValuesDescription": "Fill in costs and revenue to see results",
-        "losingMoney": "Losing Money",
-        "losingMoneyDescription": "Your costs exceed or match your revenue",
-        "lowMargin": "Low Margin",
-        "lowMarginDescription": "Thin profit margin - optimize costs or increase prices",
-        "profitable": "Profitable",
-        "profitableDescription": "Good profit margin - typical for most industries",
-        "highlyProfitable": "Highly Profitable",
-        "highlyProfitableDescription": "Excellent profit margin - scale your campaigns!"
-      }
+    "calculator": {
+        "costs": {
+            "title": "Costs (per product)",
+            "currency": "Currency",
+            "taxRate": "Tax rate (applies to all)",
+            "taxRateTooltip": "to be added later",
+            "taxRateDescription": "Set a default tax rate for all fields. You can customize each field individually below.",
+            "taxInputTooltip": "to be added later",
+            "costOfGoods": "Cost of goods",
+            "costOfGoodsTaxDescription": "If you receive tax back on the cost of goods, you can set it here.",
+            "shippingCosts": "Shipping costs",
+            "shippingCostsTaxDescription": "If you receive tax back on the shipping costs, you can set it here.",
+            "transactionCosts": "Transaction costs",
+            "transactionCostsTaxDescription": "If you receive tax back on the transaction costs, you can set it here.",
+            "otherCosts": "Other costs",
+            "otherCostsTaxDescription": "If you receive tax back on other costs, you can set it here.",
+            "addCustomCost": "Add custom cost",
+            "removeCustomCost": "Remove",
+            "customCostTitle": "Cost name",
+            "customCostTitlePlaceholder": "e.g., Packaging, Insurance",
+            "customCostRequired": "Cost name is required",
+            "customCostsLimit": "Maximum 10 custom costs allowed",
+            "customCostsNote": "Add additional costs specific to your business. Each cost will be included in the total calculation.",
+            "cancel": "Cancel",
+            "totalCosts": "Total costs"
+        },
+        "revenue": {
+            "title": "Revenue (per product)",
+            "revenue": "Revenue",
+            "revenueTaxDescription": "If you have to pay tax over the revenue, you can set it here.",
+            "taxInputTooltip": "to be added later",
+            "totalRevenue": "Total revenue"
+        },
+        "results": {
+            "title": "Break Even ROAS",
+            "profitPerUnit": "Profit per Unit",
+            "profitMargin": "Profit Margin",
+            "maxAdSpend": "Max ad spend to break even (per sale)",
+            "maxAdSpendDescription": "Spend less than this per conversion to remain profitable",
+            "reset": "Reset",
+            "status": {
+                "enterValues": "Enter values",
+                "enterValuesDescription": "Fill in costs and revenue to see results",
+                "losingMoney": "Losing Money",
+                "losingMoneyDescription": "Your costs exceed or match your revenue",
+                "lowMargin": "Low Margin",
+                "lowMarginDescription": "Thin profit margin - optimize costs or increase prices",
+                "profitable": "Profitable",
+                "profitableDescription": "Good profit margin - typical for most industries",
+                "highlyProfitable": "Highly Profitable",
+                "highlyProfitableDescription": "Excellent profit margin - scale your campaigns!"
+            }
+        }
+    },
+    "educational": {
+        "howItWorks": {
+            "title": "How does the calculator work?",
+            "step1": "In the first part of the calculator, you fill in all the costs, together with the correct VAT category of your product.",
+            "step2": "Then in the second part of the calculator you do the same, but with the revenue.",
+            "step3": "Next, the totals will be added up and the Break Even ROAS will automatically appear in the bottom section.",
+            "step4": "If you want to do a new calculation, click on the \"Reset\" button and you can enter new data."
+        },
+        "whatIsBreakEven": {
+            "title": "What is the Break Even ROAS?",
+            "description1": "With a Break Even ROAS you know exactly what ROAS you need for your ads to break even.",
+            "description2": "So if your Break Even ROAS is 1.8 for example:",
+            "profitable": "Every campaign, ad set/ad group or ad that has a ROAS higher than 1.8 is profitable.",
+            "losing": "Every campaign, ad set/ad group or ad that has a ROAS lower than 1.8 is losing you money.",
+            "breakEven": "And of course on every campaign, ad set/ad group or ad that has a ROAS of 1.8 you are break even."
+        },
+        "whyImportant": {
+            "title": "Why is it so important?",
+            "description1": "Calculating the Break Even ROAS is very important.",
+            "description2": "Facebook, TikTok and Snapchat for example indicates for every campaign, ad set/ad group and ad what the ROAS is.",
+            "description3": "This means you can keep track of how effective that part of your online advertising campaign is at all different levels.",
+            "description4": "A ROAS of 1 means you are spending exactly the same amount of money as you are earning of a conversion. If you spend $10 to sell a $10 product, the platform will indicate a ROAS of 1.",
+            "description5": "Simply put, this means you break even. However, you must also take other costs into account like cost of goods, shipping costs, transaction costs, VAT, and maybe other costs. This is where the Break Even ROAS comes in."
+        },
+        "formula": {
+            "title": "The Break Even ROAS Formula",
+            "description": "First of all, you have to add up all your costs together. Then by using the formula below you can calculate the ROAS at which a campaign, ad set/ad group or ad is profitable.",
+            "totalRevenue": "Total Revenue",
+            "totalCosts": "Total Costs",
+            "breakEvenROAS": "Break Even ROAS",
+            "perProduct": "per product",
+            "exampleTitle": "Example:",
+            "exampleDescription": "Suppose you sell a product for $30, cost of goods are $8 & the shipping costs are $2.",
+            "exampleResult": "This means that for every campaign, ad set/ad group or ad that has a ROAS higher than 1.5, you make a profit."
+        }
+    },
+    "tabs": {
+        "roa": {
+            "title": "ROA Calculator",
+            "description": "Calculate Return on Assets (ROA) easily and quickly."
+        },
+        "basic": {
+            "title": "Basic Calculators",
+            "description": "Essential business calculation tools for everyday use."
+        }
+    },
+    "footer": {
+        "copyright": "ROA Calculator. Product of Lima Angka."
+    },
+    "grossProfitCalculator": {
+        "title": "Gross Profit Calculator",
+        "currency": "Currency",
+        "cogs": "Cost of Goods Sold (COGS)",
+        "sellingPrice": "Selling Price",
+        "results": "Results",
+        "grossProfit": "Gross Profit",
+        "markup": "Markup (%)",
+        "grossMargin": "Gross Margin (%)",
+        "enterValues": "Enter COGS and Selling Price to see results",
+        "reset": "Reset"
+    },
+    "basicCalculators": {
+        "gross-profit": {
+            "title": "Gross Profit Calculator",
+            "description": "Calculate gross profit, markup, and gross margin"
+        },
+        "profit-margin": {
+            "title": "Profit Margin Calculator",
+            "description": "Calculate profit margins and markup percentages"
+        },
+        "static-cost": {
+            "title": "Static Cost Calculator",
+            "description": "Calculate fixed costs and break-even points"
+        },
+        "variable-cost": {
+            "title": "Variable Cost Calculator",
+            "description": "Analyze costs that change with production volume"
+        },
+        "break-even": {
+            "title": "Break-Even Calculator",
+            "description": "Determine the point where revenue equals costs"
+        },
+        "shipping": {
+            "title": "Shipping Cost Calculator",
+            "description": "Estimate shipping and logistics costs"
+        },
+        "tax": {
+            "title": "Tax Calculator",
+            "description": "Calculate taxes and after-tax amounts"
+        }
     }
-  },
-  "educational": {
-    "howItWorks": {
-      "title": "How does the calculator work?",
-      "step1": "In the first part of the calculator, you fill in all the costs, together with the correct VAT category of your product.",
-      "step2": "Then in the second part of the calculator you do the same, but with the revenue.",
-      "step3": "Next, the totals will be added up and the Break Even ROAS will automatically appear in the bottom section.",
-      "step4": "If you want to do a new calculation, click on the \"Reset\" button and you can enter new data."
-    },
-    "whatIsBreakEven": {
-      "title": "What is the Break Even ROAS?",
-      "description1": "With a Break Even ROAS you know exactly what ROAS you need for your ads to break even.",
-      "description2": "So if your Break Even ROAS is 1.8 for example:",
-      "profitable": "Every campaign, ad set/ad group or ad that has a ROAS higher than 1.8 is profitable.",
-      "losing": "Every campaign, ad set/ad group or ad that has a ROAS lower than 1.8 is losing you money.",
-      "breakEven": "And of course on every campaign, ad set/ad group or ad that has a ROAS of 1.8 you are break even."
-    },
-    "whyImportant": {
-      "title": "Why is it so important?",
-      "description1": "Calculating the Break Even ROAS is very important.",
-      "description2": "Facebook, TikTok and Snapchat for example indicates for every campaign, ad set/ad group and ad what the ROAS is.",
-      "description3": "This means you can keep track of how effective that part of your online advertising campaign is at all different levels.",
-      "description4": "A ROAS of 1 means you are spending exactly the same amount of money as you are earning of a conversion. If you spend $10 to sell a $10 product, the platform will indicate a ROAS of 1.",
-      "description5": "Simply put, this means you break even. However, you must also take other costs into account like cost of goods, shipping costs, transaction costs, VAT, and maybe other costs. This is where the Break Even ROAS comes in."
-    },
-    "formula": {
-      "title": "The Break Even ROAS Formula",
-      "description": "First of all, you have to add up all your costs together. Then by using the formula below you can calculate the ROAS at which a campaign, ad set/ad group or ad is profitable.",
-      "totalRevenue": "Total Revenue",
-      "totalCosts": "Total Costs",
-      "breakEvenROAS": "Break Even ROAS",
-      "perProduct": "per product",
-      "exampleTitle": "Example:",
-      "exampleDescription": "Suppose you sell a product for $30, cost of goods are $8 & the shipping costs are $2.",
-      "exampleResult": "This means that for every campaign, ad set/ad group or ad that has a ROAS higher than 1.5, you make a profit."
-    }
-  },
-  "tabs": {
-    "roa": {
-      "title": "ROA Calculator",
-      "description": "Calculate Return on Assets (ROA) easily and quickly."
-    },
-    "basic": {
-      "title": "Basic Calculators",
-      "description": "Essential business calculation tools for everyday use."
-    }
-  },
-  "footer": {
-    "copyright": "ROA Calculator. Product of Lima Angka."
-  },
-  "grossProfitCalculator": {
-    "title": "Gross Profit Calculator",
-    "currency": "Currency",
-    "cogs": "Cost of Goods Sold (COGS)",
-    "sellingPrice": "Selling Price",
-    "results": "Results",
-    "grossProfit": "Gross Profit",
-    "markup": "Markup (%)",
-    "grossMargin": "Gross Margin (%)",
-    "enterValues": "Enter COGS and Selling Price to see results",
-    "reset": "Reset"
-  },
-  "basicCalculators": {
-    "gross-profit": {
-      "title": "Gross Profit Calculator",
-      "description": "Calculate gross profit, markup, and gross margin"
-    },
-    "profit-margin": {
-      "title": "Profit Margin Calculator",
-      "description": "Calculate profit margins and markup percentages"
-    },
-    "static-cost": {
-      "title": "Static Cost Calculator",
-      "description": "Calculate fixed costs and break-even points"
-    },
-    "variable-cost": {
-      "title": "Variable Cost Calculator",
-      "description": "Analyze costs that change with production volume"
-    },
-    "break-even": {
-      "title": "Break-Even Calculator",
-      "description": "Determine the point where revenue equals costs"
-    },
-    "shipping": {
-      "title": "Shipping Cost Calculator",
-      "description": "Estimate shipping and logistics costs"
-    },
-    "tax": {
-      "title": "Tax Calculator",
-      "description": "Calculate taxes and after-tax amounts"
-    }
-  }
 }
