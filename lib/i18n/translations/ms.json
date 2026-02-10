@@ -142,6 +142,34 @@
         "cancel": "Batal",
         "add": "Tambah"
     },
+    "variableCostCalculator": {
+        "currency": "Mata Wang",
+        "variableCostsSection": "Kos Berubah (seunit)",
+        "productCost": "Kos Produk",
+        "courierCost": "Kos Kurier / Penghantaran",
+        "platformFee": "Yuran Platform",
+        "marketingCost": "Kos Pemasaran untuk Dapatkan Seorang Pelanggan",
+        "addAdditionalCost": "Tambah Kos Berubah Tambahan",
+        "maxReached": "Maks 20",
+        "results": "Keputusan",
+        "totalVariableCosts": "Jumlah Kos Berubah",
+        "enterValues": "Masukkan kos berubah untuk melihat keputusan",
+        "reset": "Tetapkan Semula",
+        "costNamePlaceholder": "cth., Pembungkus, Pulangan",
+        "cancel": "Batal",
+        "add": "Tambah"
+    },
+    "costPerUnitCalculator": {
+        "currency": "Mata Wang",
+        "fixedCostPerUnit": "Kos Tetap Seunit",
+        "variableCostPerUnit": "Kos Berubah Seunit",
+        "results": "Keputusan",
+        "totalCostPerUnit": "Jumlah Kos Seunit",
+        "enterValues": "Masukkan kos seunit untuk melihat keputusan",
+        "reset": "Tetapkan Semula",
+        "importantNotice": "Notis Penting:",
+        "noticeDescription": "Pastikan tiada kos yang terlepas atau terabaikan. Semak semua input dengan teliti. Periksa, periksa semula, dan periksa sekali lagi untuk memastikan ketepatan jumlah kos seunit."
+    },
     "basicCalculators": {
         "gross-profit": {
             "title": "Kalkulator Keuntungan Kasar",

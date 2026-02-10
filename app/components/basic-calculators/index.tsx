@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PieChart, DollarSign, Package, Calculator, TrendingUp, Target } from "lucide-react";
 import { GrossProfitCalculator } from "./GrossProfitCalculator";
 import { FixedCostCalculator } from "./FixedCostCalculator";
+import { VariableCostCalculator } from "./VariableCostCalculator";
+import { CostPerUnitCalculator } from "./CostPerUnitCalculator";
 import { useLanguage } from "@/lib/i18n/context";
 
 const calculatorMetadata = [
@@ -20,12 +22,12 @@ const calculatorMetadata = [
     {
         id: "variable-cost",
         icon: Package,
-        component: null,
+        component: VariableCostCalculator,
     },
     {
         id: "cost-per-unit",
         icon: Calculator,
-        component: null,
+        component: CostPerUnitCalculator,
     },
     {
         id: "selling-price-profit",

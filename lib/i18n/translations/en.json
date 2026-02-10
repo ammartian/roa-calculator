@@ -142,6 +142,34 @@
         "cancel": "Cancel",
         "add": "Add"
     },
+    "variableCostCalculator": {
+        "currency": "Currency",
+        "variableCostsSection": "Variable Costs (per unit)",
+        "productCost": "Product Cost",
+        "courierCost": "Courier / Delivery Cost",
+        "platformFee": "Platform Fee",
+        "marketingCost": "Marketing Cost to Acquire One Customer",
+        "addAdditionalCost": "Add Additional Variable Cost",
+        "maxReached": "Max 20",
+        "results": "Results",
+        "totalVariableCosts": "Total Variable Costs",
+        "enterValues": "Enter variable costs to see results",
+        "reset": "Reset",
+        "costNamePlaceholder": "e.g., Packaging, Returns",
+        "cancel": "Cancel",
+        "add": "Add"
+    },
+    "costPerUnitCalculator": {
+        "currency": "Currency",
+        "fixedCostPerUnit": "Fixed Cost per Unit",
+        "variableCostPerUnit": "Variable Cost per Unit",
+        "results": "Results",
+        "totalCostPerUnit": "Total Cost per Unit",
+        "enterValues": "Enter costs per unit to see results",
+        "reset": "Reset",
+        "importantNotice": "Important Notice:",
+        "noticeDescription": "Ensure that no costs are missed or overlooked. Review all inputs carefully. Check, double check, and triple check to ensure the accuracy of the total cost per unit."
+    },
     "basicCalculators": {
         "gross-profit": {
             "title": "Gross Profit Calculator",

@@ -144,6 +144,34 @@ export interface Translations {
         cancel: string;
         add: string;
     };
+    variableCostCalculator: {
+        currency: string;
+        variableCostsSection: string;
+        productCost: string;
+        courierCost: string;
+        platformFee: string;
+        marketingCost: string;
+        addAdditionalCost: string;
+        maxReached: string;
+        results: string;
+        totalVariableCosts: string;
+        enterValues: string;
+        reset: string;
+        costNamePlaceholder: string;
+        cancel: string;
+        add: string;
+    };
+    costPerUnitCalculator: {
+        currency: string;
+        fixedCostPerUnit: string;
+        variableCostPerUnit: string;
+        results: string;
+        totalCostPerUnit: string;
+        enterValues: string;
+        reset: string;
+        importantNotice: string;
+        noticeDescription: string;
+    };
     basicCalculators: {
         "gross-profit": {
             title: string;
