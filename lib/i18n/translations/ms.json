@@ -183,6 +183,18 @@
         "enterValues": "Masukkan jumlah kos seunit untuk melihat keputusan",
         "reset": "Tetapkan Semula"
     },
+    "salesTargetCalculator": {
+        "currency": "Mata Wang",
+        "targetRevenue": "Sasaran Hasil Jualan",
+        "sellingPricePerUnit": "Harga Jualan Seunit",
+        "netMarginPercent": "Margin Bersih (%)",
+        "results": "Keputusan",
+        "unitsRequired": "Unit Yang Perlu Dijual",
+        "units": "unit",
+        "estimatedProfit": "Anggaran Keuntungan",
+        "enterValues": "Masukkan sasaran hasil, harga jualan, dan margin bersih untuk melihat keputusan",
+        "reset": "Tetapkan Semula"
+    },
     "basicCalculators": {
         "gross-profit": {
             "title": "Kalkulator Keuntungan Kasar",

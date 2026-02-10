@@ -185,6 +185,18 @@ export interface Translations {
         enterValues: string;
         reset: string;
     };
+    salesTargetCalculator: {
+        currency: string;
+        targetRevenue: string;
+        sellingPricePerUnit: string;
+        netMarginPercent: string;
+        results: string;
+        unitsRequired: string;
+        units: string;
+        estimatedProfit: string;
+        enterValues: string;
+        reset: string;
+    };
     basicCalculators: {
         "gross-profit": {
             title: string;

@@ -183,6 +183,18 @@
         "enterValues": "Enter total cost per unit to see results",
         "reset": "Reset"
     },
+    "salesTargetCalculator": {
+        "currency": "Currency",
+        "targetRevenue": "Target Sales Revenue",
+        "sellingPricePerUnit": "Selling Price per Unit",
+        "netMarginPercent": "Net Margin (%)",
+        "results": "Results",
+        "unitsRequired": "Units Required to Sell",
+        "units": "units",
+        "estimatedProfit": "Estimated Profit",
+        "enterValues": "Enter target revenue, selling price, and net margin to see results",
+        "reset": "Reset"
+    },
     "basicCalculators": {
         "gross-profit": {
             "title": "Gross Profit Calculator",

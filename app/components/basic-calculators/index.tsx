@@ -7,6 +7,7 @@ import { FixedCostCalculator } from "./FixedCostCalculator";
 import { VariableCostCalculator } from "./VariableCostCalculator";
 import { CostPerUnitCalculator } from "./CostPerUnitCalculator";
 import { SellingPriceCalculator } from "./SellingPriceCalculator";
+import { SalesTargetCalculator } from "./SalesTargetCalculator";
 import { useLanguage } from "@/lib/i18n/context";
 
 const calculatorMetadata = [
@@ -38,7 +39,7 @@ const calculatorMetadata = [
     {
         id: "sales-target-profit",
         icon: Target,
-        component: null,
+        component: SalesTargetCalculator,
     },
 ];
 
