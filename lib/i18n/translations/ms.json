@@ -128,29 +128,25 @@
             "title": "Kalkulator Keuntungan Kasar",
             "description": "Kira keuntungan kasar, markup, dan margin kasar"
         },
-        "profit-margin": {
-            "title": "Kalkulator Margin Keuntungan",
-            "description": "Kira margin keuntungan dan peratusan markup"
-        },
-        "static-cost": {
-            "title": "Kalkulator Kos Statik",
-            "description": "Kira kos tetap dan titik break-even"
+        "fixed-cost": {
+            "title": "Kalkulator Kos Tetap",
+            "description": "Kira jumlah kos tetap dan analisis perbelanjaan overhead"
         },
         "variable-cost": {
             "title": "Kalkulator Kos Berubah",
-            "description": "Analisis kos yang berubah dengan volum pengeluaran"
+            "description": "Kira kos yang berubah mengikut volum pengeluaran"
         },
-        "break-even": {
-            "title": "Kalkulator Break-Even",
-            "description": "Tentukan titik di mana hasil sama dengan kos"
+        "cost-per-unit": {
+            "title": "Kalkulator Kos Seunit",
+            "description": "Kira kos bagi setiap unit yang dihasilkan"
         },
-        "shipping": {
-            "title": "Kalkulator Kos Penghantaran",
-            "description": "Anggar kos penghantaran dan logistik"
+        "selling-price-profit": {
+            "title": "Kalkulator Harga Jual & Keuntungan",
+            "description": "Kira harga jual optimum dan margin keuntungan"
         },
-        "tax": {
-            "title": "Kalkulator Cukai",
-            "description": "Kira cukai dan jumlah selepas cukai"
+        "sales-target-profit": {
+            "title": "Kalkulator Sasaran Jualan & Anggaran Keuntungan",
+            "description": "Kira sasaran jualan yang diperlukan untuk mencapai matlamat keuntungan"
         }
     }
 }

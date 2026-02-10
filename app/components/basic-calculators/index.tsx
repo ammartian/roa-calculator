@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calculator, TrendingUp, DollarSign, Package, Truck, Receipt, PieChart } from "lucide-react";
+import { PieChart, DollarSign, Package, Calculator, TrendingUp, Target } from "lucide-react";
 import { GrossProfitCalculator } from "./GrossProfitCalculator";
 import { useLanguage } from "@/lib/i18n/context";
 
@@ -12,12 +12,7 @@ const calculatorMetadata = [
         component: GrossProfitCalculator,
     },
     {
-        id: "profit-margin",
-        icon: TrendingUp,
-        component: null,
-    },
-    {
-        id: "static-cost",
+        id: "fixed-cost",
         icon: DollarSign,
         component: null,
     },
@@ -27,18 +22,18 @@ const calculatorMetadata = [
         component: null,
     },
     {
-        id: "break-even",
+        id: "cost-per-unit",
         icon: Calculator,
         component: null,
     },
     {
-        id: "shipping",
-        icon: Truck,
+        id: "selling-price-profit",
+        icon: TrendingUp,
         component: null,
     },
     {
-        id: "tax",
-        icon: Receipt,
+        id: "sales-target-profit",
+        icon: Target,
         component: null,
     },
 ];

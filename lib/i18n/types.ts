@@ -130,11 +130,7 @@ export interface Translations {
             title: string;
             description: string;
         };
-        "profit-margin": {
-            title: string;
-            description: string;
-        };
-        "static-cost": {
+        "fixed-cost": {
             title: string;
             description: string;
         };
@@ -142,15 +138,15 @@ export interface Translations {
             title: string;
             description: string;
         };
-        "break-even": {
+        "cost-per-unit": {
             title: string;
             description: string;
         };
-        shipping: {
+        "selling-price-profit": {
             title: string;
             description: string;
         };
-        tax: {
+        "sales-target-profit": {
             title: string;
             description: string;
         };
