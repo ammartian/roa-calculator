@@ -15,10 +15,12 @@ export interface CustomCostField extends CostField {
     title: string;
 }
 
+import type { ReactNode } from "react";
+
 export interface ProfitabilityStatus {
     label: string;
     color: string;
-    icon: React.ReactNode | null;
+    icon: ReactNode | null;
     description: string;
 }
 

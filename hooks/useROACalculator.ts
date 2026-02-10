@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback, useEffect, useRef } from "react";
+import { useState, useMemo, useCallback } from "react";
 import type { CostField, CalculatorResults, CustomCostField } from "@/types";
 import {
     parseCurrency,
@@ -9,14 +9,11 @@ import {
     calculateBreakEvenROAS,
     calculateProfitMargin,
 } from "@/lib/calculations";
-import { formatDecimalInput } from "@/lib/calculations";
-import { useLanguage } from "@/lib/i18n/context";
+import { formatDecimalInput } from "@/lib/formatting";
+import { useCalculatorCurrency } from "./useCalculatorCurrency";
 
 const INITIAL_COST_FIELD: CostField = { value: "", tax: "" };
-
-function getDefaultCurrency(language: string): string {
-    return language === "ms" ? "MYR" : "USD";
-}
+const MAX_CUSTOM_COSTS = 10;
 
 function calculateCostExclTax(costField: CostField): number {
     return calculateExclTax(
@@ -25,23 +22,41 @@ function calculateCostExclTax(costField: CostField): number {
     );
 }
 
-export function useROACalculator() {
-    const { language } = useLanguage();
-    const [selectedCurrency, setSelectedCurrency] = useState<string>(() => getDefaultCurrency(language));
-    const hasManuallyChangedCurrency = useRef(false);
+export interface UseROACalculatorReturn {
+    selectedCurrency: string;
+    setSelectedCurrency: (currency: string) => void;
+    masterTax: string;
+    costOfGoods: CostField;
+    shippingCosts: CostField;
+    transactionCosts: CostField;
+    otherCosts: CostField;
+    customCosts: CustomCostField[];
+    revenue: CostField;
+    handleMasterTaxChange: (value: string) => void;
+    handleFieldChange: (
+        setter: React.Dispatch<React.SetStateAction<CostField>>,
+        field: keyof CostField
+    ) => (newValue: string) => void;
+    setCostOfGoods: React.Dispatch<React.SetStateAction<CostField>>;
+    setShippingCosts: React.Dispatch<React.SetStateAction<CostField>>;
+    setTransactionCosts: React.Dispatch<React.SetStateAction<CostField>>;
+    setOtherCosts: React.Dispatch<React.SetStateAction<CostField>>;
+    setRevenue: React.Dispatch<React.SetStateAction<CostField>>;
+    addCustomCost: (title: string) => void;
+    removeCustomCost: (id: string) => void;
+    updateCustomCost: (
+        id: string,
+        field: keyof CustomCostField,
+        value: string
+    ) => void;
+    maxCustomCosts: number;
+    results: CalculatorResults;
+    handleReset: () => void;
+}
 
-    // Update currency when language changes (unless user manually selected)
-    useEffect(() => {
-        if (!hasManuallyChangedCurrency.current) {
-            const defaultCurrency = getDefaultCurrency(language);
-            queueMicrotask(() => setSelectedCurrency(defaultCurrency));
-        }
-    }, [language]);
-
-    const handleCurrencyChange = useCallback((currency: string) => {
-        hasManuallyChangedCurrency.current = true;
-        setSelectedCurrency(currency);
-    }, []);
+export function useROACalculator(): UseROACalculatorReturn {
+    const { selectedCurrency, setSelectedCurrency, resetCurrency } =
+        useCalculatorCurrency();
 
     const [masterTax, setMasterTax] = useState<string>("");
     const [costOfGoods, setCostOfGoods] = useState<CostField>(INITIAL_COST_FIELD);
@@ -51,19 +66,20 @@ export function useROACalculator() {
     const [customCosts, setCustomCosts] = useState<CustomCostField[]>([]);
     const [revenue, setRevenue] = useState<CostField>(INITIAL_COST_FIELD);
 
-    const MAX_CUSTOM_COSTS = 10;
+    const addCustomCost = useCallback(
+        (title: string) => {
+            if (customCosts.length >= MAX_CUSTOM_COSTS) return;
 
-    const addCustomCost = useCallback((title: string) => {
-        if (customCosts.length >= MAX_CUSTOM_COSTS) return;
-
-        const newCustomCost: CustomCostField = {
-            id: crypto.randomUUID(),
-            title: title.trim(),
-            value: "",
-            tax: masterTax,
-        };
-        setCustomCosts((prev) => [...prev, newCustomCost]);
-    }, [customCosts.length, masterTax]);
+            const newCustomCost: CustomCostField = {
+                id: crypto.randomUUID(),
+                title: title.trim(),
+                value: "",
+                tax: masterTax,
+            };
+            setCustomCosts((prev) => [...prev, newCustomCost]);
+        },
+        [customCosts.length, masterTax]
+    );
 
     const removeCustomCost = useCallback((id: string) => {
         setCustomCosts((prev) => prev.filter((cost) => cost.id !== id));
@@ -95,7 +111,10 @@ export function useROACalculator() {
     }, []);
 
     const handleFieldChange = useCallback(
-        (setter: React.Dispatch<React.SetStateAction<CostField>>, field: keyof CostField) =>
+        (
+            setter: React.Dispatch<React.SetStateAction<CostField>>,
+            field: keyof CostField
+        ) =>
             (newValue: string) => {
                 const formatted = formatDecimalInput(newValue);
                 setter((prev) => ({ ...prev, [field]: formatted }));
@@ -109,7 +128,10 @@ export function useROACalculator() {
         const transactionExcl = calculateCostExclTax(transactionCosts);
         const otherExcl = calculateCostExclTax(otherCosts);
 
-        const customCostsTotal = customCosts.reduce((sum, cost) => sum + calculateCostExclTax(cost), 0);
+        const customCostsTotal = customCosts.reduce(
+            (sum, cost) => sum + calculateCostExclTax(cost),
+            0
+        );
 
         const baseTotalCosts = calculateTotalCosts(
             costOfGoodsExcl,
@@ -133,14 +155,12 @@ export function useROACalculator() {
     }, [costOfGoods, shippingCosts, transactionCosts, otherCosts, customCosts, revenue]);
 
     const handleReset = useCallback(() => {
-        hasManuallyChangedCurrency.current = false;
-        setSelectedCurrency(getDefaultCurrency(language));
+        resetCurrency();
         setMasterTax("");
         setCostOfGoods(INITIAL_COST_FIELD);
         setShippingCosts(INITIAL_COST_FIELD);
         setTransactionCosts(INITIAL_COST_FIELD);
         setOtherCosts(INITIAL_COST_FIELD);
-        // Reset custom cost values but keep the custom costs themselves
         setCustomCosts((prev) =>
             prev.map((cost) => ({
                 ...cost,
@@ -149,11 +169,11 @@ export function useROACalculator() {
             }))
         );
         setRevenue(INITIAL_COST_FIELD);
-    }, [language]);
+    }, [resetCurrency]);
 
     return {
         selectedCurrency,
-        setSelectedCurrency: handleCurrencyChange,
+        setSelectedCurrency,
         masterTax,
         costOfGoods,
         shippingCosts,

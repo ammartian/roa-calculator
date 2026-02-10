@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { CurrencyCombobox } from "@/components/ui/currency-combobox";
+import { CurrencyInput } from "@/components/ui/currency-input";
 import { DynamicCostItem } from "@/components/ui/dynamic-cost-item";
 import { Building2, Users, Wifi, Package, Plus, RotateCcw } from "lucide-react";
 
@@ -34,7 +35,6 @@ export function FixedCostCalculator() {
         canAddMoreCosts,
     } = useFixedCostCalculator();
 
-    // State for adding new cost
     const [isAddingCost, setIsAddingCost] = useState(false);
     const [newCostTitle, setNewCostTitle] = useState("");
     const titleInputRef = useRef<HTMLInputElement>(null);
@@ -84,7 +84,6 @@ export function FixedCostCalculator() {
 
     return (
         <div className="space-y-6">
-            {/* Currency Selector */}
             <div className="space-y-2">
                 <Label htmlFor="currency">{translations.currency}</Label>
                 <CurrencyCombobox
@@ -94,78 +93,52 @@ export function FixedCostCalculator() {
                 />
             </div>
 
-            {/* Fixed Costs Section */}
             <div className="space-y-4">
                 <h3 className="font-semibold text-foreground">{translations.fixedCostsSection}</h3>
-                
+
                 <div className="grid grid-cols-1 gap-4">
-                    {/* Premises Rent */}
                     <div className="space-y-2">
                         <Label htmlFor="premisesRent" className="flex items-center gap-2">
                             <Building2 className="h-4 w-4 text-muted-foreground" />
                             {translations.premisesRent}
                         </Label>
-                        <div className="flex items-center gap-2 flex-1 border rounded-md px-3 bg-background focus-within:ring-2 focus-within:ring-ring">
-                            <span className="text-muted-foreground whitespace-nowrap font-medium">
-                                {currencySymbol}
-                            </span>
-                            <Input
-                                id="premisesRent"
-                                type="text"
-                                inputMode="decimal"
-                                value={premisesRent}
-                                onChange={(e) => handlePremisesRentChange(e.target.value)}
-                                placeholder="0.00"
-                                className="border-0 bg-transparent px-0 focus-visible:ring-0 shadow-none"
-                            />
-                        </div>
+                        <CurrencyInput
+                            id="premisesRent"
+                            currencySymbol={currencySymbol}
+                            value={premisesRent}
+                            onChange={(e) => handlePremisesRentChange(e.target.value)}
+                            placeholder="0.00"
+                        />
                     </div>
 
-                    {/* Staff Salaries */}
                     <div className="space-y-2">
                         <Label htmlFor="staffSalaries" className="flex items-center gap-2">
                             <Users className="h-4 w-4 text-muted-foreground" />
                             {translations.staffSalaries}
                         </Label>
-                        <div className="flex items-center gap-2 flex-1 border rounded-md px-3 bg-background focus-within:ring-2 focus-within:ring-ring">
-                            <span className="text-muted-foreground whitespace-nowrap font-medium">
-                                {currencySymbol}
-                            </span>
-                            <Input
-                                id="staffSalaries"
-                                type="text"
-                                inputMode="decimal"
-                                value={staffSalaries}
-                                onChange={(e) => handleStaffSalariesChange(e.target.value)}
-                                placeholder="0.00"
-                                className="border-0 bg-transparent px-0 focus-visible:ring-0 shadow-none"
-                            />
-                        </div>
+                        <CurrencyInput
+                            id="staffSalaries"
+                            currencySymbol={currencySymbol}
+                            value={staffSalaries}
+                            onChange={(e) => handleStaffSalariesChange(e.target.value)}
+                            placeholder="0.00"
+                        />
                     </div>
 
-                    {/* Internet Bill */}
                     <div className="space-y-2">
                         <Label htmlFor="internetBill" className="flex items-center gap-2">
                             <Wifi className="h-4 w-4 text-muted-foreground" />
                             {translations.internetBill}
                         </Label>
-                        <div className="flex items-center gap-2 flex-1 border rounded-md px-3 bg-background focus-within:ring-2 focus-within:ring-ring">
-                            <span className="text-muted-foreground whitespace-nowrap font-medium">
-                                {currencySymbol}
-                            </span>
-                            <Input
-                                id="internetBill"
-                                type="text"
-                                inputMode="decimal"
-                                value={internetBill}
-                                onChange={(e) => handleInternetBillChange(e.target.value)}
-                                placeholder="0.00"
-                                className="border-0 bg-transparent px-0 focus-visible:ring-0 shadow-none"
-                            />
-                        </div>
+                        <CurrencyInput
+                            id="internetBill"
+                            currencySymbol={currencySymbol}
+                            value={internetBill}
+                            onChange={(e) => handleInternetBillChange(e.target.value)}
+                            placeholder="0.00"
+                        />
                     </div>
 
-                    {/* Additional Fixed Costs */}
                     {additionalCosts.map((cost) => (
                         <DynamicCostItem
                             key={cost.id}
@@ -176,7 +149,6 @@ export function FixedCostCalculator() {
                         />
                     ))}
 
-                    {/* Add Additional Cost Button / Input */}
                     <div className="space-y-2">
                         {isAddingCost ? (
                             <div className="space-y-2">
@@ -228,7 +200,6 @@ export function FixedCostCalculator() {
                 </div>
             </div>
 
-            {/* Units Sold Section */}
             <div className="space-y-2 pt-4 border-t">
                 <Label htmlFor="unitsSold" className="flex items-center gap-2">
                     <Package className="h-4 w-4 text-muted-foreground" />
@@ -245,25 +216,21 @@ export function FixedCostCalculator() {
                 />
             </div>
 
-            {/* Results Section */}
             <div className="space-y-4 pt-4 border-t">
                 <h3 className="font-semibold text-foreground">{translations.results}</h3>
 
                 {results.hasValidInput ? (
                     <div className="space-y-3">
-                        {/* Total Fixed Costs */}
                         <div className="flex justify-between items-center p-3 bg-secondary/50 rounded-lg">
                             <span className="text-sm text-muted-foreground">{translations.totalFixedCosts}</span>
                             <span className="font-semibold">{formatCurrencyWithSelected(results.totalFixedCosts)}</span>
                         </div>
 
-                        {/* Units Sold */}
                         <div className="flex justify-between items-center p-3 bg-secondary/50 rounded-lg">
                             <span className="text-sm text-muted-foreground">{translations.unitsSoldLabel}</span>
                             <span className="font-semibold">{results.unitsSold.toLocaleString()}</span>
                         </div>
 
-                        {/* Fixed Cost per Unit - Highlighted */}
                         <div className="p-4 rounded-lg border-2 bg-primary/5 border-primary/20">
                             <div className="text-sm text-muted-foreground mb-1">{translations.fixedCostPerUnit}</div>
                             <div className="text-2xl font-bold text-primary">{formatCurrencyWithSelected(results.fixedCostPerUnit)}</div>
@@ -276,12 +243,7 @@ export function FixedCostCalculator() {
                 )}
             </div>
 
-            {/* Reset Button */}
-            <Button
-                variant="outline"
-                onClick={handleReset}
-                className="w-full"
-            >
+            <Button variant="outline" onClick={handleReset} className="w-full">
                 <RotateCcw className="h-4 w-4 mr-2" />
                 {translations.reset}
             </Button>

@@ -1,12 +1,9 @@
 "use client";
 
-import { useState, useMemo, useCallback, useEffect, useRef } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { parseCurrency } from "@/lib/calculations";
-import { useLanguage } from "@/lib/i18n/context";
-
-function getDefaultCurrency(language: string): string {
-    return language === "ms" ? "MYR" : "USD";
-}
+import { sanitizeDecimalInput } from "@/lib/formatting";
+import { useCalculatorCurrency } from "./useCalculatorCurrency";
 
 export interface GrossProfitResults {
     grossProfit: number;
@@ -16,43 +13,30 @@ export interface GrossProfitResults {
     hasValidInput: boolean;
 }
 
-export function useGrossProfitCalculator() {
-    const { language } = useLanguage();
-    const [selectedCurrency, setSelectedCurrency] = useState<string>(() => getDefaultCurrency(language));
-    const hasManuallyChangedCurrency = useRef(false);
+export interface UseGrossProfitCalculatorReturn {
+    selectedCurrency: string;
+    setSelectedCurrency: (currency: string) => void;
+    cogs: string;
+    sellingPrice: string;
+    handleCogsChange: (value: string) => void;
+    handleSellingPriceChange: (value: string) => void;
+    results: GrossProfitResults;
+    handleReset: () => void;
+}
 
-    // Update currency when language changes (unless user manually selected)
-    useEffect(() => {
-        if (!hasManuallyChangedCurrency.current) {
-            const defaultCurrency = getDefaultCurrency(language);
-            queueMicrotask(() => setSelectedCurrency(defaultCurrency));
-        }
-    }, [language]);
-
-    const handleCurrencyChange = useCallback((currency: string) => {
-        hasManuallyChangedCurrency.current = true;
-        setSelectedCurrency(currency);
-    }, []);
+export function useGrossProfitCalculator(): UseGrossProfitCalculatorReturn {
+    const { selectedCurrency, setSelectedCurrency, resetCurrency } =
+        useCalculatorCurrency();
 
     const [cogs, setCogs] = useState<string>("");
     const [sellingPrice, setSellingPrice] = useState<string>("");
 
     const handleCogsChange = useCallback((value: string) => {
-        // Allow only numbers and decimal point
-        const sanitized = value.replace(/[^0-9.]/g, "");
-        // Prevent multiple decimal points
-        const parts = sanitized.split(".");
-        const formatted = parts.length > 2 ? parts[0] + "." + parts.slice(1).join("") : sanitized;
-        setCogs(formatted);
+        setCogs(sanitizeDecimalInput(value));
     }, []);
 
     const handleSellingPriceChange = useCallback((value: string) => {
-        // Allow only numbers and decimal point
-        const sanitized = value.replace(/[^0-9.]/g, "");
-        // Prevent multiple decimal points
-        const parts = sanitized.split(".");
-        const formatted = parts.length > 2 ? parts[0] + "." + parts.slice(1).join("") : sanitized;
-        setSellingPrice(formatted);
+        setSellingPrice(sanitizeDecimalInput(value));
     }, []);
 
     const results: GrossProfitResults = useMemo(() => {
@@ -73,7 +57,8 @@ export function useGrossProfitCalculator() {
 
         const grossProfit = sellingPriceValue - cogsValue;
         const markupPercent = cogsValue > 0 ? (grossProfit / cogsValue) * 100 : 0;
-        const grossMarginPercent = sellingPriceValue > 0 ? (grossProfit / sellingPriceValue) * 100 : 0;
+        const grossMarginPercent =
+            sellingPriceValue > 0 ? (grossProfit / sellingPriceValue) * 100 : 0;
 
         return {
             grossProfit,
@@ -85,15 +70,14 @@ export function useGrossProfitCalculator() {
     }, [cogs, sellingPrice]);
 
     const handleReset = useCallback(() => {
-        hasManuallyChangedCurrency.current = false;
-        setSelectedCurrency(getDefaultCurrency(language));
+        resetCurrency();
         setCogs("");
         setSellingPrice("");
-    }, [language]);
+    }, [resetCurrency]);
 
     return {
         selectedCurrency,
-        setSelectedCurrency: handleCurrencyChange,
+        setSelectedCurrency,
         cogs,
         sellingPrice,
         handleCogsChange,

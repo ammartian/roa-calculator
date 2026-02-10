@@ -5,10 +5,10 @@ import { currencies } from "@/lib/currencies";
 import { useGrossProfitCalculator } from "@/hooks/useGrossProfitCalculator";
 import { formatCurrency, getCurrencySymbol } from "@/lib/calculations";
 import { useLanguage } from "@/lib/i18n/context";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { CurrencyCombobox } from "@/components/ui/currency-combobox";
+import { CurrencyInput } from "@/components/ui/currency-input";
 import { TrendingUp, DollarSign, Percent, RotateCcw } from "lucide-react";
 
 export function GrossProfitCalculator() {
@@ -36,7 +36,6 @@ export function GrossProfitCalculator() {
 
     return (
         <div className="space-y-6">
-            {/* Currency Selector */}
             <div className="space-y-2">
                 <Label htmlFor="currency">{translations.currency}</Label>
                 <CurrencyCombobox
@@ -46,54 +45,36 @@ export function GrossProfitCalculator() {
                 />
             </div>
 
-            {/* Input Section */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {/* COGS Input */}
                 <div className="space-y-2">
                     <Label htmlFor="cogs" className="flex items-center gap-2">
                         <DollarSign className="h-4 w-4 text-muted-foreground" />
                         {translations.cogs}
                     </Label>
-                    <div className="flex items-center gap-2 flex-1 border rounded-md px-3 bg-background focus-within:ring-2 focus-within:ring-ring">
-                        <span className="text-muted-foreground whitespace-nowrap font-medium">
-                            {currencySymbol}
-                        </span>
-                        <Input
-                            id="cogs"
-                            type="text"
-                            inputMode="decimal"
-                            value={cogs}
-                            onChange={(e) => handleCogsChange(e.target.value)}
-                            placeholder="0.00"
-                            className="border-0 bg-transparent px-0 focus-visible:ring-0 shadow-none"
-                        />
-                    </div>
+                    <CurrencyInput
+                        id="cogs"
+                        currencySymbol={currencySymbol}
+                        value={cogs}
+                        onChange={(e) => handleCogsChange(e.target.value)}
+                        placeholder="0.00"
+                    />
                 </div>
 
-                {/* Selling Price Input */}
                 <div className="space-y-2">
                     <Label htmlFor="sellingPrice" className="flex items-center gap-2">
                         <DollarSign className="h-4 w-4 text-muted-foreground" />
                         {translations.sellingPrice}
                     </Label>
-                    <div className="flex items-center gap-2 flex-1 border rounded-md px-3 bg-background focus-within:ring-2 focus-within:ring-ring">
-                        <span className="text-muted-foreground whitespace-nowrap font-medium">
-                            {currencySymbol}
-                        </span>
-                        <Input
-                            id="sellingPrice"
-                            type="text"
-                            inputMode="decimal"
-                            value={sellingPrice}
-                            onChange={(e) => handleSellingPriceChange(e.target.value)}
-                            placeholder="0.00"
-                            className="border-0 bg-transparent px-0 focus-visible:ring-0 shadow-none"
-                        />
-                    </div>
+                    <CurrencyInput
+                        id="sellingPrice"
+                        currencySymbol={currencySymbol}
+                        value={sellingPrice}
+                        onChange={(e) => handleSellingPriceChange(e.target.value)}
+                        placeholder="0.00"
+                    />
                 </div>
             </div>
 
-            {/* Results Section */}
             <div className="space-y-4 pt-4 border-t">
                 <h3 className="font-semibold text-foreground flex items-center gap-2">
                     {translations.results}
@@ -101,7 +82,6 @@ export function GrossProfitCalculator() {
 
                 {results.hasValidInput ? (
                     <div className="grid grid-cols-1 gap-4">
-                        {/* Gross Profit */}
                         <div
                             className={`p-4 rounded-lg border-2 ${results.isProfitable
                                     ? "bg-emerald-50 border-emerald-200 dark:bg-emerald-950/20 dark:border-emerald-800"
@@ -126,9 +106,7 @@ export function GrossProfitCalculator() {
                             </div>
                         </div>
 
-                        {/* Markup & Margin Grid */}
                         <div className="grid grid-cols-2 gap-4">
-                            {/* Markup Percentage */}
                             <div className="p-4 rounded-lg bg-secondary/50 border">
                                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
                                     <Percent className="h-4 w-4" />
@@ -139,7 +117,6 @@ export function GrossProfitCalculator() {
                                 </div>
                             </div>
 
-                            {/* Gross Margin Percentage */}
                             <div className="p-4 rounded-lg bg-secondary/50 border">
                                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
                                     <Percent className="h-4 w-4" />
@@ -153,19 +130,12 @@ export function GrossProfitCalculator() {
                     </div>
                 ) : (
                     <div className="p-8 border-2 border-dashed border-muted rounded-lg text-center">
-                        <p className="text-muted-foreground">
-                            {translations.enterValues}
-                        </p>
+                        <p className="text-muted-foreground">{translations.enterValues}</p>
                     </div>
                 )}
             </div>
 
-            {/* Reset Button */}
-            <Button
-                variant="outline"
-                onClick={handleReset}
-                className="w-full"
-            >
+            <Button variant="outline" onClick={handleReset} className="w-full">
                 <RotateCcw className="h-4 w-4 mr-2" />
                 {translations.reset}
             </Button>
