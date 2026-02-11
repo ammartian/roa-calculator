@@ -30,8 +30,8 @@ export default function Home() {
 
                 <Tabs defaultValue="roa" className="w-full" onValueChange={setActiveTab}>
                     <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
-                        <TabsTrigger value="roa">{t.tabs.roa.title}</TabsTrigger>
-                        <TabsTrigger value="basic">{t.tabs.basic.title}</TabsTrigger>
+                        <TabsTrigger value="roa" className="text-xs md:text-sm">{t.tabs.roa.title}</TabsTrigger>
+                        <TabsTrigger value="basic" className="text-xs md:text-sm">{t.tabs.basic.title}</TabsTrigger>
                     </TabsList>
 
                     {/* forceMount to persist data when switching tabs */}
