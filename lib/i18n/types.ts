@@ -24,8 +24,6 @@ export interface Translations {
             shippingCostsTaxDescription: string;
             transactionCosts: string;
             transactionCostsTaxDescription: string;
-            otherCosts: string;
-            otherCostsTaxDescription: string;
             addCustomCost: string;
             removeCustomCost: string;
             customCostTitle: string;

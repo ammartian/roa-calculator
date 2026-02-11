@@ -22,8 +22,6 @@
             "shippingCostsTaxDescription": "If you receive tax back on the shipping costs, you can set it here.",
             "transactionCosts": "Transaction costs",
             "transactionCostsTaxDescription": "If you receive tax back on the transaction costs, you can set it here.",
-            "otherCosts": "Other costs",
-            "otherCostsTaxDescription": "If you receive tax back on other costs, you can set it here.",
             "addCustomCost": "Add custom cost",
             "removeCustomCost": "Remove",
             "customCostTitle": "Cost name",
@@ -100,7 +98,7 @@
     },
     "tabs": {
         "roa": {
-            "title": "ROA Calculator",
+            "title": "Break Even ROAS Calculator",
             "description": "Calculate Return on Assets (ROA) easily and quickly."
         },
         "basic": {

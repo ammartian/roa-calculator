@@ -30,9 +30,7 @@ interface CostSectionProps {
     transactionCosts: CostFieldType;
     onTransactionCostsValueChange: (value: string) => void;
     onTransactionCostsTaxChange: (value: string) => void;
-    otherCosts: CostFieldType;
-    onOtherCostsValueChange: (value: string) => void;
-    onOtherCostsTaxChange: (value: string) => void;
+
     customCosts: CustomCostFieldType[];
     onAddCustomCost: (title: string) => void;
     onRemoveCustomCost: (id: string) => void;
@@ -58,9 +56,6 @@ export function CostSection({
     transactionCosts,
     onTransactionCostsValueChange,
     onTransactionCostsTaxChange,
-    otherCosts,
-    onOtherCostsValueChange,
-    onOtherCostsTaxChange,
     customCosts,
     onAddCustomCost,
     onRemoveCustomCost,
@@ -184,16 +179,6 @@ export function CostSection({
                     onTaxChange={onTransactionCostsTaxChange}
                     currencySymbol={currencySymbol}
                     taxDescription={translations.transactionCostsTaxDescription}
-                    taxInputTooltip={translations.taxInputTooltip}
-                />
-
-                <CostField
-                    label={translations.otherCosts}
-                    field={otherCosts}
-                    onValueChange={onOtherCostsValueChange}
-                    onTaxChange={onOtherCostsTaxChange}
-                    currencySymbol={currencySymbol}
-                    taxDescription={translations.otherCostsTaxDescription}
                     taxInputTooltip={translations.taxInputTooltip}
                 />
 

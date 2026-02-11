@@ -14,10 +14,9 @@ export function calculateExclTax(value: number, taxPercent: number): number {
 export function calculateTotalCosts(
     costOfGoods: number,
     shippingCosts: number,
-    transactionCosts: number,
-    otherCosts: number
+    transactionCosts: number
 ): number {
-    return costOfGoods + shippingCosts + transactionCosts + otherCosts;
+    return costOfGoods + shippingCosts + transactionCosts;
 }
 
 export function calculateBreakEvenROAS(

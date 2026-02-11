@@ -22,8 +22,6 @@
             "shippingCostsTaxDescription": "Jika anda menerima cukai balik untuk kos penghantaran, anda boleh menetapkannya di sini.",
             "transactionCosts": "Kos transaksi",
             "transactionCostsTaxDescription": "Jika anda menerima cukai balik untuk kos transaksi, anda boleh menetapkannya di sini.",
-            "otherCosts": "Kos lain",
-            "otherCostsTaxDescription": "Jika anda menerima cukai balik untuk kos lain, anda boleh menetapkannya di sini.",
             "addCustomCost": "Tambah kos tersuai",
             "removeCustomCost": "Buang",
             "customCostTitle": "Nama kos",
@@ -100,7 +98,7 @@
     },
     "tabs": {
         "roa": {
-            "title": "Kalkulator ROA",
+            "title": "Kalkulator Break Even ROAS",
             "description": "Kira Pulangan Atas Aset (ROA) dengan mudah dan pantas."
         },
         "basic": {

@@ -29,7 +29,6 @@ export interface UseROACalculatorReturn {
     costOfGoods: CostField;
     shippingCosts: CostField;
     transactionCosts: CostField;
-    otherCosts: CostField;
     customCosts: CustomCostField[];
     revenue: CostField;
     handleMasterTaxChange: (value: string) => void;
@@ -40,7 +39,6 @@ export interface UseROACalculatorReturn {
     setCostOfGoods: React.Dispatch<React.SetStateAction<CostField>>;
     setShippingCosts: React.Dispatch<React.SetStateAction<CostField>>;
     setTransactionCosts: React.Dispatch<React.SetStateAction<CostField>>;
-    setOtherCosts: React.Dispatch<React.SetStateAction<CostField>>;
     setRevenue: React.Dispatch<React.SetStateAction<CostField>>;
     addCustomCost: (title: string) => void;
     removeCustomCost: (id: string) => void;
@@ -62,7 +60,6 @@ export function useROACalculator(): UseROACalculatorReturn {
     const [costOfGoods, setCostOfGoods] = useState<CostField>(INITIAL_COST_FIELD);
     const [shippingCosts, setShippingCosts] = useState<CostField>(INITIAL_COST_FIELD);
     const [transactionCosts, setTransactionCosts] = useState<CostField>(INITIAL_COST_FIELD);
-    const [otherCosts, setOtherCosts] = useState<CostField>(INITIAL_COST_FIELD);
     const [customCosts, setCustomCosts] = useState<CustomCostField[]>([]);
     const [revenue, setRevenue] = useState<CostField>(INITIAL_COST_FIELD);
 
@@ -103,7 +100,6 @@ export function useROACalculator(): UseROACalculatorReturn {
         setCostOfGoods((prev) => ({ ...prev, tax: formatted }));
         setShippingCosts((prev) => ({ ...prev, tax: formatted }));
         setTransactionCosts((prev) => ({ ...prev, tax: formatted }));
-        setOtherCosts((prev) => ({ ...prev, tax: formatted }));
         setCustomCosts((prev) =>
             prev.map((cost) => ({ ...cost, tax: formatted }))
         );
@@ -126,7 +122,6 @@ export function useROACalculator(): UseROACalculatorReturn {
         const costOfGoodsExcl = calculateCostExclTax(costOfGoods);
         const shippingExcl = calculateCostExclTax(shippingCosts);
         const transactionExcl = calculateCostExclTax(transactionCosts);
-        const otherExcl = calculateCostExclTax(otherCosts);
 
         const customCostsTotal = customCosts.reduce(
             (sum, cost) => sum + calculateCostExclTax(cost),
@@ -136,8 +131,7 @@ export function useROACalculator(): UseROACalculatorReturn {
         const baseTotalCosts = calculateTotalCosts(
             costOfGoodsExcl,
             shippingExcl,
-            transactionExcl,
-            otherExcl
+            transactionExcl
         );
 
         const totalCosts = baseTotalCosts + customCostsTotal;
@@ -152,7 +146,7 @@ export function useROACalculator(): UseROACalculatorReturn {
             profitMarginPercent: calculateProfitMargin(profitPerUnit, totalRevenue),
             maxAdSpendForBreakEven: profitPerUnit,
         };
-    }, [costOfGoods, shippingCosts, transactionCosts, otherCosts, customCosts, revenue]);
+    }, [costOfGoods, shippingCosts, transactionCosts, customCosts, revenue]);
 
     const handleReset = useCallback(() => {
         resetCurrency();
@@ -160,7 +154,6 @@ export function useROACalculator(): UseROACalculatorReturn {
         setCostOfGoods(INITIAL_COST_FIELD);
         setShippingCosts(INITIAL_COST_FIELD);
         setTransactionCosts(INITIAL_COST_FIELD);
-        setOtherCosts(INITIAL_COST_FIELD);
         setCustomCosts((prev) =>
             prev.map((cost) => ({
                 ...cost,
@@ -178,7 +171,6 @@ export function useROACalculator(): UseROACalculatorReturn {
         costOfGoods,
         shippingCosts,
         transactionCosts,
-        otherCosts,
         customCosts,
         revenue,
         handleMasterTaxChange,
@@ -186,7 +178,6 @@ export function useROACalculator(): UseROACalculatorReturn {
         setCostOfGoods,
         setShippingCosts,
         setTransactionCosts,
-        setOtherCosts,
         setRevenue,
         addCustomCost,
         removeCustomCost,

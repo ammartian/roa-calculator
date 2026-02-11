@@ -36,7 +36,6 @@ export interface CalculatorState {
     costOfGoods: CostField;
     shippingCosts: CostField;
     transactionCosts: CostField;
-    otherCosts: CostField;
     customCosts: CustomCostField[];
     revenue: CostField;
 }
