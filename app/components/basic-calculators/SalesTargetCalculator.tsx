@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { CurrencyCombobox } from "@/components/ui/currency-combobox";
 import { CurrencyInput } from "@/components/ui/currency-input";
-import { Target, DollarSign, Percent, Package, RotateCcw } from "lucide-react";
+import { Target, DollarSign, TrendingUp, Package, RotateCcw } from "lucide-react";
 
 export function SalesTargetCalculator() {
     const { t } = useLanguage();
@@ -59,7 +59,7 @@ export function SalesTargetCalculator() {
                         id="targetRevenue"
                         currencySymbol={currencySymbol}
                         value={targetRevenue}
-                        onChange={(e) => handleTargetRevenueChange(e.target.value)}
+                        onChange={handleTargetRevenueChange}
                         placeholder="0.00"
                     />
                 </div>
@@ -73,21 +73,21 @@ export function SalesTargetCalculator() {
                         id="sellingPricePerUnit"
                         currencySymbol={currencySymbol}
                         value={sellingPricePerUnit}
-                        onChange={(e) => handleSellingPricePerUnitChange(e.target.value)}
+                        onChange={handleSellingPricePerUnitChange}
                         placeholder="0.00"
                     />
                 </div>
 
                 <div className="space-y-2">
                     <Label htmlFor="netMarginPercent" className="flex items-center gap-2">
-                        <Percent className="h-4 w-4 text-muted-foreground" />
+                        <TrendingUp className="h-4 w-4 text-muted-foreground" />
                         {translations.netMarginPercent}
                     </Label>
                     <CurrencyInput
                         id="netMarginPercent"
                         currencySymbol="%"
                         value={netMarginPercent}
-                        onChange={(e) => handleNetMarginPercentChange(e.target.value)}
+                        onChange={handleNetMarginPercentChange}
                         placeholder="0.00"
                     />
                 </div>

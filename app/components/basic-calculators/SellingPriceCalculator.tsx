@@ -53,7 +53,7 @@ export function SellingPriceCalculator() {
                         id="totalCostPerUnit"
                         currencySymbol={currencySymbol}
                         value={totalCostPerUnit}
-                        onChange={(e) => handleTotalCostPerUnitChange(e.target.value)}
+                        onChange={handleTotalCostPerUnitChange}
                         placeholder="0.00"
                     />
                 </div>
@@ -67,7 +67,7 @@ export function SellingPriceCalculator() {
                         id="desiredProfit"
                         currencySymbol={currencySymbol}
                         value={desiredProfit}
-                        onChange={(e) => handleDesiredProfitChange(e.target.value)}
+                        onChange={handleDesiredProfitChange}
                         placeholder="0.00"
                     />
                 </div>
@@ -81,7 +81,7 @@ export function SellingPriceCalculator() {
                         id="safetyMargin"
                         currencySymbol={currencySymbol}
                         value={safetyMargin}
-                        onChange={(e) => handleSafetyMarginChange(e.target.value)}
+                        onChange={handleSafetyMarginChange}
                         placeholder="0.00"
                     />
                 </div>

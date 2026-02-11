@@ -55,7 +55,7 @@ export function CostPerUnitCalculator() {
                         id="fixedCostPerUnit"
                         currencySymbol={currencySymbol}
                         value={fixedCostPerUnit}
-                        onChange={(e) => handleFixedCostPerUnitChange(e.target.value)}
+                        onChange={handleFixedCostPerUnitChange}
                         placeholder="0.00"
                     />
                 </div>
@@ -69,7 +69,7 @@ export function CostPerUnitCalculator() {
                         id="variableCostPerUnit"
                         currencySymbol={currencySymbol}
                         value={variableCostPerUnit}
-                        onChange={(e) => handleVariableCostPerUnitChange(e.target.value)}
+                        onChange={handleVariableCostPerUnitChange}
                         placeholder="0.00"
                     />
                 </div>

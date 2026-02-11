@@ -139,13 +139,13 @@ export function VariableCostCalculator() {
                             <Package className="h-4 w-4 text-muted-foreground" />
                             {translations.productCost}
                         </Label>
-                        <CurrencyInput
-                            id="productCost"
-                            currencySymbol={currencySymbol}
-                            value={productCost}
-                            onChange={(e) => handleProductCostChange(e.target.value)}
-                            placeholder="0.00"
-                        />
+                    <CurrencyInput
+                        id="productCost"
+                        currencySymbol={currencySymbol}
+                        value={productCost}
+                        onChange={handleProductCostChange}
+                        placeholder="0.00"
+                    />
                     </div>
 
                     <div className="space-y-2">
@@ -153,13 +153,13 @@ export function VariableCostCalculator() {
                             <Truck className="h-4 w-4 text-muted-foreground" />
                             {translations.courierCost}
                         </Label>
-                        <CurrencyInput
-                            id="courierCost"
-                            currencySymbol={currencySymbol}
-                            value={courierCost}
-                            onChange={(e) => handleCourierCostChange(e.target.value)}
-                            placeholder="0.00"
-                        />
+                    <CurrencyInput
+                        id="courierCost"
+                        currencySymbol={currencySymbol}
+                        value={courierCost}
+                        onChange={handleCourierCostChange}
+                        placeholder="0.00"
+                    />
                     </div>
 
                     <div className="space-y-2">
@@ -167,13 +167,13 @@ export function VariableCostCalculator() {
                             <Percent className="h-4 w-4 text-muted-foreground" />
                             {translations.platformFee}
                         </Label>
-                        <CurrencyInput
-                            id="platformFee"
-                            currencySymbol={currencySymbol}
-                            value={platformFee}
-                            onChange={(e) => handlePlatformFeeChange(e.target.value)}
-                            placeholder="0.00"
-                        />
+                    <CurrencyInput
+                        id="platformFee"
+                        currencySymbol={currencySymbol}
+                        value={platformFee}
+                        onChange={handlePlatformFeeChange}
+                        placeholder="0.00"
+                    />
                     </div>
 
                     <div className="space-y-2">
@@ -181,13 +181,13 @@ export function VariableCostCalculator() {
                             <Target className="h-4 w-4 text-muted-foreground" />
                             {translations.marketingCost}
                         </Label>
-                        <CurrencyInput
-                            id="marketingCost"
-                            currencySymbol={currencySymbol}
-                            value={marketingCost}
-                            onChange={(e) => handleMarketingCostChange(e.target.value)}
-                            placeholder="0.00"
-                        />
+                    <CurrencyInput
+                        id="marketingCost"
+                        currencySymbol={currencySymbol}
+                        value={marketingCost}
+                        onChange={handleMarketingCostChange}
+                        placeholder="0.00"
+                    />
                     </div>
 
                     {additionalCosts.map((cost) => (

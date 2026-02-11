@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { CurrencyCombobox } from "@/components/ui/currency-combobox";
 import { CurrencyInput } from "@/components/ui/currency-input";
-import { TrendingUp, DollarSign, Percent, RotateCcw } from "lucide-react";
+import { TrendingUp, DollarSign, Calculator, RotateCcw } from "lucide-react";
 
 export function GrossProfitCalculator() {
     const { t } = useLanguage();
@@ -55,7 +55,7 @@ export function GrossProfitCalculator() {
                         id="cogs"
                         currencySymbol={currencySymbol}
                         value={cogs}
-                        onChange={(e) => handleCogsChange(e.target.value)}
+                        onChange={handleCogsChange}
                         placeholder="0.00"
                     />
                 </div>
@@ -69,7 +69,7 @@ export function GrossProfitCalculator() {
                         id="sellingPrice"
                         currencySymbol={currencySymbol}
                         value={sellingPrice}
-                        onChange={(e) => handleSellingPriceChange(e.target.value)}
+                        onChange={handleSellingPriceChange}
                         placeholder="0.00"
                     />
                 </div>
@@ -109,7 +109,7 @@ export function GrossProfitCalculator() {
                         <div className="grid grid-cols-2 gap-4">
                             <div className="p-4 rounded-lg bg-secondary/50 border">
                                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
-                                    <Percent className="h-4 w-4" />
+                                    <Calculator className="h-4 w-4" />
                                     {translations.markup}
                                 </div>
                                 <div className="text-xl font-semibold">
@@ -119,7 +119,7 @@ export function GrossProfitCalculator() {
 
                             <div className="p-4 rounded-lg bg-secondary/50 border">
                                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
-                                    <Percent className="h-4 w-4" />
+                                    <Calculator className="h-4 w-4" />
                                     {translations.grossMargin}
                                 </div>
                                 <div className="text-xl font-semibold">

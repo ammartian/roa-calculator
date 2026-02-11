@@ -85,27 +85,10 @@ export function ResultsSection({
             </CardHeader>
             <CardContent className="space-y-6">
                 <div className="text-center">
-                    <span
-                        className={`text-5xl font-bold ${breakEvenROAS > 0 ? profitabilityStatus.color : "text-primary"
-                            }`}
-                    >
+                    <span className="text-5xl font-bold text-black dark:text-white">
                         {breakEvenROAS > 0 ? breakEvenROAS.toFixed(2) : "0.00"}
                     </span>
                 </div>
-
-                {breakEvenROAS > 0 && (
-                    <div className="flex flex-col items-center gap-2">
-                        <div
-                            className={`flex items-center gap-2 font-medium ${profitabilityStatus.color}`}
-                        >
-                            {profitabilityStatus.icon}
-                            {profitabilityStatus.label}
-                        </div>
-                        <p className="text-sm text-muted-foreground text-center">
-                            {profitabilityStatus.description}
-                        </p>
-                    </div>
-                )}
 
                 <Separator />
 

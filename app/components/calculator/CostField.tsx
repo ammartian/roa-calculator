@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import { HelpCircle } from "lucide-react";
+import { FormattedInput } from "@/components/ui/formatted-input";
 import type { CostField as CostFieldType } from "@/types";
 
 interface CostFieldProps {
@@ -29,7 +30,7 @@ export function CostField({
         <div className="space-y-2">
             <div className="flex justify-between items-center">
                 <Label className="font-medium">{label}</Label>
-                {taxInputTooltip && (
+                {/* Tooltip hidden - {taxInputTooltip && (
                     <div className="w-[80px] flex justify-end">
                         <Tooltip>
                             <TooltipTrigger asChild>
@@ -40,20 +41,20 @@ export function CostField({
                             </TooltipContent>
                         </Tooltip>
                     </div>
-                )}
+                )} */}
             </div>
             <div className="flex gap-2">
                 <div className="flex items-center gap-2 flex-1 border rounded-md px-3 bg-background focus-within:ring-2 focus-within:ring-ring">
                     <span className="text-muted-foreground whitespace-nowrap font-medium">
                         {currencySymbol}
                     </span>
-                    <Input
-                        type="text"
-                        inputMode="decimal"
-                        placeholder="0.00"
+                    <FormattedInput
                         value={field.value}
-                        onChange={(e) => onValueChange(e.target.value)}
+                        onChange={onValueChange}
+                        placeholder="0.00"
                         className="border-0 bg-transparent px-0 focus-visible:ring-0 shadow-none"
+                        allowDecimals={true}
+                        allowNegative={true}
                     />
                 </div>
                 <div className="relative w-[80px]">

@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
+import { FormattedInput } from "@/components/ui/formatted-input";
 import type { CustomCostField as CustomCostFieldType } from "@/types";
 
 interface CustomCostFieldProps {
@@ -37,13 +38,13 @@ export function CustomCostField({
                     <span className="text-muted-foreground whitespace-nowrap font-medium">
                         {currencySymbol}
                     </span>
-                    <Input
-                        type="text"
-                        inputMode="decimal"
-                        placeholder="0.00"
+                    <FormattedInput
                         value={customCost.value}
-                        onChange={(e) => onUpdate(customCost.id, "value", e.target.value)}
+                        onChange={(value) => onUpdate(customCost.id, "value", value)}
+                        placeholder="0.00"
                         className="border-0 bg-transparent px-0 focus-visible:ring-0 shadow-none"
+                        allowDecimals={true}
+                        allowNegative={true}
                     />
                 </div>
                 <div className="relative w-[80px]">

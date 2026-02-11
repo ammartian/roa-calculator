@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { CurrencyCombobox } from "@/components/ui/currency-combobox";
 import { CurrencyInput } from "@/components/ui/currency-input";
 import { DynamicCostItem } from "@/components/ui/dynamic-cost-item";
+import { FormattedInput } from "@/components/ui/formatted-input";
 import { Building2, Users, Wifi, Package, Plus, RotateCcw } from "lucide-react";
 
 interface AddCostFormProps {
@@ -143,7 +144,7 @@ export function FixedCostCalculator() {
                             id="premisesRent"
                             currencySymbol={currencySymbol}
                             value={premisesRent}
-                            onChange={(e) => handlePremisesRentChange(e.target.value)}
+                            onChange={handlePremisesRentChange}
                             placeholder="0.00"
                         />
                     </div>
@@ -157,7 +158,7 @@ export function FixedCostCalculator() {
                             id="staffSalaries"
                             currencySymbol={currencySymbol}
                             value={staffSalaries}
-                            onChange={(e) => handleStaffSalariesChange(e.target.value)}
+                            onChange={handleStaffSalariesChange}
                             placeholder="0.00"
                         />
                     </div>
@@ -171,7 +172,7 @@ export function FixedCostCalculator() {
                             id="internetBill"
                             currencySymbol={currencySymbol}
                             value={internetBill}
-                            onChange={(e) => handleInternetBillChange(e.target.value)}
+                            onChange={handleInternetBillChange}
                             placeholder="0.00"
                         />
                     </div>
@@ -220,14 +221,15 @@ export function FixedCostCalculator() {
                     <Package className="h-4 w-4 text-muted-foreground" />
                     {translations.unitsSold}
                 </Label>
-                <Input
+                <FormattedInput
                     id="unitsSold"
-                    type="text"
-                    inputMode="numeric"
                     value={unitsSold}
-                    onChange={(e) => handleUnitsSoldChange(e.target.value)}
+                    onChange={handleUnitsSoldChange}
                     placeholder="0"
                     className="focus-visible:ring-2"
+                    allowDecimals={false}
+                    allowNegative={false}
+                    inputMode="numeric"
                 />
             </div>
 

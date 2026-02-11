@@ -123,14 +123,14 @@ export function CostSection({
                 <div className="space-y-2">
                     <div className="flex items-center gap-2">
                         <Label className="font-medium">{translations.taxRate}</Label>
-                        <Tooltip>
+                        {/* Tooltip hidden - <Tooltip>
                             <TooltipTrigger asChild>
                                 <HelpCircle className="h-4 w-4 text-muted-foreground" />
                             </TooltipTrigger>
                             <TooltipContent>
                                 <p>{translations.taxRateTooltip}</p>
                             </TooltipContent>
-                        </Tooltip>
+                        </Tooltip> */}
                     </div>
                     <div className="relative w-[80px]">
                         <Input
