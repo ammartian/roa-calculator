@@ -97,8 +97,14 @@ export function SalesTargetCalculator() {
                 <h3 className="font-semibold text-foreground">{translations.results}</h3>
 
                 {results.hasValidInput ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="space-y-4">
                         <div className="p-4 rounded-lg border-2 bg-primary/5 border-primary/20">
+                            <p className="text-xs text-muted-foreground mb-1">
+                                {translations.unitsRequiredFormula}
+                            </p>
+                            <p className="text-xs text-muted-foreground font-mono mb-2">
+                                {formatCurrencyWithSelected(results.targetRevenue)} / {formatCurrencyWithSelected(results.sellingPricePerUnit)} = {results.unitsRequired.toFixed(0)} {translations.units}
+                            </p>
                             <div className="text-sm text-muted-foreground mb-1 flex items-center gap-2">
                                 <Package className="h-4 w-4" />
                                 {translations.unitsRequired}
@@ -109,6 +115,12 @@ export function SalesTargetCalculator() {
                         </div>
 
                         <div className="p-4 rounded-lg border-2 bg-emerald-50 border-emerald-200 dark:bg-emerald-950/20 dark:border-emerald-800">
+                            <p className="text-xs text-muted-foreground mb-1">
+                                {translations.estimatedProfitFormula}
+                            </p>
+                            <p className="text-xs text-muted-foreground font-mono mb-2">
+                                ({results.netMarginPercent.toFixed(2)}% / 100) × {formatCurrencyWithSelected(results.targetRevenue)} = {formatCurrencyWithSelected(results.estimatedProfit)}
+                            </p>
                             <div className="text-sm text-muted-foreground mb-1 flex items-center gap-2">
                                 <DollarSign className="h-4 w-4 text-emerald-600" />
                                 {translations.estimatedProfit}

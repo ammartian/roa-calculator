@@ -91,46 +91,66 @@ export function SellingPriceCalculator() {
                 <h3 className="font-semibold text-foreground">{translations.results}</h3>
 
                 {results.hasValidInput ? (
-                    <div className="space-y-3">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div className="p-4 rounded-lg border-2 bg-muted/50 border-muted">
-                                <div className="text-sm text-muted-foreground mb-1">
-                                    {translations.minimumSellingPrice}
-                                </div>
-                                <div className="text-xl font-semibold text-foreground">
-                                    {formatCurrencyWithSelected(results.minimumSellingPrice)}
-                                </div>
+                    <div className="space-y-4">
+                        <div className="p-4 rounded-lg border-2 bg-muted/50 border-muted">
+                            <p className="text-xs text-muted-foreground mb-1">
+                                {translations.minimumSellingPriceFormula}
+                            </p>
+                            <p className="text-xs text-muted-foreground font-mono mb-2">
+                                {formatCurrencyWithSelected(results.totalCostPerUnit)} + {formatCurrencyWithSelected(results.desiredProfit)} = {formatCurrencyWithSelected(results.minimumSellingPrice)}
+                            </p>
+                            <div className="text-sm text-muted-foreground mb-1">
+                                {translations.minimumSellingPrice}
                             </div>
-
-                            <div className="p-4 rounded-lg border-2 bg-primary/5 border-primary/20">
-                                <div className="text-sm text-muted-foreground mb-1">
-                                    {translations.recommendedSellingPrice}
-                                </div>
-                                <div className="text-2xl font-bold text-primary">
-                                    {formatCurrencyWithSelected(results.recommendedSellingPrice)}
-                                </div>
+                            <div className="text-xl font-semibold text-foreground">
+                                {formatCurrencyWithSelected(results.minimumSellingPrice)}
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div className="p-4 rounded-lg border bg-card">
-                                <div className="text-sm text-muted-foreground mb-1 flex items-center gap-2">
-                                    <DollarSign className="h-4 w-4" />
-                                    {translations.netProfit}
-                                </div>
-                                <div className="text-lg font-semibold text-foreground">
-                                    {formatCurrencyWithSelected(results.netProfit)}
-                                </div>
+                        <div className="p-4 rounded-lg border-2 bg-primary/5 border-primary/20">
+                            <p className="text-xs text-muted-foreground mb-1">
+                                {translations.recommendedSellingPriceFormula}
+                            </p>
+                            <p className="text-xs text-muted-foreground font-mono mb-2">
+                                {formatCurrencyWithSelected(results.minimumSellingPrice)} + {formatCurrencyWithSelected(results.safetyMargin)} = {formatCurrencyWithSelected(results.recommendedSellingPrice)}
+                            </p>
+                            <div className="text-sm text-muted-foreground mb-1">
+                                {translations.recommendedSellingPrice}
                             </div>
+                            <div className="text-2xl font-bold text-primary">
+                                {formatCurrencyWithSelected(results.recommendedSellingPrice)}
+                            </div>
+                        </div>
 
-                            <div className="p-4 rounded-lg border bg-card">
-                                <div className="text-sm text-muted-foreground mb-1 flex items-center gap-2">
-                                    <TrendingUp className="h-4 w-4" />
-                                    {translations.netMargin}
-                                </div>
-                                <div className="text-lg font-semibold text-foreground">
-                                    {results.netMarginPercent.toFixed(2)}%
-                                </div>
+                        <div className="p-4 rounded-lg border bg-card">
+                            <p className="text-xs text-muted-foreground mb-1">
+                                {translations.netProfitFormula}
+                            </p>
+                            <p className="text-xs text-muted-foreground font-mono mb-2">
+                                {formatCurrencyWithSelected(results.recommendedSellingPrice)} - {formatCurrencyWithSelected(results.totalCostPerUnit)} = {formatCurrencyWithSelected(results.netProfit)}
+                            </p>
+                            <div className="text-sm text-muted-foreground mb-1 flex items-center gap-2">
+                                <DollarSign className="h-4 w-4" />
+                                {translations.netProfit}
+                            </div>
+                            <div className="text-xl font-semibold text-foreground">
+                                {formatCurrencyWithSelected(results.netProfit)}
+                            </div>
+                        </div>
+
+                        <div className="p-4 rounded-lg border bg-card">
+                            <p className="text-xs text-muted-foreground mb-1">
+                                {translations.netMarginFormula}
+                            </p>
+                            <p className="text-xs text-muted-foreground font-mono mb-2">
+                                ({formatCurrencyWithSelected(results.netProfit)} / {formatCurrencyWithSelected(results.recommendedSellingPrice)}) × 100 = {results.netMarginPercent.toFixed(2)}%
+                            </p>
+                            <div className="text-sm text-muted-foreground mb-1 flex items-center gap-2">
+                                <TrendingUp className="h-4 w-4" />
+                                {translations.netMargin}
+                            </div>
+                            <div className="text-xl font-semibold text-foreground">
+                                {results.netMarginPercent.toFixed(2)}%
                             </div>
                         </div>
                     </div>

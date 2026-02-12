@@ -184,9 +184,13 @@ export interface Translations {
         safetyMargin: string;
         results: string;
         minimumSellingPrice: string;
+        minimumSellingPriceFormula: string;
         recommendedSellingPrice: string;
+        recommendedSellingPriceFormula: string;
         netProfit: string;
+        netProfitFormula: string;
         netMargin: string;
+        netMarginFormula: string;
         enterValues: string;
         reset: string;
     };
@@ -197,8 +201,10 @@ export interface Translations {
         netMarginPercent: string;
         results: string;
         unitsRequired: string;
+        unitsRequiredFormula: string;
         units: string;
         estimatedProfit: string;
+        estimatedProfitFormula: string;
         enterValues: string;
         reset: string;
     };
