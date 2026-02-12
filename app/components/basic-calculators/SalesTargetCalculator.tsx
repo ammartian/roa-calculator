@@ -103,7 +103,7 @@ export function SalesTargetCalculator() {
                                 {translations.unitsRequiredFormula}
                             </p>
                             <p className="text-xs text-muted-foreground font-mono mb-2">
-                                {formatCurrencyWithSelected(results.targetRevenue)} / {formatCurrencyWithSelected(results.sellingPricePerUnit)} = {results.unitsRequired.toFixed(0)} {translations.units}
+                                {formatCurrencyWithSelected(results.targetRevenue)} ÷ {formatCurrencyWithSelected(results.sellingPricePerUnit)} = {results.unitsRequired.toFixed(0)} {translations.units}
                             </p>
                             <div className="text-sm text-muted-foreground mb-1 flex items-center gap-2">
                                 <Package className="h-4 w-4" />
@@ -119,7 +119,7 @@ export function SalesTargetCalculator() {
                                 {translations.estimatedProfitFormula}
                             </p>
                             <p className="text-xs text-muted-foreground font-mono mb-2">
-                                ({results.netMarginPercent.toFixed(2)}% / 100) × {formatCurrencyWithSelected(results.targetRevenue)} = {formatCurrencyWithSelected(results.estimatedProfit)}
+                                ({results.netMarginPercent.toFixed(2)}% ÷ 100) × {formatCurrencyWithSelected(results.targetRevenue)} = {formatCurrencyWithSelected(results.estimatedProfit)}
                             </p>
                             <div className="text-sm text-muted-foreground mb-1 flex items-center gap-2">
                                 <DollarSign className="h-4 w-4 text-emerald-600" />

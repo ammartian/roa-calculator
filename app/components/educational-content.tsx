@@ -110,7 +110,7 @@ export default function EducationalContent() {
 
                     <div className="bg-muted rounded-lg p-4 text-center">
                         <p className="font-mono text-sm sm:text-base">
-                            <strong>{t.educational.formula.totalRevenue}</strong> {t.educational.formula.perProduct} / (
+                            <strong>{t.educational.formula.totalRevenue}</strong> {t.educational.formula.perProduct} ÷ (
                             <strong>{t.educational.formula.totalRevenue}</strong> {t.educational.formula.perProduct} -{" "}
                             <strong>{t.educational.formula.totalCosts}</strong> {t.educational.formula.perProduct}) ={" "}
                             <strong>{t.educational.formula.breakEvenROAS}</strong>
@@ -125,7 +125,7 @@ export default function EducationalContent() {
                             {t.educational.formula.exampleDescription}
                         </p>
                         <div className="bg-muted rounded-lg p-3 text-center font-mono text-sm">
-                            30 / (30 - (8 + 2)) = <strong>1.5</strong>
+                            30 ÷ (30 - (8 + 2)) = <strong>1.5</strong>
                         </div>
                         <p className="text-muted-foreground mt-2">
                             {t.educational.formula.exampleResult}

@@ -253,7 +253,7 @@ export function FixedCostCalculator() {
                                 {translations.fixedCostPerUnitFormula}
                             </p>
                             <p className="text-xs text-muted-foreground font-mono mb-2">
-                                {formatCurrencyWithSelected(results.totalFixedCosts)} / {results.unitsSold.toLocaleString()} = {formatCurrencyWithSelected(results.fixedCostPerUnit)}
+                                {formatCurrencyWithSelected(results.totalFixedCosts)} ÷ {results.unitsSold.toLocaleString()} = {formatCurrencyWithSelected(results.fixedCostPerUnit)}
                             </p>
                             <div className="text-sm text-muted-foreground mb-1">{translations.fixedCostPerUnit}</div>
                             <div className="text-2xl font-bold text-primary">{formatCurrencyWithSelected(results.fixedCostPerUnit)}</div>

@@ -143,7 +143,7 @@ export function SellingPriceCalculator() {
                                 {translations.netMarginFormula}
                             </p>
                             <p className="text-xs text-muted-foreground font-mono mb-2">
-                                ({formatCurrencyWithSelected(results.netProfit)} / {formatCurrencyWithSelected(results.recommendedSellingPrice)}) × 100 = {results.netMarginPercent.toFixed(2)}%
+                                ({formatCurrencyWithSelected(results.netProfit)} ÷ {formatCurrencyWithSelected(results.recommendedSellingPrice)}) × 100 = {results.netMarginPercent.toFixed(2)}%
                             </p>
                             <div className="text-sm text-muted-foreground mb-1 flex items-center gap-2">
                                 <TrendingUp className="h-4 w-4" />

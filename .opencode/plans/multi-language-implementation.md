@@ -153,7 +153,7 @@ lib/i18n/
     },
     "results": {
       "title": "Break Even ROAS",
-      "profitPerUnit": "Keuntungan Seunit",
+      "profitPerUnit": "Keuntungan Per Unit",
       "profitMargin": "Margin Keuntungan",
       "maxAdSpend": "Perbelanjaan iklan maksimum untuk break even (setiap jualan)",
       "maxAdSpendDescription": "Berbelanja kurang daripada ini setiap penukaran untuk kekal menguntungkan",

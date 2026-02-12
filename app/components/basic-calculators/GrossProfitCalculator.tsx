@@ -120,7 +120,7 @@ export function GrossProfitCalculator() {
                                 {translations.markupFormula}
                             </p>
                             <p className="text-xs text-muted-foreground font-mono mb-2">
-                                ({formatCurrencyWithSelected(results.grossProfit)} / {formatCurrencyWithSelected(cogsValue)}) × 100 = {results.markupPercent.toFixed(2)}%
+                                ({formatCurrencyWithSelected(results.grossProfit)} ÷ {formatCurrencyWithSelected(cogsValue)}) × 100 = {results.markupPercent.toFixed(2)}%
                             </p>
                             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
                                 <Calculator className="h-4 w-4" />
@@ -136,7 +136,7 @@ export function GrossProfitCalculator() {
                                 {translations.grossMarginFormula}
                             </p>
                             <p className="text-xs text-muted-foreground font-mono mb-2">
-                                ({formatCurrencyWithSelected(results.grossProfit)} / {formatCurrencyWithSelected(sellingPriceValue)}) × 100 = {results.grossMarginPercent.toFixed(2)}%
+                                ({formatCurrencyWithSelected(results.grossProfit)} ÷ {formatCurrencyWithSelected(sellingPriceValue)}) × 100 = {results.grossMarginPercent.toFixed(2)}%
                             </p>
                             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
                                 <Calculator className="h-4 w-4" />

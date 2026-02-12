@@ -143,7 +143,7 @@ export function ResultsSection({
                         </p>
                         <div className="text-xs text-muted-foreground text-center">
                             <span className="font-mono">
-                                {formatCurrency(totalRevenue)} / ({formatCurrency(totalRevenue)} -{" "}
+                                {formatCurrency(totalRevenue)} ÷ ({formatCurrency(totalRevenue)} -{" "}
                                 {formatCurrency(totalCosts)}) = {breakEvenROAS.toFixed(2)}
                             </span>
                         </div>
