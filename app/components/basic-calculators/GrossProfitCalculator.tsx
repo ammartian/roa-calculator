@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import { currencies } from "@/lib/currencies";
 import { useGrossProfitCalculator } from "@/hooks/useGrossProfitCalculator";
-import { formatCurrency, getCurrencySymbol } from "@/lib/calculations";
+import { formatCurrency, getCurrencySymbol, parseCurrency } from "@/lib/calculations";
 import { useLanguage } from "@/lib/i18n/context";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -33,6 +33,9 @@ export function GrossProfitCalculator() {
         formatCurrency(value, selectedCurrency);
 
     const translations = t.grossProfitCalculator;
+
+    const cogsValue = parseCurrency(cogs);
+    const sellingPriceValue = parseCurrency(sellingPrice);
 
     return (
         <div className="space-y-6">
@@ -88,6 +91,12 @@ export function GrossProfitCalculator() {
                                     : "bg-red-50 border-red-200 dark:bg-red-950/20 dark:border-red-800"
                                 }`}
                         >
+                            <p className="text-xs text-muted-foreground mb-1">
+                                {translations.grossProfitFormula}
+                            </p>
+                            <p className="text-xs text-muted-foreground font-mono mb-2">
+                                {formatCurrencyWithSelected(sellingPriceValue)} - {formatCurrencyWithSelected(cogsValue)} = {formatCurrencyWithSelected(results.grossProfit)}
+                            </p>
                             <div className="flex items-center justify-between">
                                 <span className="text-sm text-muted-foreground">
                                     {translations.grossProfit}
@@ -106,25 +115,35 @@ export function GrossProfitCalculator() {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-4">
-                            <div className="p-4 rounded-lg bg-secondary/50 border">
-                                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
-                                    <Calculator className="h-4 w-4" />
-                                    {translations.markup}
-                                </div>
-                                <div className="text-xl font-semibold">
-                                    {results.markupPercent.toFixed(2)}%
-                                </div>
+                        <div className="p-4 rounded-lg bg-secondary/50 border">
+                            <p className="text-xs text-muted-foreground mb-1">
+                                {translations.markupFormula}
+                            </p>
+                            <p className="text-xs text-muted-foreground font-mono mb-2">
+                                ({formatCurrencyWithSelected(results.grossProfit)} / {formatCurrencyWithSelected(cogsValue)}) × 100 = {results.markupPercent.toFixed(2)}%
+                            </p>
+                            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
+                                <Calculator className="h-4 w-4" />
+                                {translations.markup}
                             </div>
+                            <div className="text-xl font-semibold">
+                                {results.markupPercent.toFixed(2)}%
+                            </div>
+                        </div>
 
-                            <div className="p-4 rounded-lg bg-secondary/50 border">
-                                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
-                                    <Calculator className="h-4 w-4" />
-                                    {translations.grossMargin}
-                                </div>
-                                <div className="text-xl font-semibold">
-                                    {results.grossMarginPercent.toFixed(2)}%
-                                </div>
+                        <div className="p-4 rounded-lg bg-secondary/50 border">
+                            <p className="text-xs text-muted-foreground mb-1">
+                                {translations.grossMarginFormula}
+                            </p>
+                            <p className="text-xs text-muted-foreground font-mono mb-2">
+                                ({formatCurrencyWithSelected(results.grossProfit)} / {formatCurrencyWithSelected(sellingPriceValue)}) × 100 = {results.grossMarginPercent.toFixed(2)}%
+                            </p>
+                            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
+                                <Calculator className="h-4 w-4" />
+                                {translations.grossMargin}
+                            </div>
+                            <div className="text-xl font-semibold">
+                                {results.grossMarginPercent.toFixed(2)}%
                             </div>
                         </div>
                     </div>

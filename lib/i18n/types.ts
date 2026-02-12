@@ -119,8 +119,11 @@ export interface Translations {
         sellingPrice: string;
         results: string;
         grossProfit: string;
+        grossProfitFormula: string;
         markup: string;
+        markupFormula: string;
         grossMargin: string;
+        grossMarginFormula: string;
         enterValues: string;
         reset: string;
     };
@@ -137,6 +140,7 @@ export interface Translations {
         results: string;
         totalFixedCosts: string;
         fixedCostPerUnit: string;
+        fixedCostPerUnitFormula: string;
         enterValues: string;
         reset: string;
         costNamePlaceholder: string;
