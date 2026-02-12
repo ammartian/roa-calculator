@@ -158,6 +158,7 @@ export interface Translations {
         maxReached: string;
         results: string;
         totalVariableCosts: string;
+        totalVariableCostsFormula: string;
         enterValues: string;
         reset: string;
         costNamePlaceholder: string;
@@ -170,6 +171,7 @@ export interface Translations {
         variableCostPerUnit: string;
         results: string;
         totalCostPerUnit: string;
+        totalCostPerUnitFormula: string;
         enterValues: string;
         reset: string;
         importantNotice: string;

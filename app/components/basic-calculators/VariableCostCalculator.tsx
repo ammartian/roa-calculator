@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { currencies } from "@/lib/currencies";
 import { useVariableCostCalculator } from "@/hooks/useVariableCostCalculator";
-import { formatCurrency, getCurrencySymbol } from "@/lib/calculations";
+import { formatCurrency, getCurrencySymbol, parseCurrency } from "@/lib/calculations";
 import { useLanguage } from "@/lib/i18n/context";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -118,6 +118,13 @@ export function VariableCostCalculator() {
         formatCurrency(value, selectedCurrency);
 
     const translations = t.variableCostCalculator;
+
+    // Calculate individual values for formula display
+    const productValue = parseCurrency(productCost);
+    const courierValue = parseCurrency(courierCost);
+    const platformValue = parseCurrency(platformFee);
+    const marketingValue = parseCurrency(marketingCost);
+    const additionalTotal = additionalCosts.reduce((sum, cost) => sum + parseCurrency(cost.amount), 0);
 
     return (
         <div className="space-y-6">
@@ -234,6 +241,20 @@ export function VariableCostCalculator() {
 
                 {results.hasValidInput ? (
                     <div className="p-4 rounded-lg border-2 bg-primary/5 border-primary/20">
+                        <p className="text-xs text-muted-foreground mb-1">
+                            {translations.totalVariableCostsFormula}
+                        </p>
+                        <p className="text-xs text-muted-foreground font-mono mb-2">
+                            {(() => {
+                                const parts = [];
+                                if (productValue > 0) parts.push(formatCurrencyWithSelected(productValue));
+                                if (courierValue > 0) parts.push(formatCurrencyWithSelected(courierValue));
+                                if (platformValue > 0) parts.push(formatCurrencyWithSelected(platformValue));
+                                if (marketingValue > 0) parts.push(formatCurrencyWithSelected(marketingValue));
+                                if (additionalTotal > 0) parts.push(`${formatCurrencyWithSelected(additionalTotal)} (other costs)`);
+                                return parts.join(" + ") + " = " + formatCurrencyWithSelected(results.totalVariableCosts);
+                            })()}
+                        </p>
                         <div className="text-sm text-muted-foreground mb-1">{translations.totalVariableCosts}</div>
                         <div className="text-2xl font-bold text-primary">{formatCurrencyWithSelected(results.totalVariableCosts)}</div>
                     </div>

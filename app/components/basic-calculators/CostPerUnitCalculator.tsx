@@ -80,6 +80,12 @@ export function CostPerUnitCalculator() {
 
                 {results.hasValidInput ? (
                     <div className="p-4 rounded-lg border-2 bg-primary/5 border-primary/20">
+                        <p className="text-xs text-muted-foreground mb-1">
+                            {translations.totalCostPerUnitFormula}
+                        </p>
+                        <p className="text-xs text-muted-foreground font-mono mb-2">
+                            {formatCurrencyWithSelected(results.fixedCostPerUnit)} + {formatCurrencyWithSelected(results.variableCostPerUnit)} = {formatCurrencyWithSelected(results.totalCostPerUnit)}
+                        </p>
                         <div className="text-sm text-muted-foreground mb-1">
                             {translations.totalCostPerUnit}
                         </div>
