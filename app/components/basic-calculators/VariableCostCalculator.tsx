@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { CurrencyCombobox } from "@/components/ui/currency-combobox";
 import { CurrencyInput } from "@/components/ui/currency-input";
 import { DynamicCostItem } from "@/components/ui/dynamic-cost-item";
-import { Package, Truck, Percent, Target, Plus, RotateCcw } from "lucide-react";
+import { Package, Truck, Store, Target, Plus, RotateCcw } from "lucide-react";
 
 interface AddCostFormProps {
     onAdd: (title: string) => void;
@@ -171,7 +171,7 @@ export function VariableCostCalculator() {
 
                     <div className="space-y-2">
                         <Label htmlFor="platformFee" className="flex items-center gap-2">
-                            <Percent className="h-4 w-4 text-muted-foreground" />
+                            <Store className="h-4 w-4 text-muted-foreground" />
                             {translations.platformFee}
                         </Label>
                     <CurrencyInput
