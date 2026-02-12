@@ -41,6 +41,7 @@
         },
         "results": {
             "title": "Break Even ROAS",
+            "formula": "Total Revenue per product / (Total Revenue per product - Total Costs per product) = Break Even ROAS",
             "profitPerUnit": "Profit per Unit",
             "profitMargin": "Profit Margin",
             "maxAdSpend": "Max ad spend to break even (per sale)",

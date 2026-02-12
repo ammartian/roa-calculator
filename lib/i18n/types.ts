@@ -43,6 +43,7 @@ export interface Translations {
         };
         results: {
             title: string;
+            formula: string;
             profitPerUnit: string;
             profitMargin: string;
             maxAdSpend: string;

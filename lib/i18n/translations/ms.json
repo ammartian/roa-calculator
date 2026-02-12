@@ -41,6 +41,7 @@
         },
         "results": {
             "title": "Break Even ROAS",
+            "formula": "Jumlah Hasil setiap produk / (Jumlah Hasil setiap produk - Jumlah Kos setiap produk) = Break Even ROAS",
             "profitPerUnit": "Keuntungan Seunit",
             "profitMargin": "Margin Keuntungan",
             "maxAdSpend": "Perbelanjaan iklan maksimum untuk break even (setiap jualan)",

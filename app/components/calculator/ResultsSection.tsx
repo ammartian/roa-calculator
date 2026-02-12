@@ -137,11 +137,16 @@ export function ResultsSection({
                 )}
 
                 {breakEvenROAS > 0 && (
-                    <div className="text-xs text-muted-foreground text-center">
-                        <span className="font-mono">
-                            {formatCurrency(totalRevenue)} / ({formatCurrency(totalRevenue)} -{" "}
-                            {formatCurrency(totalCosts)}) = {breakEvenROAS.toFixed(2)}
-                        </span>
+                    <div className="space-y-3">
+                        <p className="text-xs text-muted-foreground text-center">
+                            {translations.formula}
+                        </p>
+                        <div className="text-xs text-muted-foreground text-center">
+                            <span className="font-mono">
+                                {formatCurrency(totalRevenue)} / ({formatCurrency(totalRevenue)} -{" "}
+                                {formatCurrency(totalCosts)}) = {breakEvenROAS.toFixed(2)}
+                            </span>
+                        </div>
                     </div>
                 )}
 
