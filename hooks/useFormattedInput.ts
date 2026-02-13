@@ -59,21 +59,13 @@ export function useFormattedInput(
     }, [allowDecimals, onChange]);
 
     const handleKeyDown = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
-        // Allow only numbers, decimal point, negative sign, and navigation keys
-        const allowedKeys = [
-            "Backspace", "Delete", "Tab", "Escape", "Enter",
-            "Home", "End", "ArrowLeft", "ArrowRight",
-            "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "-"
-        ];
-
+        // Allow copy/paste shortcuts
         if (e.ctrlKey || e.metaKey) {
-            return; // Allow copy/paste shortcuts
-        }
-
-        if (!allowedKeys.includes(e.key)) {
-            e.preventDefault();
             return;
         }
+
+        // Only block specific invalid keys, allow everything else
+        // The input sanitization in handleChange will clean up any invalid characters
 
         // Prevent multiple decimal points
         if (e.key === "." && (!allowDecimals || displayValue.includes("."))) {

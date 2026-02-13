@@ -26,19 +26,23 @@ export function formatDecimalInput(value: string): string {
 /**
  * Formats a number string with commas as thousands separators.
  * Preserves decimal places. Handles the integer and decimal parts separately.
+ * Also preserves trailing decimal points to allow ongoing decimal entry.
  */
 export function formatWithCommas(value: string): string {
     if (!value) return value;
 
     const parts = value.split(".");
     const integerPart = parts[0];
-    const decimalPart = parts[1] || "";
+    const decimalPart = parts[1] !== undefined ? parts[1] : null;
 
     // Format integer part with commas
     const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-    // Recombine with decimal part if it exists
-    return decimalPart ? `${formattedInteger}.${decimalPart}` : formattedInteger;
+    // Recombine with decimal part if it exists (even if empty, preserve the decimal point)
+    if (decimalPart !== null) {
+        return `${formattedInteger}.${decimalPart}`;
+    }
+    return formattedInteger;
 }
 
 /**
