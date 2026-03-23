@@ -1,7 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { Calculator, Check, Globe, Layers, TrendingUp, Users, LayoutGrid } from "lucide-react";
+import {
+    Calculator,
+    Check,
+    Globe,
+    Layers,
+    TrendingUp,
+    Users,
+    LayoutGrid,
+    Presentation,
+    Tv,
+} from "lucide-react";
 import {
     Sidebar,
     SidebarContent,
@@ -24,7 +34,7 @@ import { useLanguage } from "@/lib/i18n/context";
 import type { Language } from "@/lib/i18n/types";
 import { cn } from "@/lib/utils";
 
-type Section = "roa" | "basic" | "funnel1" | "funnel2";
+type Section = "roa" | "basic" | "funnel1" | "funnel2" | "funnel3" | "funnel4";
 
 interface AppSidebarProps {
     activeSection: Section;
@@ -60,6 +70,16 @@ export function AppSidebar({ activeSection, onSectionChange }: AppSidebarProps) 
             id: "funnel2" as Section,
             label: t.tabs.funnel2.title,
             icon: Users,
+        },
+        {
+            id: "funnel3" as Section,
+            label: t.tabs.funnel3.title,
+            icon: Presentation,
+        },
+        {
+            id: "funnel4" as Section,
+            label: t.tabs.funnel4.title,
+            icon: Tv,
         },
     ];
 
