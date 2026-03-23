@@ -4,6 +4,11 @@
         "english": "English",
         "malay": "Bahasa Malaysia"
     },
+    "businessType": {
+        "label": "Jenis perniagaan",
+        "product": "Produk",
+        "service": "Perkhidmatan"
+    },
     "page": {
         "title": "Kalkulator ROA",
         "subtitle": "Kira Break Even ROAS anda dalam beberapa saat"
@@ -30,14 +35,20 @@
             "customCostsLimit": "Maksimum 10 kos tersuai dibenarkan",
             "customCostsNote": "Tambah kos tambahan yang khusus untuk perniagaan anda. Setiap kos akan dimasukkan dalam jumlah pengiraan.",
             "cancel": "Batal",
-            "totalCosts": "Jumlah kos"
+            "totalCosts": "Jumlah kos",
+            "title_product": "Kos (setiap produk)",
+            "title_service": "Kos (setiap tugasan atau engagement)",
+            "costOfGoods_product": "Kos barang",
+            "costOfGoods_service": "Kos penghantaran langsung"
         },
         "revenue": {
             "title": "Hasil (setiap produk)",
             "revenue": "Hasil",
             "revenueTaxDescription": "Jika anda perlu membayar cukai ke atas hasil, anda boleh menetapkannya di sini.",
             "taxInputTooltip": "akan ditambah kemudian",
-            "totalRevenue": "Jumlah hasil"
+            "totalRevenue": "Jumlah hasil",
+            "title_product": "Hasil (setiap produk)",
+            "title_service": "Hasil (setiap tugasan atau engagement)"
         },
         "results": {
             "title": "Break Even ROAS",
@@ -58,7 +69,15 @@
                 "profitableDescription": "Margin keuntungan yang baik - biasa untuk kebanyakan industri",
                 "highlyProfitable": "Sangat Menguntungkan",
                 "highlyProfitableDescription": "Margin keuntungan yang sangat baik - skalakan kempen anda!"
-            }
+            },
+            "formula_product": "Jumlah Hasil setiap produk ÷ (Jumlah Hasil setiap produk - Jumlah Kos setiap produk) = Break Even ROAS",
+            "formula_service": "Jumlah Hasil setiap tugasan ÷ (Jumlah Hasil setiap tugasan - Jumlah Kos setiap tugasan) = Break Even ROAS",
+            "profitPerUnit_product": "Keuntungan Per Unit",
+            "profitPerUnit_service": "Keuntungan Per Tugasan",
+            "maxAdSpend_product": "Perbelanjaan iklan maksimum untuk break even (setiap jualan)",
+            "maxAdSpend_service": "Perbelanjaan iklan maksimum untuk break even (setiap tugasan ditutup)",
+            "maxAdSpendDescription_product": "Berbelanja kurang daripada ini setiap penukaran untuk kekal menguntungkan",
+            "maxAdSpendDescription_service": "Berbelanja kurang daripada ini setiap penukaran lead ke tugasan untuk kekal menguntungkan"
         }
     },
     "educational": {
@@ -67,7 +86,9 @@
             "step1": "Dalam bahagian pertama kalkulator, anda mengisi semua kos, bersama dengan kategori VAT yang betul untuk produk anda.",
             "step2": "Kemudian dalam bahagian kedua kalkulator anda melakukan perkara yang sama, tetapi dengan hasil.",
             "step3": "Seterusnya, jumlah akan dijumlahkan dan Break Even ROAS akan muncul secara automatik di bahagian bawah.",
-            "step4": "Jika anda ingin melakukan pengiraan baharu, klik butang \"Tetapkan Semula\" dan anda boleh memasukkan data baharu."
+            "step4": "Jika anda ingin melakukan pengiraan baharu, klik butang \"Tetapkan Semula\" dan anda boleh memasukkan data baharu.",
+            "step1_product": "Dalam bahagian pertama kalkulator, anda mengisi semua kos, bersama dengan kategori VAT yang betul untuk produk anda.",
+            "step1_service": "Dalam bahagian pertama kalkulator, anda mengisi semua kos, bersama dengan kategori VAT yang betul untuk perkhidmatan atau engagement anda."
         },
         "whatIsBreakEven": {
             "title": "Apakah Break Even ROAS?",
@@ -83,7 +104,11 @@
             "description2": "Facebook, TikTok dan Snapchat sebagai contoh menunjukkan untuk setiap kempen, set iklan/kumpulan iklan dan iklan berapa ROASnya.",
             "description3": "Ini bermakna anda boleh mengesan berkesannya bahagian kempen pengiklanan dalam talian anda pada semua peringkat yang berbeza.",
             "description4": "ROAS 1 bermakna anda membelanjakan jumlah wang yang sama seperti yang anda peroleh daripada penukaran. Jika anda membelanjakan $10 untuk menjual produk $10, platform akan menunjukkan ROAS 1.",
-            "description5": "Ringkasnya, ini bermakna anda break even. Walau bagaimanapun, anda juga mesti mengambil kira kos lain seperti kos barang, kos penghantaran, kos transaksi, VAT, dan mungkin kos lain. Di sinilah Break Even ROAS berperanan."
+            "description5": "Ringkasnya, ini bermakna anda break even. Walau bagaimanapun, anda juga mesti mengambil kira kos lain seperti kos barang, kos penghantaran, kos transaksi, VAT, dan mungkin kos lain. Di sinilah Break Even ROAS berperanan.",
+            "description4_product": "ROAS 1 bermakna anda membelanjakan jumlah wang yang sama seperti yang anda peroleh daripada penukaran. Jika anda membelanjakan $10 untuk menjual produk $10, platform akan menunjukkan ROAS 1.",
+            "description4_service": "ROAS 1 bermakna anda membelanjakan jumlah wang yang sama seperti yang anda peroleh daripada penukaran. Jika anda membelanjakan $10 untuk memenangi jualan atau tugasan $10, platform akan menunjukkan ROAS 1.",
+            "description5_product": "Ringkasnya, ini bermakna anda break even. Walau bagaimanapun, anda juga mesti mengambil kira kos lain seperti kos barang, kos penghantaran, kos transaksi, VAT, dan mungkin kos lain. Di sinilah Break Even ROAS berperanan.",
+            "description5_service": "Ringkasnya, ini bermakna anda break even. Walau bagaimanapun, anda juga mesti mengambil kira kos lain seperti kos penghantaran langsung, perjalanan, yuran platform, VAT, dan mungkin kos lain. Di sinilah Break Even ROAS berperanan."
         },
         "formula": {
             "title": "Formula Break Even ROAS",
@@ -94,7 +119,11 @@
             "perProduct": "setiap produk",
             "exampleTitle": "Contoh:",
             "exampleDescription": "Andaikan anda menjual produk seharga $30, kos barang adalah $8 & kos penghantaran adalah $2.",
-            "exampleResult": "Ini bermakna untuk setiap kempen, set iklan/kumpulan iklan atau iklan yang mempunyai ROAS lebih tinggi daripada 1.5, anda memperoleh keuntungan."
+            "exampleResult": "Ini bermakna untuk setiap kempen, set iklan/kumpulan iklan atau iklan yang mempunyai ROAS lebih tinggi daripada 1.5, anda memperoleh keuntungan.",
+            "perProduct_product": "setiap produk",
+            "perProduct_service": "setiap tugasan",
+            "exampleDescription_product": "Andaikan anda menjual produk seharga $30, kos barang adalah $8 & kos penghantaran adalah $2.",
+            "exampleDescription_service": "Andaikan anda mengenakan bayaran tugasan $30, kos penghantaran langsung $8 & perjalanan atau bahan $2."
         }
     },
     "tabs": {
@@ -104,7 +133,9 @@
         },
         "basic": {
             "title": "Kalkulator Asas",
-            "description": "Alat pengiraan perniagaan penting untuk kegunaan harian."
+            "description": "Alat pengiraan perniagaan penting untuk kegunaan harian.",
+            "description_product": "Alat pengiraan perniagaan penting untuk kegunaan harian.",
+            "description_service": "Alat penting untuk harga tugasan, kos, dan sasaran dalam perniagaan perkhidmatan."
         },
         "funnel1": {
             "title": "Funnel 1: Runcit (WhatsApp / Telepemasaran)",
@@ -124,15 +155,21 @@
         },
         "funnel5": {
             "title": "Funnel 5: Halaman produk e-dagang",
-            "description": "Trafik, tambah troli, CPP, LTV, dan ROAS untuk iklan ke halaman produk."
+            "description": "Trafik, tambah troli, CPP, LTV, dan ROAS untuk iklan ke halaman produk.",
+            "description_product": "Trafik, tambah troli, CPP, LTV, dan ROAS untuk iklan ke halaman produk.",
+            "description_service": "Trafik, permintaan sebut harga, CPP, LTV, dan ROAS untuk halaman pendaratan perkhidmatan."
         },
         "funnel6": {
             "title": "Funnel 6: Perkhidmatan / reka bentuk dalaman",
-            "description": "Lead, temu janji, CPL, CPP, dan ROAS untuk jualan perkhidmatan berperingkat."
+            "description": "Lead, temu janji, CPL, CPP, dan ROAS untuk jualan perkhidmatan berperingkat.",
+            "description_product": "Lead, demo atau lawatan, CPL, CPP, dan ROAS untuk jualan produk berperingkat.",
+            "description_service": "Lead, temu janji, CPL, CPP, dan ROAS untuk jualan perkhidmatan berperingkat."
         },
         "funnel7": {
             "title": "Funnel 7: Produk digital / ebook",
-            "description": "Klik halaman jualan, CPC, CPP, dan ROAS untuk produk digital."
+            "description": "Klik halaman jualan, CPC, CPP, dan ROAS untuk produk digital.",
+            "description_product": "Klik halaman jualan, CPC, CPP, dan ROAS untuk produk digital.",
+            "description_service": "Klik halaman jualan, CPC, CPP, dan ROAS untuk tawaran digital dan perkhidmatan dalam talian."
         }
     },
     "footer": {
@@ -151,7 +188,15 @@
         "grossMargin": "Margin Kasar (%)",
         "grossMarginFormula": "(Keuntungan Kasar ÷ Harga Jualan) × 100 = Margin Kasar (%)",
         "enterValues": "Masukkan COGS dan Harga Jualan untuk melihat keputusan",
-        "reset": "Tetapkan Semula"
+        "reset": "Tetapkan Semula",
+        "cogs_product": "Kos Barang Terjual (COGS)",
+        "cogs_service": "Kos penghantaran langsung perkhidmatan (COS)",
+        "grossProfitFormula_product": "Harga Jualan - Kos Barang Terjual = Keuntungan Kasar",
+        "grossProfitFormula_service": "Harga Jualan - Kos Penghantaran Langsung Perkhidmatan = Keuntungan Kasar",
+        "markupFormula_product": "(Keuntungan Kasar ÷ Kos Barang Terjual) × 100 = Markup (%)",
+        "markupFormula_service": "(Keuntungan Kasar ÷ Kos Penghantaran Langsung Perkhidmatan) × 100 = Markup (%)",
+        "enterValues_product": "Masukkan COGS dan Harga Jualan untuk melihat keputusan",
+        "enterValues_service": "Masukkan kos penghantaran langsung perkhidmatan dan Harga Jualan untuk melihat keputusan"
     },
     "fixedCostCalculator": {
         "currency": "Mata Wang",
@@ -171,7 +216,17 @@
         "reset": "Tetapkan Semula",
         "costNamePlaceholder": "cth., Utiliti, Insurans",
         "cancel": "Batal",
-        "add": "Tambah"
+        "add": "Tambah",
+        "unitsSold_product": "Unit Terjual",
+        "unitsSold_service": "Tugasan atau engagement terjual",
+        "unitsSoldLabel_product": "Unit Terjual",
+        "unitsSoldLabel_service": "Tugasan terjual",
+        "fixedCostPerUnit_product": "Kos Tetap Per Unit",
+        "fixedCostPerUnit_service": "Kos Tetap Per Tugasan",
+        "fixedCostPerUnitFormula_product": "Jumlah Kos Tetap ÷ Unit Terjual = Kos Tetap Per Unit",
+        "fixedCostPerUnitFormula_service": "Jumlah Kos Tetap ÷ Tugasan Terjual = Kos Tetap Per Tugasan",
+        "enterValues_product": "Masukkan kos tetap dan unit terjual untuk melihat keputusan",
+        "enterValues_service": "Masukkan kos tetap dan bilangan tugasan terjual untuk melihat keputusan"
     },
     "variableCostCalculator": {
         "currency": "Mata Wang",
@@ -189,7 +244,17 @@
         "reset": "Tetapkan Semula",
         "costNamePlaceholder": "cth., Pembungkus, Pulangan",
         "cancel": "Batal",
-        "add": "Tambah"
+        "add": "Tambah",
+        "variableCostsSection_product": "Kos Berubah (per unit)",
+        "variableCostsSection_service": "Kos Berubah (per tugasan atau engagement)",
+        "productCost_product": "Kos Produk",
+        "productCost_service": "Kos penghantaran langsung perkhidmatan",
+        "courierCost_product": "Kos Kurier / Penghantaran",
+        "courierCost_service": "Kos perjalanan / penghantaran",
+        "marketingCost_product": "Kos Pemasaran untuk Dapatkan Seorang Pelanggan",
+        "marketingCost_service": "Kos Pemasaran untuk Dapatkan Seorang Klien",
+        "costNamePlaceholder_product": "cth., Pembungkus, Pulangan",
+        "costNamePlaceholder_service": "cth., Subkontraktor, bahan, perbatuan"
     },
     "costPerUnitCalculator": {
         "currency": "Mata Wang",
@@ -201,7 +266,19 @@
         "enterValues": "Masukkan kos per unit untuk melihat keputusan",
         "reset": "Tetapkan Semula",
         "importantNotice": "Notis Penting:",
-        "noticeDescription": "Pastikan tiada kos yang terlepas atau terabaikan. Semak semua input dengan teliti. Periksa, periksa semula, dan periksa sekali lagi untuk memastikan ketepatan jumlah kos per unit."
+        "noticeDescription": "Pastikan tiada kos yang terlepas atau terabaikan. Semak semua input dengan teliti. Periksa, periksa semula, dan periksa sekali lagi untuk memastikan ketepatan jumlah kos per unit.",
+        "fixedCostPerUnit_product": "Kos Tetap Per Unit",
+        "fixedCostPerUnit_service": "Kos Tetap Per Tugasan",
+        "variableCostPerUnit_product": "Kos Berubah Per Unit",
+        "variableCostPerUnit_service": "Kos Berubah Per Tugasan",
+        "totalCostPerUnit_product": "Jumlah Kos Per Unit",
+        "totalCostPerUnit_service": "Jumlah Kos Per Tugasan",
+        "totalCostPerUnitFormula_product": "Kos Tetap Per Unit + Kos Berubah Per Unit = Jumlah Kos Per Unit",
+        "totalCostPerUnitFormula_service": "Kos Tetap Per Tugasan + Kos Berubah Per Tugasan = Jumlah Kos Per Tugasan",
+        "enterValues_product": "Masukkan kos per unit untuk melihat keputusan",
+        "enterValues_service": "Masukkan kos per tugasan untuk melihat keputusan",
+        "noticeDescription_product": "Pastikan tiada kos yang terlepas atau terabaikan. Semak semua input dengan teliti. Periksa, periksa semula, dan periksa sekali lagi untuk memastikan ketepatan jumlah kos per unit.",
+        "noticeDescription_service": "Pastikan tiada kos yang terlepas atau terabaikan. Semak semua input dengan teliti. Periksa, periksa semula, dan periksa sekali lagi untuk memastikan ketepatan jumlah kos per tugasan."
     },
     "sellingPriceCalculator": {
         "currency": "Mata Wang",
@@ -218,7 +295,19 @@
         "netMargin": "Margin Bersih (%)",
         "netMarginFormula": "(Keuntungan Bersih ÷ Harga Jualan Disyorkan) × 100 = Margin Bersih (%)",
         "enterValues": "Masukkan jumlah kos per unit untuk melihat keputusan",
-        "reset": "Tetapkan Semula"
+        "reset": "Tetapkan Semula",
+        "totalCostPerUnit_product": "Jumlah Kos Per Unit",
+        "totalCostPerUnit_service": "Jumlah Kos Per Tugasan",
+        "desiredProfit_product": "Keuntungan Dikehendaki Per Unit",
+        "desiredProfit_service": "Keuntungan Dikehendaki Per Tugasan",
+        "safetyMargin_product": "Margin Keselamatan / Kecemasan Per Unit",
+        "safetyMargin_service": "Margin Keselamatan / Kecemasan Per Tugasan",
+        "minimumSellingPriceFormula_product": "Jumlah Kos Per Unit + Keuntungan Dikehendaki = Harga Jualan Minimum",
+        "minimumSellingPriceFormula_service": "Jumlah Kos Per Tugasan + Keuntungan Dikehendaki = Harga Jualan Minimum",
+        "netProfitFormula_product": "Harga Jualan Disyorkan - Jumlah Kos Per Unit = Keuntungan Bersih",
+        "netProfitFormula_service": "Harga Jualan Disyorkan - Jumlah Kos Per Tugasan = Keuntungan Bersih",
+        "enterValues_product": "Masukkan jumlah kos per unit untuk melihat keputusan",
+        "enterValues_service": "Masukkan jumlah kos per tugasan untuk melihat keputusan"
     },
     "salesTargetCalculator": {
         "currency": "Mata Wang",
@@ -232,7 +321,17 @@
         "estimatedProfit": "Anggaran Keuntungan",
         "estimatedProfitFormula": "(Margin Bersih % ÷ 100) × Sasaran Hasil Jualan = Anggaran Keuntungan",
         "enterValues": "Masukkan sasaran hasil, harga jualan, dan margin bersih untuk melihat keputusan",
-        "reset": "Tetapkan Semula"
+        "reset": "Tetapkan Semula",
+        "sellingPricePerUnit_product": "Harga Jualan Per Unit",
+        "sellingPricePerUnit_service": "Purata hasil per tugasan",
+        "unitsRequired_product": "Unit Yang Perlu Dijual",
+        "unitsRequired_service": "Tugasan yang perlu dijual",
+        "unitsRequiredFormula_product": "Sasaran Hasil Jualan ÷ Harga Jualan Per Unit = Unit Yang Perlu Dijual",
+        "unitsRequiredFormula_service": "Sasaran Hasil Jualan ÷ Purata Hasil Per Tugasan = Tugasan Yang Perlu Dijual",
+        "units_product": "unit",
+        "units_service": "tugasan",
+        "enterValues_product": "Masukkan sasaran hasil, harga jualan, dan margin bersih untuk melihat keputusan",
+        "enterValues_service": "Masukkan sasaran hasil, purata hasil per tugasan, dan margin bersih untuk melihat keputusan"
     },
     "basicCalculators": {
         "gross-profit": {
@@ -245,11 +344,15 @@
         },
         "variable-cost": {
             "title": "Kalkulator Kos Berubah",
-            "description": "Kira kos yang berubah mengikut volum pengeluaran"
+            "description": "Kira kos yang berubah mengikut volum pengeluaran",
+            "description_product": "Kira kos yang berubah mengikut volum pengeluaran",
+            "description_service": "Kira kos yang berubah mengikut jualan, tugasan, atau volum penghantaran"
         },
         "cost-per-unit": {
             "title": "Kalkulator Kos Per Unit",
-            "description": "Kira kos bagi setiap unit yang dihasilkan"
+            "description": "Kira kos bagi setiap unit yang dihasilkan",
+            "description_product": "Kira kos bagi setiap unit yang dihasilkan",
+            "description_service": "Kira kos bagi setiap tugasan, jam, atau engagement"
         },
         "selling-price-profit": {
             "title": "Kalkulator Harga Jual & Keuntungan",
@@ -288,7 +391,25 @@
         "roas": "Pulangan belanja iklan (ROAS)",
         "primaryMetricHint": "Isyarat trafik berdasarkan CPL maks vs jadual PRD: hijau < RM 20, kuning RM 20–25, merah > RM 25.",
         "reset": "Tetapkan semula",
-        "enterValues": "Masukkan sasaran jualan, AOV, dan kadar penukaran untuk melihat keputusan."
+        "enterValues": "Masukkan sasaran jualan, AOV, dan kadar penukaran untuk melihat keputusan.",
+        "averageOrderValueTooltip_product": "Purata nilai pesanan setiap pelanggan.",
+        "averageOrderValueTooltip_service": "Purata nilai urusan atau invois setiap klien.",
+        "conversionRate_product": "Kadar penukaran (lead → pelanggan)",
+        "conversionRate_service": "Kadar penukaran (lead → klien bayar)",
+        "conversionRateTooltip_product": "Peratusan lead menjadi pelanggan (contoh: 20 = 20%).",
+        "conversionRateTooltip_service": "Peratusan lead menjadi klien bayar (contoh: 20 = 20%).",
+        "cogs_product": "Kos barang terjual (setiap produk)",
+        "cogs_service": "Kos perkhidmatan (setiap klien atau tugasan)",
+        "cogsTooltip_product": "Kos barang terjual bagi satu unit.",
+        "cogsTooltip_service": "Kos langsung untuk satu jualan atau tugasan.",
+        "totalCustomers_product": "Jumlah pelanggan diperlukan",
+        "totalCustomers_service": "Jumlah klien diperlukan",
+        "grossProfitMargin_product": "Keuntungan kasar setiap produk",
+        "grossProfitMargin_service": "Keuntungan kasar setiap tugasan atau klien",
+        "maxCPP_product": "Kos maksimum setiap pembelian (CPP)",
+        "maxCPP_service": "Kos maksimum setiap jualan ditutup (CPP)",
+        "enterValues_product": "Masukkan sasaran jualan, AOV, dan kadar penukaran untuk melihat keputusan.",
+        "enterValues_service": "Masukkan sasaran jualan, purata nilai urusan, dan kadar penukaran untuk melihat keputusan."
     },
     "funnel2": {
         "inputsTitle": "Input anda",
@@ -323,7 +444,17 @@
         "roasPerYear": "ROAS setahun (aktif × LTV ÷ bajet)",
         "primaryMetricHint": "Isyarat trafik berdasarkan CPL maks vs jadual PRD: hijau < RM 480, kuning RM 480–600, merah > RM 600.",
         "reset": "Tetapkan semula",
-        "enterValues": "Masukkan sasaran ejen dan kadar penukaran untuk melihat keputusan."
+        "enterValues": "Masukkan sasaran ejen dan kadar penukaran untuk melihat keputusan.",
+        "restockValue_product": "Purata nilai stok semula (setiap ejen)",
+        "restockValue_service": "Purata nilai pesanan berulang (setiap ejen)",
+        "restockValueTooltip_product": "Purata nilai stok semula setiap ejen.",
+        "restockValueTooltip_service": "Purata nilai pembelian semula atau pembaharuan setiap ejen.",
+        "restockFrequency_product": "Kekerapan stok semula (setahun)",
+        "restockFrequency_service": "Kekerapan pembelian semula (setahun)",
+        "restockFrequencyTooltip_product": "Berapa kali stok semula setahun bagi seorang ejen.",
+        "restockFrequencyTooltip_service": "Berapa kali pembelian semula atau pembaharuan setahun bagi seorang ejen.",
+        "ltv_product": "Purata LTV (stok semula × kekerapan)",
+        "ltv_service": "Purata LTV (nilai berulang × kekerapan)"
     },
     "funnel3": {
         "inputsTitle": "Input anda",
@@ -356,7 +487,23 @@
         "roas": "Pulangan belanja iklan (ROAS)",
         "primaryMetricHint": "Isyarat trafik berdasarkan kos maks setiap pendaftaran vs PRD: hijau < RM 16.80, kuning RM 16.80–21, merah > RM 21.",
         "reset": "Tetapkan semula",
-        "enterValues": "Masukkan sasaran komisen, komisen per pelanggan, dan kadar kehadiran/tutup untuk melihat keputusan."
+        "enterValues": "Masukkan sasaran komisen, komisen per pelanggan, dan kadar kehadiran/tutup untuk melihat keputusan.",
+        "commissionPerNewClient_product": "Purata komisen setiap pelanggan baharu",
+        "commissionPerNewClient_service": "Purata komisen setiap pelanggan baharu",
+        "commissionPerNewClientTooltip_product": "Purata komisen bagi setiap pelanggan baharu.",
+        "commissionPerNewClientTooltip_service": "Purata komisen bagi setiap pelanggan baharu.",
+        "closingRateWebinarTooltip_product": "Peratus hadir yang membeli (contoh: 20 = 20%).",
+        "closingRateWebinarTooltip_service": "Peratus tutup jualan dalam webinar (contoh: 20 = 20%).",
+        "cogs_product": "Kos barang terjual (setiap pesanan)",
+        "cogs_service": "Kos barang terjual (setiap pelanggan)",
+        "cogsTooltip_product": "Kos langsung per jualan (0 jika tiada).",
+        "cogsTooltip_service": "Kos per pelanggan (0 jika tiada kos langsung).",
+        "newClientsRequired_product": "Jumlah pelanggan baharu diperlukan",
+        "newClientsRequired_service": "Jumlah pelanggan baharu diperlukan",
+        "grossProfitPerClient_product": "Keuntungan kasar setiap pelanggan",
+        "grossProfitPerClient_service": "Keuntungan kasar setiap pelanggan",
+        "enterValues_product": "Masukkan sasaran komisen, komisen per pelanggan, dan kadar kehadiran/tutup untuk melihat keputusan.",
+        "enterValues_service": "Masukkan sasaran komisen, komisen per pelanggan, dan kadar kehadiran/tutup untuk melihat keputusan."
     },
     "funnel4": {
         "inputsTitle": "Input anda",
@@ -393,7 +540,19 @@
         "roas": "Pulangan belanja iklan (ROAS)",
         "primaryMetricHint": "Isyarat trafik berdasarkan kos maks setiap pendaftaran vs PRD: hijau < RM 16, kuning RM 16–20, merah > RM 20.",
         "reset": "Tetapkan semula",
-        "enterValues": "Masukkan sasaran jualan, harga pakej, dan kadar kehadiran/tutup untuk melihat keputusan."
+        "enterValues": "Masukkan sasaran jualan, harga pakej, dan kadar kehadiran/tutup untuk melihat keputusan.",
+        "closingRate_product": "Kadar tutup (hadir → pelanggan)",
+        "closingRate_service": "Kadar tutup (hadir → klien)",
+        "closingRateTooltip_product": "Peratus hadir menjadi pelanggan premium (contoh: 10 = 10%).",
+        "closingRateTooltip_service": "Peratus hadir menjadi klien premium (contoh: 10 = 10%).",
+        "cogs_product": "Kos barang terjual (setiap pelanggan)",
+        "cogs_service": "Kos penghantaran (setiap klien)",
+        "cogsTooltip_product": "Kos per pelanggan premium (0 jika tiada kos langsung).",
+        "cogsTooltip_service": "Kos langsung per klien premium (0 jika tiada).",
+        "premiumCustomers_product": "Jumlah pelanggan premium diperlukan",
+        "premiumCustomers_service": "Jumlah klien premium diperlukan",
+        "grossProfitPerCustomer_product": "Keuntungan kasar setiap pelanggan",
+        "grossProfitPerCustomer_service": "Keuntungan kasar setiap klien"
     },
     "funnel5": {
         "inputsTitle": "Input anda",
@@ -431,7 +590,43 @@
         "roas": "Pulangan belanja iklan (ROAS)",
         "primaryMetricHint": "Isyarat trafik berdasarkan CPP maks vs PRD: hijau < RM 20.40, kuning RM 20.40–25.50, merah > RM 25.50.",
         "reset": "Tetapkan semula",
-        "enterValues": "Masukkan sasaran jualan, AOV, dan kadar penukaran halaman produk untuk melihat keputusan."
+        "enterValues": "Masukkan sasaran jualan, AOV, dan kadar penukaran halaman produk untuk melihat keputusan.",
+        "averageOrderValueTooltip_product": "Purata nilai pesanan setiap pelanggan.",
+        "averageOrderValueTooltip_service": "Purata nilai projek atau pakej setiap klien.",
+        "grossProfitMarginPerProduct_product": "Margin kasar setiap produk (RM)",
+        "grossProfitMarginPerProduct_service": "Margin kasar setiap tugasan atau pakej (RM)",
+        "grossProfitMarginPerProductTooltip_product": "Keuntungan kasar setiap unit dalam RM (input terus, bukan peratus).",
+        "grossProfitMarginPerProductTooltip_service": "Keuntungan kasar setiap tugasan atau pakej dalam RM (input terus, bukan peratus).",
+        "cogs_product": "Kos barang terjual (setiap produk)",
+        "cogs_service": "Kos langsung (setiap tugasan atau penghantaran)",
+        "cogsTooltip_product": "Kos barang terjual bagi rujukan (tidak digunakan dalam formula PRD ini).",
+        "cogsTooltip_service": "Kos langsung bagi rujukan; CPP maks menggunakan medan margin kasar.",
+        "addToCartRate_product": "Kadar tambah troli",
+        "addToCartRate_service": "Kadar permintaan sebut harga atau tempahan",
+        "addToCartRateTooltip_product": "Peratus pelawat yang tambah troli (contoh: 6.8 = 6.8%).",
+        "addToCartRateTooltip_service": "Peratus pelawat yang minta sebut harga atau mula tempahan (contoh: 6.8 = 6.8%).",
+        "conversionRateProductPage_product": "Kadar penukaran (halaman produk → beli)",
+        "conversionRateProductPage_service": "Kadar penukaran (halaman pendaratan → jualan bayar)",
+        "conversionRateProductPageTooltip_product": "Peratus pelawat halaman produk yang membeli (contoh: 4 = 4%).",
+        "conversionRateProductPageTooltip_service": "Peratus pelawat halaman pendaratan yang menjadi klien bayar (contoh: 4 = 4%).",
+        "repurchaseValue_product": "Purata nilai pembelian semula (setiap pelanggan)",
+        "repurchaseValue_service": "Purata nilai pembelian semula (setiap klien)",
+        "repurchaseValueTooltip_product": "Purata nilai pembelian semula setiap pelanggan untuk LTV.",
+        "repurchaseValueTooltip_service": "Purata nilai pesanan berulang atau retainer untuk LTV.",
+        "repurchaseFrequency_product": "Kekerapan pembelian semula (setahun)",
+        "repurchaseFrequency_service": "Kekerapan pembelian semula (setahun)",
+        "repurchaseFrequencyTooltip_product": "Bilangan pembelian semula setahun bagi seorang pelanggan.",
+        "repurchaseFrequencyTooltip_service": "Bilangan pembelian semula atau pembaharuan setahun bagi seorang klien.",
+        "totalCustomers_product": "Jumlah pelanggan diperlukan",
+        "totalCustomers_service": "Jumlah klien diperlukan",
+        "visitorsNeeded_product": "Pelawat diperlukan (halaman produk)",
+        "visitorsNeeded_service": "Pelawat diperlukan (halaman perkhidmatan)",
+        "addToCartCount_product": "Bilangan tambah troli diperlukan",
+        "addToCartCount_service": "Bilangan sebut harga atau tempahan diperlukan",
+        "maxCPP_product": "Kos maksimum setiap pembelian (CPP)",
+        "maxCPP_service": "Kos maksimum setiap jualan ditutup (CPP)",
+        "enterValues_product": "Masukkan sasaran jualan, AOV, dan kadar penukaran halaman produk untuk melihat keputusan.",
+        "enterValues_service": "Masukkan sasaran jualan, AOV, dan kadar penukaran halaman pendaratan untuk melihat keputusan."
     },
     "funnel6": {
         "inputsTitle": "Input anda",
@@ -464,7 +659,29 @@
         "roas": "Pulangan belanja iklan (ROAS)",
         "primaryMetricHint": "Isyarat trafik berdasarkan CPL maks vs PRD: hijau < RM 33.60, kuning RM 33.60–42, merah > RM 42.",
         "reset": "Tetapkan semula",
-        "enterValues": "Masukkan sasaran jualan, AOV, dan kedua-dua kadar penukaran untuk melihat keputusan."
+        "enterValues": "Masukkan sasaran jualan, AOV, dan kedua-dua kadar penukaran untuk melihat keputusan.",
+        "averageOrderValue_product": "Purata pesanan setiap pelanggan (AOV)",
+        "averageOrderValue_service": "Purata pesanan setiap pelanggan (AOV)",
+        "averageOrderValueTooltip_product": "Purata nilai pesanan setiap pelanggan.",
+        "averageOrderValueTooltip_service": "Purata nilai pesanan setiap pelanggan.",
+        "leadsToAppointmentRate_product": "Kadar penukaran (lead → demo)",
+        "leadsToAppointmentRate_service": "Kadar penukaran (lead → temu janji)",
+        "leadsToAppointmentRateTooltip_product": "Peratus lead yang tempah demo atau lawatan (contoh: 20 = 20%).",
+        "leadsToAppointmentRateTooltip_service": "Peratus lead ke temu janji (contoh: 20 = 20%).",
+        "appointmentToCustomerRate_product": "Kadar penukaran (demo → pelanggan)",
+        "appointmentToCustomerRate_service": "Kadar penukaran (temu janji → pelanggan)",
+        "appointmentToCustomerRateTooltip_product": "Peratus demo atau lawatan yang jadi jualan (contoh: 50 = 50%).",
+        "appointmentToCustomerRateTooltip_service": "Peratus temu janji menjadi pelanggan bayar (contoh: 50 = 50%).",
+        "cogs_product": "Kos barang terjual (setiap unit terjual)",
+        "cogs_service": "Kos barang terjual (setiap perkhidmatan)",
+        "cogsTooltip_product": "COGS bagi setiap unit terjual.",
+        "cogsTooltip_service": "Kos perkhidmatan / COGS bagi satu pelanggan.",
+        "totalCustomers_product": "Jumlah pelanggan diperlukan",
+        "totalCustomers_service": "Jumlah klien diperlukan",
+        "appointmentsNeeded_product": "Demo atau lawatan diperlukan",
+        "appointmentsNeeded_service": "Temu janji diperlukan",
+        "maxCPP_product": "Kos maksimum setiap pembelian (CPP)",
+        "maxCPP_service": "Kos maksimum setiap jualan ditutup (CPP)"
     },
     "funnel7": {
         "inputsTitle": "Input anda",
@@ -494,6 +711,20 @@
         "roas": "Pulangan belanja iklan (ROAS)",
         "primaryMetricHint": "Isyarat trafik berdasarkan CPC maks vs PRD: hijau < RM 24, kuning RM 24–30, merah > RM 30.",
         "reset": "Tetapkan semula",
-        "enterValues": "Masukkan sasaran jualan, AOV, dan kadar penukaran halaman jualan untuk melihat keputusan."
+        "enterValues": "Masukkan sasaran jualan, AOV, dan kadar penukaran halaman jualan untuk melihat keputusan.",
+        "conversionRateSalesPage_product": "Kadar penukaran (halaman jualan → pelanggan)",
+        "conversionRateSalesPage_service": "Kadar penukaran (halaman jualan → klien)",
+        "conversionRateSalesPageTooltip_product": "Peratus klik halaman jualan menjadi pelanggan (contoh: 20 = 20%).",
+        "conversionRateSalesPageTooltip_service": "Peratus klik menjadi perkhidmatan atau jualan ditempah (contoh: 20 = 20%).",
+        "cogs_product": "Kos barang terjual (setiap produk)",
+        "cogs_service": "Kos penghantaran marginal (setiap jualan)",
+        "cogsTooltip_product": "Kos per unit (0 untuk produk digital tanpa kos langsung).",
+        "cogsTooltip_service": "Kos penghantaran marginal per jualan (0 jika tiada).",
+        "totalCustomers_product": "Jumlah pelanggan diperlukan",
+        "totalCustomers_service": "Jumlah klien diperlukan",
+        "maxCPP_product": "Kos maksimum setiap pembelian (CPP)",
+        "maxCPP_service": "Kos maksimum setiap penukaran (CPP)",
+        "enterValues_product": "Masukkan sasaran jualan, AOV, dan kadar penukaran halaman jualan untuk melihat keputusan.",
+        "enterValues_service": "Masukkan sasaran jualan, AOV, dan kadar penukaran halaman jualan untuk melihat keputusan."
     }
 }

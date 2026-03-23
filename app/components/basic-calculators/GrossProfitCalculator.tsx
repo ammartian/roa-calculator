@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import { currencies } from "@/lib/currencies";
 import { useGrossProfitCalculator } from "@/hooks/useGrossProfitCalculator";
 import { formatCurrency, getCurrencySymbol, parseCurrency } from "@/lib/calculations";
-import { useLanguage } from "@/lib/i18n/context";
+import { useT } from "@/lib/i18n/useT";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { CurrencyCombobox } from "@/components/ui/currency-combobox";
@@ -12,7 +12,7 @@ import { CurrencyInput } from "@/components/ui/currency-input";
 import { TrendingUp, DollarSign, Calculator, RotateCcw } from "lucide-react";
 
 export function GrossProfitCalculator() {
-    const { t } = useLanguage();
+    const t = useT();
     const {
         selectedCurrency,
         setSelectedCurrency,

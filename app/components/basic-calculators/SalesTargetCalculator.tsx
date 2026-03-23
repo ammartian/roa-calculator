@@ -4,7 +4,7 @@ import { useMemo, useCallback } from "react";
 import { currencies } from "@/lib/currencies";
 import { useSalesTargetCalculator } from "@/hooks/useSalesTargetCalculator";
 import { formatCurrency, getCurrencySymbol } from "@/lib/calculations";
-import { useLanguage } from "@/lib/i18n/context";
+import { useT } from "@/lib/i18n/useT";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { CurrencyCombobox } from "@/components/ui/currency-combobox";
@@ -12,7 +12,7 @@ import { CurrencyInput } from "@/components/ui/currency-input";
 import { Target, DollarSign, TrendingUp, Package, RotateCcw } from "lucide-react";
 
 export function SalesTargetCalculator() {
-    const { t } = useLanguage();
+    const t = useT();
     const {
         selectedCurrency,
         setSelectedCurrency,

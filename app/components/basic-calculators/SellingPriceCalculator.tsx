@@ -3,7 +3,7 @@
 import { currencies } from "@/lib/currencies";
 import { useSellingPriceCalculator } from "@/hooks/useSellingPriceCalculator";
 import { formatCurrency, getCurrencySymbol } from "@/lib/calculations";
-import { useLanguage } from "@/lib/i18n/context";
+import { useT } from "@/lib/i18n/useT";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { CurrencyCombobox } from "@/components/ui/currency-combobox";
@@ -11,7 +11,7 @@ import { CurrencyInput } from "@/components/ui/currency-input";
 import { Calculator, TrendingUp, Shield, DollarSign, RotateCcw } from "lucide-react";
 
 export function SellingPriceCalculator() {
-    const { t } = useLanguage();
+    const t = useT();
     const {
         selectedCurrency,
         setSelectedCurrency,

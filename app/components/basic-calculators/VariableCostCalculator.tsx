@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { currencies } from "@/lib/currencies";
 import { useVariableCostCalculator } from "@/hooks/useVariableCostCalculator";
 import { formatCurrency, getCurrencySymbol, parseCurrency } from "@/lib/calculations";
-import { useLanguage } from "@/lib/i18n/context";
+import { useT } from "@/lib/i18n/useT";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -78,7 +78,7 @@ function AddCostForm({ onAdd, onCancel, placeholder, addLabel, cancelLabel }: Ad
 }
 
 export function VariableCostCalculator() {
-    const { t } = useLanguage();
+    const t = useT();
     const {
         selectedCurrency,
         setSelectedCurrency,

@@ -8,7 +8,7 @@ import { VariableCostCalculator } from "./VariableCostCalculator";
 import { CostPerUnitCalculator } from "./CostPerUnitCalculator";
 import { SellingPriceCalculator } from "./SellingPriceCalculator";
 import { SalesTargetCalculator } from "./SalesTargetCalculator";
-import { useLanguage } from "@/lib/i18n/context";
+import { useT } from "@/lib/i18n/useT";
 
 const calculatorMetadata = [
     {
@@ -44,7 +44,7 @@ const calculatorMetadata = [
 ];
 
 export default function BasicCalculators() {
-    const { t } = useLanguage();
+    const t = useT();
 
     return (
         <div className="space-y-6">

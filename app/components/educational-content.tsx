@@ -8,10 +8,10 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Calculator, TrendingUp, HelpCircle, Lightbulb } from "lucide-react";
-import { useLanguage } from "@/lib/i18n/context";
+import { useT } from "@/lib/i18n/useT";
 
 export default function EducationalContent() {
-    const { t } = useLanguage();
+    const t = useT();
 
     return (
         <div className="w-full max-w-xl md:max-w-4xl mx-auto space-y-6 mt-8">

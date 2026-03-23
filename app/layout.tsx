@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/i18n/context";
+import { BusinessTypeProvider } from "@/lib/i18n/business-type-context";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SidebarProvider } from "@/components/ui/sidebar";
 
@@ -31,11 +32,13 @@ export default function RootLayout({
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
                 <LanguageProvider>
-                    <TooltipProvider>
-                        <SidebarProvider>
-                            {children}
-                        </SidebarProvider>
-                    </TooltipProvider>
+                    <BusinessTypeProvider>
+                        <TooltipProvider>
+                            <SidebarProvider>
+                                {children}
+                            </SidebarProvider>
+                        </TooltipProvider>
+                    </BusinessTypeProvider>
                 </LanguageProvider>
             </body>
         </html>

@@ -1,10 +1,17 @@
 export type Language = "en" | "ms";
 
+export type BusinessType = "product" | "service";
+
 export interface Translations {
     common: {
         language: string;
         english: string;
         malay: string;
+    };
+    businessType: {
+        label: string;
+        product: string;
+        service: string;
     };
     page: {
         title: string;
@@ -33,6 +40,10 @@ export interface Translations {
             customCostsNote: string;
             cancel: string;
             totalCosts: string;
+            title_product: string;
+            title_service: string;
+            costOfGoods_product: string;
+            costOfGoods_service: string;
         };
         revenue: {
             title: string;
@@ -40,6 +51,8 @@ export interface Translations {
             revenueTaxDescription: string;
             taxInputTooltip: string;
             totalRevenue: string;
+            title_product: string;
+            title_service: string;
         };
         results: {
             title: string;
@@ -61,6 +74,14 @@ export interface Translations {
                 highlyProfitable: string;
                 highlyProfitableDescription: string;
             };
+            formula_product: string;
+            formula_service: string;
+            profitPerUnit_product: string;
+            profitPerUnit_service: string;
+            maxAdSpend_product: string;
+            maxAdSpend_service: string;
+            maxAdSpendDescription_product: string;
+            maxAdSpendDescription_service: string;
         };
     };
     educational: {
@@ -70,6 +91,8 @@ export interface Translations {
             step2: string;
             step3: string;
             step4: string;
+            step1_product: string;
+            step1_service: string;
         };
         whatIsBreakEven: {
             title: string;
@@ -86,6 +109,10 @@ export interface Translations {
             description3: string;
             description4: string;
             description5: string;
+            description4_product: string;
+            description4_service: string;
+            description5_product: string;
+            description5_service: string;
         };
         formula: {
             title: string;
@@ -97,6 +124,10 @@ export interface Translations {
             exampleTitle: string;
             exampleDescription: string;
             exampleResult: string;
+            perProduct_product: string;
+            perProduct_service: string;
+            exampleDescription_product: string;
+            exampleDescription_service: string;
         };
     };
     tabs: {
@@ -127,14 +158,20 @@ export interface Translations {
         funnel5: {
             title: string;
             description: string;
+            description_product: string;
+            description_service: string;
         };
         funnel6: {
             title: string;
             description: string;
+            description_product: string;
+            description_service: string;
         };
         funnel7: {
             title: string;
             description: string;
+            description_product: string;
+            description_service: string;
         };
     };
     footer: {
@@ -154,6 +191,14 @@ export interface Translations {
         grossMarginFormula: string;
         enterValues: string;
         reset: string;
+        cogs_product: string;
+        cogs_service: string;
+        grossProfitFormula_product: string;
+        grossProfitFormula_service: string;
+        markupFormula_product: string;
+        markupFormula_service: string;
+        enterValues_product: string;
+        enterValues_service: string;
     };
     fixedCostCalculator: {
         currency: string;
@@ -174,6 +219,16 @@ export interface Translations {
         costNamePlaceholder: string;
         cancel: string;
         add: string;
+        unitsSold_product: string;
+        unitsSold_service: string;
+        unitsSoldLabel_product: string;
+        unitsSoldLabel_service: string;
+        fixedCostPerUnit_product: string;
+        fixedCostPerUnit_service: string;
+        fixedCostPerUnitFormula_product: string;
+        fixedCostPerUnitFormula_service: string;
+        enterValues_product: string;
+        enterValues_service: string;
     };
     variableCostCalculator: {
         currency: string;
@@ -192,6 +247,16 @@ export interface Translations {
         costNamePlaceholder: string;
         cancel: string;
         add: string;
+        variableCostsSection_product: string;
+        variableCostsSection_service: string;
+        productCost_product: string;
+        productCost_service: string;
+        courierCost_product: string;
+        courierCost_service: string;
+        marketingCost_product: string;
+        marketingCost_service: string;
+        costNamePlaceholder_product: string;
+        costNamePlaceholder_service: string;
     };
     costPerUnitCalculator: {
         currency: string;
@@ -204,6 +269,18 @@ export interface Translations {
         reset: string;
         importantNotice: string;
         noticeDescription: string;
+        fixedCostPerUnit_product: string;
+        fixedCostPerUnit_service: string;
+        variableCostPerUnit_product: string;
+        variableCostPerUnit_service: string;
+        totalCostPerUnit_product: string;
+        totalCostPerUnit_service: string;
+        totalCostPerUnitFormula_product: string;
+        totalCostPerUnitFormula_service: string;
+        enterValues_product: string;
+        enterValues_service: string;
+        noticeDescription_product: string;
+        noticeDescription_service: string;
     };
     sellingPriceCalculator: {
         currency: string;
@@ -221,6 +298,18 @@ export interface Translations {
         netMarginFormula: string;
         enterValues: string;
         reset: string;
+        totalCostPerUnit_product: string;
+        totalCostPerUnit_service: string;
+        desiredProfit_product: string;
+        desiredProfit_service: string;
+        safetyMargin_product: string;
+        safetyMargin_service: string;
+        minimumSellingPriceFormula_product: string;
+        minimumSellingPriceFormula_service: string;
+        netProfitFormula_product: string;
+        netProfitFormula_service: string;
+        enterValues_product: string;
+        enterValues_service: string;
     };
     salesTargetCalculator: {
         currency: string;
@@ -235,6 +324,16 @@ export interface Translations {
         estimatedProfitFormula: string;
         enterValues: string;
         reset: string;
+        sellingPricePerUnit_product: string;
+        sellingPricePerUnit_service: string;
+        unitsRequired_product: string;
+        unitsRequired_service: string;
+        unitsRequiredFormula_product: string;
+        unitsRequiredFormula_service: string;
+        units_product: string;
+        units_service: string;
+        enterValues_product: string;
+        enterValues_service: string;
     };
     basicCalculators: {
         "gross-profit": {
@@ -248,10 +347,14 @@ export interface Translations {
         "variable-cost": {
             title: string;
             description: string;
+            description_product: string;
+            description_service: string;
         };
         "cost-per-unit": {
             title: string;
             description: string;
+            description_product: string;
+            description_service: string;
         };
         "selling-price-profit": {
             title: string;
@@ -291,6 +394,24 @@ export interface Translations {
         primaryMetricHint: string;
         reset: string;
         enterValues: string;
+        averageOrderValueTooltip_product: string;
+        averageOrderValueTooltip_service: string;
+        conversionRate_product: string;
+        conversionRate_service: string;
+        conversionRateTooltip_product: string;
+        conversionRateTooltip_service: string;
+        cogs_product: string;
+        cogs_service: string;
+        cogsTooltip_product: string;
+        cogsTooltip_service: string;
+        totalCustomers_product: string;
+        totalCustomers_service: string;
+        grossProfitMargin_product: string;
+        grossProfitMargin_service: string;
+        maxCPP_product: string;
+        maxCPP_service: string;
+        enterValues_product: string;
+        enterValues_service: string;
     };
     funnel2: {
         inputsTitle: string;
@@ -326,6 +447,16 @@ export interface Translations {
         primaryMetricHint: string;
         reset: string;
         enterValues: string;
+        restockValue_product: string;
+        restockValue_service: string;
+        restockValueTooltip_product: string;
+        restockValueTooltip_service: string;
+        restockFrequency_product: string;
+        restockFrequency_service: string;
+        restockFrequencyTooltip_product: string;
+        restockFrequencyTooltip_service: string;
+        ltv_product: string;
+        ltv_service: string;
     };
     funnel3: {
         inputsTitle: string;
@@ -359,6 +490,22 @@ export interface Translations {
         primaryMetricHint: string;
         reset: string;
         enterValues: string;
+        commissionPerNewClient_product: string;
+        commissionPerNewClient_service: string;
+        commissionPerNewClientTooltip_product: string;
+        commissionPerNewClientTooltip_service: string;
+        closingRateWebinarTooltip_product: string;
+        closingRateWebinarTooltip_service: string;
+        cogs_product: string;
+        cogs_service: string;
+        cogsTooltip_product: string;
+        cogsTooltip_service: string;
+        newClientsRequired_product: string;
+        newClientsRequired_service: string;
+        grossProfitPerClient_product: string;
+        grossProfitPerClient_service: string;
+        enterValues_product: string;
+        enterValues_service: string;
     };
     funnel4: {
         inputsTitle: string;
@@ -396,6 +543,18 @@ export interface Translations {
         primaryMetricHint: string;
         reset: string;
         enterValues: string;
+        closingRate_product: string;
+        closingRate_service: string;
+        closingRateTooltip_product: string;
+        closingRateTooltip_service: string;
+        cogs_product: string;
+        cogs_service: string;
+        cogsTooltip_product: string;
+        cogsTooltip_service: string;
+        premiumCustomers_product: string;
+        premiumCustomers_service: string;
+        grossProfitPerCustomer_product: string;
+        grossProfitPerCustomer_service: string;
     };
     funnel5: {
         inputsTitle: string;
@@ -434,6 +593,42 @@ export interface Translations {
         primaryMetricHint: string;
         reset: string;
         enterValues: string;
+        averageOrderValueTooltip_product: string;
+        averageOrderValueTooltip_service: string;
+        grossProfitMarginPerProduct_product: string;
+        grossProfitMarginPerProduct_service: string;
+        grossProfitMarginPerProductTooltip_product: string;
+        grossProfitMarginPerProductTooltip_service: string;
+        cogs_product: string;
+        cogs_service: string;
+        cogsTooltip_product: string;
+        cogsTooltip_service: string;
+        addToCartRate_product: string;
+        addToCartRate_service: string;
+        addToCartRateTooltip_product: string;
+        addToCartRateTooltip_service: string;
+        conversionRateProductPage_product: string;
+        conversionRateProductPage_service: string;
+        conversionRateProductPageTooltip_product: string;
+        conversionRateProductPageTooltip_service: string;
+        repurchaseValue_product: string;
+        repurchaseValue_service: string;
+        repurchaseValueTooltip_product: string;
+        repurchaseValueTooltip_service: string;
+        repurchaseFrequency_product: string;
+        repurchaseFrequency_service: string;
+        repurchaseFrequencyTooltip_product: string;
+        repurchaseFrequencyTooltip_service: string;
+        totalCustomers_product: string;
+        totalCustomers_service: string;
+        visitorsNeeded_product: string;
+        visitorsNeeded_service: string;
+        addToCartCount_product: string;
+        addToCartCount_service: string;
+        maxCPP_product: string;
+        maxCPP_service: string;
+        enterValues_product: string;
+        enterValues_service: string;
     };
     funnel6: {
         inputsTitle: string;
@@ -467,6 +662,28 @@ export interface Translations {
         primaryMetricHint: string;
         reset: string;
         enterValues: string;
+        averageOrderValue_product: string;
+        averageOrderValue_service: string;
+        averageOrderValueTooltip_product: string;
+        averageOrderValueTooltip_service: string;
+        leadsToAppointmentRate_product: string;
+        leadsToAppointmentRate_service: string;
+        leadsToAppointmentRateTooltip_product: string;
+        leadsToAppointmentRateTooltip_service: string;
+        appointmentToCustomerRate_product: string;
+        appointmentToCustomerRate_service: string;
+        appointmentToCustomerRateTooltip_product: string;
+        appointmentToCustomerRateTooltip_service: string;
+        cogs_product: string;
+        cogs_service: string;
+        cogsTooltip_product: string;
+        cogsTooltip_service: string;
+        totalCustomers_product: string;
+        totalCustomers_service: string;
+        appointmentsNeeded_product: string;
+        appointmentsNeeded_service: string;
+        maxCPP_product: string;
+        maxCPP_service: string;
     };
     funnel7: {
         inputsTitle: string;
@@ -497,5 +714,19 @@ export interface Translations {
         primaryMetricHint: string;
         reset: string;
         enterValues: string;
+        conversionRateSalesPage_product: string;
+        conversionRateSalesPage_service: string;
+        conversionRateSalesPageTooltip_product: string;
+        conversionRateSalesPageTooltip_service: string;
+        cogs_product: string;
+        cogs_service: string;
+        cogsTooltip_product: string;
+        cogsTooltip_service: string;
+        totalCustomers_product: string;
+        totalCustomers_service: string;
+        maxCPP_product: string;
+        maxCPP_service: string;
+        enterValues_product: string;
+        enterValues_service: string;
     };
 }

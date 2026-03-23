@@ -15,7 +15,7 @@ import Funnel7Calculator from "./components/funnel7/index";
 import EducationalContent from "./components/educational-content";
 import Footer from "./components/footer";
 import { AppSidebar } from "./components/AppSidebar";
-import { useLanguage } from "@/lib/i18n/context";
+import { useT } from "@/lib/i18n/useT";
 
 type Section =
     | "roa"
@@ -29,7 +29,7 @@ type Section =
     | "funnel7";
 
 export default function Home() {
-    const { t } = useLanguage();
+    const t = useT();
     const [activeSection, setActiveSection] = useState<Section>("roa");
 
     return (

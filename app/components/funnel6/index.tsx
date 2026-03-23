@@ -1,12 +1,12 @@
 "use client";
 
 import { useFunnel6Calculator } from "@/hooks/useFunnel6Calculator";
-import { useLanguage } from "@/lib/i18n/context";
+import { useT } from "@/lib/i18n/useT";
 import { InputsSection } from "./InputsSection";
 import { ResultsSection } from "./ResultsSection";
 
 export default function Funnel6Calculator() {
-    const { t } = useLanguage();
+    const t = useT();
     const {
         targetSales,
         aov,

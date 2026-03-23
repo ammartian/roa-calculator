@@ -4,13 +4,13 @@ import { useMemo } from "react";
 import { currencies } from "@/lib/currencies";
 import { useROACalculator } from "@/hooks/useROACalculator";
 import { formatCurrency, getCurrencySymbol } from "@/lib/calculations";
-import { useLanguage } from "@/lib/i18n/context";
+import { useT } from "@/lib/i18n/useT";
 import { CostSection } from "./CostSection";
 import { RevenueSection } from "./RevenueSection";
 import { ResultsSection } from "./ResultsSection";
 
 export default function Calculator() {
-    const { t } = useLanguage();
+    const t = useT();
     const {
         selectedCurrency,
         setSelectedCurrency,

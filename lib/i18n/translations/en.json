@@ -4,6 +4,11 @@
         "english": "English",
         "malay": "Bahasa Malaysia"
     },
+    "businessType": {
+        "label": "Business type",
+        "product": "Product",
+        "service": "Service"
+    },
     "page": {
         "title": "ROA Calculator",
         "subtitle": "Calculate your Break Even ROAS in seconds"
@@ -30,14 +35,20 @@
             "customCostsLimit": "Maximum 10 custom costs allowed",
             "customCostsNote": "Add additional costs specific to your business. Each cost will be included in the total calculation.",
             "cancel": "Cancel",
-            "totalCosts": "Total costs"
+            "totalCosts": "Total costs",
+            "title_product": "Costs (per product)",
+            "title_service": "Costs (per job or engagement)",
+            "costOfGoods_product": "Cost of goods",
+            "costOfGoods_service": "Direct cost of delivery"
         },
         "revenue": {
             "title": "Revenue (per product)",
             "revenue": "Revenue",
             "revenueTaxDescription": "If you have to pay tax over the revenue, you can set it here.",
             "taxInputTooltip": "to be added later",
-            "totalRevenue": "Total revenue"
+            "totalRevenue": "Total revenue",
+            "title_product": "Revenue (per product)",
+            "title_service": "Revenue (per job or engagement)"
         },
         "results": {
             "title": "Break Even ROAS",
@@ -58,7 +69,15 @@
                 "profitableDescription": "Good profit margin - typical for most industries",
                 "highlyProfitable": "Highly Profitable",
                 "highlyProfitableDescription": "Excellent profit margin - scale your campaigns!"
-            }
+            },
+            "formula_product": "Total Revenue per product ÷ (Total Revenue per product - Total Costs per product) = Break Even ROAS",
+            "formula_service": "Total Revenue per job ÷ (Total Revenue per job - Total Costs per job) = Break Even ROAS",
+            "profitPerUnit_product": "Profit per Unit",
+            "profitPerUnit_service": "Profit per Job",
+            "maxAdSpend_product": "Max ad spend to break even (per sale)",
+            "maxAdSpend_service": "Max ad spend to break even (per closed job)",
+            "maxAdSpendDescription_product": "Spend less than this per conversion to remain profitable",
+            "maxAdSpendDescription_service": "Spend less than this per lead-to-job conversion to remain profitable"
         }
     },
     "educational": {
@@ -67,7 +86,9 @@
             "step1": "In the first part of the calculator, you fill in all the costs, together with the correct VAT category of your product.",
             "step2": "Then in the second part of the calculator you do the same, but with the revenue.",
             "step3": "Next, the totals will be added up and the Break Even ROAS will automatically appear in the bottom section.",
-            "step4": "If you want to do a new calculation, click on the \"Reset\" button and you can enter new data."
+            "step4": "If you want to do a new calculation, click on the \"Reset\" button and you can enter new data.",
+            "step1_product": "In the first part of the calculator, you fill in all the costs, together with the correct VAT category of your product.",
+            "step1_service": "In the first part of the calculator, you fill in all the costs, together with the correct VAT category for your service or engagement."
         },
         "whatIsBreakEven": {
             "title": "What is the Break Even ROAS?",
@@ -83,7 +104,11 @@
             "description2": "Facebook, TikTok and Snapchat for example indicates for every campaign, ad set/ad group and ad what the ROAS is.",
             "description3": "This means you can keep track of how effective that part of your online advertising campaign is at all different levels.",
             "description4": "A ROAS of 1 means you are spending exactly the same amount of money as you are earning of a conversion. If you spend $10 to sell a $10 product, the platform will indicate a ROAS of 1.",
-            "description5": "Simply put, this means you break even. However, you must also take other costs into account like cost of goods, shipping costs, transaction costs, VAT, and maybe other costs. This is where the Break Even ROAS comes in."
+            "description5": "Simply put, this means you break even. However, you must also take other costs into account like cost of goods, shipping costs, transaction costs, VAT, and maybe other costs. This is where the Break Even ROAS comes in.",
+            "description4_product": "A ROAS of 1 means you are spending exactly the same amount of money as you are earning of a conversion. If you spend $10 to sell a $10 product, the platform will indicate a ROAS of 1.",
+            "description4_service": "A ROAS of 1 means you are spending exactly the same amount of money as you are earning from a conversion. If you spend $10 to win a $10 job or sale, the platform will indicate a ROAS of 1.",
+            "description5_product": "Simply put, this means you break even. However, you must also take other costs into account like cost of goods, shipping costs, transaction costs, VAT, and maybe other costs. This is where the Break Even ROAS comes in.",
+            "description5_service": "Simply put, this means you break even. However, you must also take other costs into account like direct delivery cost, travel, platform fees, VAT, and maybe other costs. This is where the Break Even ROAS comes in."
         },
         "formula": {
             "title": "The Break Even ROAS Formula",
@@ -94,7 +119,11 @@
             "perProduct": "per product",
             "exampleTitle": "Example:",
             "exampleDescription": "Suppose you sell a product for $30, cost of goods are $8 & the shipping costs are $2.",
-            "exampleResult": "This means that for every campaign, ad set/ad group or ad that has a ROAS higher than 1.5, you make a profit."
+            "exampleResult": "This means that for every campaign, ad set/ad group or ad that has a ROAS higher than 1.5, you make a profit.",
+            "perProduct_product": "per product",
+            "perProduct_service": "per job",
+            "exampleDescription_product": "Suppose you sell a product for $30, cost of goods are $8 & the shipping costs are $2.",
+            "exampleDescription_service": "Suppose you price a job at $30, direct delivery costs are $8 & travel or materials are $2."
         }
     },
     "tabs": {
@@ -104,7 +133,9 @@
         },
         "basic": {
             "title": "Basic Calculators",
-            "description": "Essential business calculation tools for everyday use."
+            "description": "Essential business calculation tools for everyday use.",
+            "description_product": "Essential business calculation tools for everyday use.",
+            "description_service": "Essential tools for pricing jobs, costs, and targets in service businesses."
         },
         "funnel1": {
             "title": "Funnel 1: Retail (WhatsApp / Telemarketing)",
@@ -124,15 +155,21 @@
         },
         "funnel5": {
             "title": "Funnel 5: E-commerce product page",
-            "description": "Traffic, add-to-cart, CPP, LTV, and ROAS for product-page funnels."
+            "description": "Traffic, add-to-cart, CPP, LTV, and ROAS for product-page funnels.",
+            "description_product": "Traffic, add-to-cart, CPP, LTV, and ROAS for product-page funnels.",
+            "description_service": "Traffic, quote requests, CPP, LTV, and ROAS for service landing pages."
         },
         "funnel6": {
             "title": "Funnel 6: Service / interior design",
-            "description": "Leads, appointments, CPL, CPP, and ROAS for multi-step service sales."
+            "description": "Leads, appointments, CPL, CPP, and ROAS for multi-step service sales.",
+            "description_product": "Leads, demos or visits, CPL, CPP, and ROAS for multi-step product sales.",
+            "description_service": "Leads, appointments, CPL, CPP, and ROAS for multi-step service sales."
         },
         "funnel7": {
             "title": "Funnel 7: Digital product / ebook",
-            "description": "Sales page clicks, CPC, CPP, and ROAS for digital products."
+            "description": "Sales page clicks, CPC, CPP, and ROAS for digital products.",
+            "description_product": "Sales page clicks, CPC, CPP, and ROAS for digital products.",
+            "description_service": "Sales page clicks, CPC, CPP, and ROAS for digital offers and online services."
         }
     },
     "footer": {
@@ -151,7 +188,15 @@
         "grossMargin": "Gross Margin (%)",
         "grossMarginFormula": "(Gross Profit ÷ Selling Price) × 100 = Gross Margin (%)",
         "enterValues": "Enter COGS and Selling Price to see results",
-        "reset": "Reset"
+        "reset": "Reset",
+        "cogs_product": "Cost of Goods Sold (COGS)",
+        "cogs_service": "Direct cost of service (COS)",
+        "grossProfitFormula_product": "Selling Price - Cost of Goods Sold = Gross Profit",
+        "grossProfitFormula_service": "Selling Price - Direct Cost of Service = Gross Profit",
+        "markupFormula_product": "(Gross Profit ÷ Cost of Goods Sold) × 100 = Markup (%)",
+        "markupFormula_service": "(Gross Profit ÷ Direct Cost of Service) × 100 = Markup (%)",
+        "enterValues_product": "Enter COGS and Selling Price to see results",
+        "enterValues_service": "Enter direct cost of service and Selling Price to see results"
     },
     "fixedCostCalculator": {
         "currency": "Currency",
@@ -171,7 +216,17 @@
         "reset": "Reset",
         "costNamePlaceholder": "e.g., Utilities, Insurance",
         "cancel": "Cancel",
-        "add": "Add"
+        "add": "Add",
+        "unitsSold_product": "Units Sold",
+        "unitsSold_service": "Jobs or engagements sold",
+        "unitsSoldLabel_product": "Units Sold",
+        "unitsSoldLabel_service": "Jobs sold",
+        "fixedCostPerUnit_product": "Fixed Cost per Unit",
+        "fixedCostPerUnit_service": "Fixed Cost per Job",
+        "fixedCostPerUnitFormula_product": "Total Fixed Costs ÷ Units Sold = Fixed Cost per Unit",
+        "fixedCostPerUnitFormula_service": "Total Fixed Costs ÷ Jobs Sold = Fixed Cost per Job",
+        "enterValues_product": "Enter fixed costs and units sold to see results",
+        "enterValues_service": "Enter fixed costs and number of jobs sold to see results"
     },
     "variableCostCalculator": {
         "currency": "Currency",
@@ -189,7 +244,17 @@
         "reset": "Reset",
         "costNamePlaceholder": "e.g., Packaging, Returns",
         "cancel": "Cancel",
-        "add": "Add"
+        "add": "Add",
+        "variableCostsSection_product": "Variable Costs (per unit)",
+        "variableCostsSection_service": "Variable Costs (per job or engagement)",
+        "productCost_product": "Product Cost",
+        "productCost_service": "Direct service delivery cost",
+        "courierCost_product": "Courier / Delivery Cost",
+        "courierCost_service": "Travel / fulfillment cost",
+        "marketingCost_product": "Marketing Cost to Acquire One Customer",
+        "marketingCost_service": "Marketing Cost to Acquire One Client",
+        "costNamePlaceholder_product": "e.g., Packaging, Returns",
+        "costNamePlaceholder_service": "e.g., Subcontractors, materials, mileage"
     },
     "costPerUnitCalculator": {
         "currency": "Currency",
@@ -201,7 +266,19 @@
         "enterValues": "Enter costs per unit to see results",
         "reset": "Reset",
         "importantNotice": "Important Notice:",
-        "noticeDescription": "Ensure that no costs are missed or overlooked. Review all inputs carefully. Check, double check, and triple check to ensure the accuracy of the total cost per unit."
+        "noticeDescription": "Ensure that no costs are missed or overlooked. Review all inputs carefully. Check, double check, and triple check to ensure the accuracy of the total cost per unit.",
+        "fixedCostPerUnit_product": "Fixed Cost per Unit",
+        "fixedCostPerUnit_service": "Fixed Cost per Job",
+        "variableCostPerUnit_product": "Variable Cost per Unit",
+        "variableCostPerUnit_service": "Variable Cost per Job",
+        "totalCostPerUnit_product": "Total Cost per Unit",
+        "totalCostPerUnit_service": "Total Cost per Job",
+        "totalCostPerUnitFormula_product": "Fixed Cost per Unit + Variable Cost per Unit = Total Cost per Unit",
+        "totalCostPerUnitFormula_service": "Fixed Cost per Job + Variable Cost per Job = Total Cost per Job",
+        "enterValues_product": "Enter costs per unit to see results",
+        "enterValues_service": "Enter costs per job to see results",
+        "noticeDescription_product": "Ensure that no costs are missed or overlooked. Review all inputs carefully. Check, double check, and triple check to ensure the accuracy of the total cost per unit.",
+        "noticeDescription_service": "Ensure that no costs are missed or overlooked. Review all inputs carefully. Check, double check, and triple check to ensure the accuracy of the total cost per job."
     },
     "sellingPriceCalculator": {
         "currency": "Currency",
@@ -218,7 +295,19 @@
         "netMargin": "Net Margin (%)",
         "netMarginFormula": "(Net Profit ÷ Recommended Selling Price) × 100 = Net Margin (%)",
         "enterValues": "Enter total cost per unit to see results",
-        "reset": "Reset"
+        "reset": "Reset",
+        "totalCostPerUnit_product": "Total Cost per Unit",
+        "totalCostPerUnit_service": "Total Cost per Job",
+        "desiredProfit_product": "Desired Profit per Unit",
+        "desiredProfit_service": "Desired Profit per Job",
+        "safetyMargin_product": "Safety / Contingency Margin per Unit",
+        "safetyMargin_service": "Safety / Contingency Margin per Job",
+        "minimumSellingPriceFormula_product": "Total Cost per Unit + Desired Profit = Minimum Selling Price",
+        "minimumSellingPriceFormula_service": "Total Cost per Job + Desired Profit = Minimum Selling Price",
+        "netProfitFormula_product": "Recommended Selling Price - Total Cost per Unit = Net Profit",
+        "netProfitFormula_service": "Recommended Selling Price - Total Cost per Job = Net Profit",
+        "enterValues_product": "Enter total cost per unit to see results",
+        "enterValues_service": "Enter total cost per job to see results"
     },
     "salesTargetCalculator": {
         "currency": "Currency",
@@ -232,7 +321,17 @@
         "estimatedProfit": "Estimated Profit",
         "estimatedProfitFormula": "(Net Margin % ÷ 100) × Target Revenue = Estimated Profit",
         "enterValues": "Enter target revenue, selling price, and net margin to see results",
-        "reset": "Reset"
+        "reset": "Reset",
+        "sellingPricePerUnit_product": "Selling Price per Unit",
+        "sellingPricePerUnit_service": "Average revenue per job",
+        "unitsRequired_product": "Units Required to Sell",
+        "unitsRequired_service": "Jobs required to sell",
+        "unitsRequiredFormula_product": "Target Revenue ÷ Selling Price per Unit = Units Required",
+        "unitsRequiredFormula_service": "Target Revenue ÷ Average Revenue per Job = Jobs Required",
+        "units_product": "units",
+        "units_service": "jobs",
+        "enterValues_product": "Enter target revenue, selling price, and net margin to see results",
+        "enterValues_service": "Enter target revenue, average revenue per job, and net margin to see results"
     },
     "basicCalculators": {
         "gross-profit": {
@@ -245,11 +344,15 @@
         },
         "variable-cost": {
             "title": "Variable Cost Calculator",
-            "description": "Calculate costs that vary with production volume"
+            "description": "Calculate costs that vary with production volume",
+            "description_product": "Calculate costs that vary with production volume",
+            "description_service": "Calculate costs that vary with sales, jobs, or delivery volume"
         },
         "cost-per-unit": {
             "title": "Cost Per Unit Calculator",
-            "description": "Calculate the cost per individual unit produced"
+            "description": "Calculate the cost per individual unit produced",
+            "description_product": "Calculate the cost per individual unit produced",
+            "description_service": "Calculate the cost per job, hour, or engagement"
         },
         "selling-price-profit": {
             "title": "Selling Price & Profit Calculator",
@@ -288,7 +391,25 @@
         "roas": "Return on ad spend (ROAS)",
         "primaryMetricHint": "Traffic light uses max CPL vs PRD bands: green < RM 20, yellow RM 20–25, red > RM 25.",
         "reset": "Reset",
-        "enterValues": "Enter target sales, AOV, and conversion rate to see results."
+        "enterValues": "Enter target sales, AOV, and conversion rate to see results.",
+        "averageOrderValueTooltip_product": "Average order value per customer.",
+        "averageOrderValueTooltip_service": "Average deal or invoice value per client.",
+        "conversionRate_product": "Conversion rate (lead → customer)",
+        "conversionRate_service": "Conversion rate (lead → paying client)",
+        "conversionRateTooltip_product": "Share of leads that become customers (e.g. 20 = 20%).",
+        "conversionRateTooltip_service": "Share of leads that become paying clients (e.g. 20 = 20%).",
+        "cogs_product": "Cost of goods sold (per product)",
+        "cogs_service": "Cost of service (per client or job)",
+        "cogsTooltip_product": "Cost of goods sold for one unit.",
+        "cogsTooltip_service": "Direct cost to deliver one sale or job.",
+        "totalCustomers_product": "Total customers needed",
+        "totalCustomers_service": "Total clients needed",
+        "grossProfitMargin_product": "Gross profit per product",
+        "grossProfitMargin_service": "Gross profit per job or client",
+        "maxCPP_product": "Max cost per purchase (CPP)",
+        "maxCPP_service": "Max cost per closed sale (CPP)",
+        "enterValues_product": "Enter target sales, AOV, and conversion rate to see results.",
+        "enterValues_service": "Enter target sales, average deal value, and conversion rate to see results."
     },
     "funnel2": {
         "inputsTitle": "Your inputs",
@@ -323,7 +444,17 @@
         "roasPerYear": "ROAS per year (active × LTV ÷ budget)",
         "primaryMetricHint": "Traffic light uses max CPL vs PRD bands: green < RM 480, yellow RM 480–600, red > RM 600.",
         "reset": "Reset",
-        "enterValues": "Enter target agents and conversion rate to see results."
+        "enterValues": "Enter target agents and conversion rate to see results.",
+        "restockValue_product": "Average restock value (per agent)",
+        "restockValue_service": "Average repeat order value (per agent)",
+        "restockValueTooltip_product": "Average restock order value per agent.",
+        "restockValueTooltip_service": "Average repeat purchase or renewal value per agent.",
+        "restockFrequency_product": "Restock frequency (per year)",
+        "restockFrequency_service": "Repeat purchase frequency (per year)",
+        "restockFrequencyTooltip_product": "How many restocks per year per agent.",
+        "restockFrequencyTooltip_service": "How many repeat purchases or renewals per year per agent.",
+        "ltv_product": "Average LTV (restock × frequency)",
+        "ltv_service": "Average LTV (repeat value × frequency)"
     },
     "funnel3": {
         "inputsTitle": "Your inputs",
@@ -356,7 +487,23 @@
         "roas": "Return on ad spend (ROAS)",
         "primaryMetricHint": "Traffic light uses max cost per signup vs PRD bands: green < RM 16.80, yellow RM 16.80–21, red > RM 21.",
         "reset": "Reset",
-        "enterValues": "Enter commission target, commission per client, show-up and closing rates to see results."
+        "enterValues": "Enter commission target, commission per client, show-up and closing rates to see results.",
+        "commissionPerNewClient_product": "Average commission per new client",
+        "commissionPerNewClient_service": "Average commission per new client",
+        "commissionPerNewClientTooltip_product": "Average commission earned per new client.",
+        "commissionPerNewClientTooltip_service": "Average commission earned per new client.",
+        "closingRateWebinarTooltip_product": "Share of attendees who purchase (e.g. 20 = 20%).",
+        "closingRateWebinarTooltip_service": "Share of attendees who become clients (e.g. 20 = 20%).",
+        "cogs_product": "Cost of goods sold (per order)",
+        "cogs_service": "Cost of goods sold (per client)",
+        "cogsTooltip_product": "Direct cost per sale (0 if none).",
+        "cogsTooltip_service": "Direct cost per client (0 if none).",
+        "newClientsRequired_product": "Total new customers required",
+        "newClientsRequired_service": "Total new clients required",
+        "grossProfitPerClient_product": "Gross profit per customer",
+        "grossProfitPerClient_service": "Gross profit per client",
+        "enterValues_product": "Enter commission target, commission per customer, show-up and closing rates to see results.",
+        "enterValues_service": "Enter commission target, commission per client, show-up and closing rates to see results."
     },
     "funnel4": {
         "inputsTitle": "Your inputs",
@@ -393,7 +540,19 @@
         "roas": "Return on ad spend (ROAS)",
         "primaryMetricHint": "Traffic light uses max cost per signup vs PRD bands: green < RM 16, yellow RM 16–20, red > RM 20.",
         "reset": "Reset",
-        "enterValues": "Enter target sales, package price, and show-up / closing rates to see results."
+        "enterValues": "Enter target sales, package price, and show-up / closing rates to see results.",
+        "closingRate_product": "Closing rate (show-up to customer)",
+        "closingRate_service": "Closing rate (show-up to client)",
+        "closingRateTooltip_product": "Share of attendees who buy premium (e.g. 10 = 10%).",
+        "closingRateTooltip_service": "Share of attendees who become premium clients (e.g. 10 = 10%).",
+        "cogs_product": "Cost of goods sold (per customer)",
+        "cogs_service": "Cost of fulfillment (per client)",
+        "cogsTooltip_product": "Cost per premium customer (0 if none).",
+        "cogsTooltip_service": "Direct cost per premium client (0 if none).",
+        "premiumCustomers_product": "Total premium customers required",
+        "premiumCustomers_service": "Total premium clients required",
+        "grossProfitPerCustomer_product": "Gross profit per customer",
+        "grossProfitPerCustomer_service": "Gross profit per client"
     },
     "funnel5": {
         "inputsTitle": "Your inputs",
@@ -431,7 +590,43 @@
         "roas": "Return on ad spend (ROAS)",
         "primaryMetricHint": "Traffic light uses max CPP vs PRD bands: green < RM 20.40, yellow RM 20.40–25.50, red > RM 25.50.",
         "reset": "Reset",
-        "enterValues": "Enter target sales, AOV, and product-page conversion rate to see results."
+        "enterValues": "Enter target sales, AOV, and product-page conversion rate to see results.",
+        "averageOrderValueTooltip_product": "Average order value per customer.",
+        "averageOrderValueTooltip_service": "Average project or package value per client.",
+        "grossProfitMarginPerProduct_product": "Gross profit margin per product (RM)",
+        "grossProfitMarginPerProduct_service": "Gross profit margin per job or package (RM)",
+        "grossProfitMarginPerProductTooltip_product": "Gross profit per unit in RM (direct input per PRD).",
+        "grossProfitMarginPerProductTooltip_service": "Gross profit per job or package in RM (direct input per PRD).",
+        "cogs_product": "Cost of goods sold (per product)",
+        "cogs_service": "Direct cost (per job or delivery)",
+        "cogsTooltip_product": "COGS for reference; max CPP uses gross profit margin field.",
+        "cogsTooltip_service": "Direct cost for reference; max CPP uses gross profit margin field.",
+        "addToCartRate_product": "Add-to-cart rate",
+        "addToCartRate_service": "Quote or booking request rate",
+        "addToCartRateTooltip_product": "Share of visitors who add to cart (e.g. 6.8 = 6.8%).",
+        "addToCartRateTooltip_service": "Share of visitors who request a quote or start booking (e.g. 6.8 = 6.8%).",
+        "conversionRateProductPage_product": "Conversion rate (product page to purchase)",
+        "conversionRateProductPage_service": "Conversion rate (landing page to paid sale)",
+        "conversionRateProductPageTooltip_product": "Share of product-page visitors who purchase (e.g. 4 = 4%).",
+        "conversionRateProductPageTooltip_service": "Share of landing-page visitors who become paying clients (e.g. 4 = 4%).",
+        "repurchaseValue_product": "Average repurchase value (per customer)",
+        "repurchaseValue_service": "Average repeat purchase value (per client)",
+        "repurchaseValueTooltip_product": "Average repurchase order value for LTV.",
+        "repurchaseValueTooltip_service": "Average repeat or retainer order value for LTV.",
+        "repurchaseFrequency_product": "Repurchase frequency (per year)",
+        "repurchaseFrequency_service": "Repeat purchase frequency (per year)",
+        "repurchaseFrequencyTooltip_product": "How many repurchases per year per customer.",
+        "repurchaseFrequencyTooltip_service": "How many repeat purchases or renewals per year per client.",
+        "totalCustomers_product": "Total customers needed",
+        "totalCustomers_service": "Total clients needed",
+        "visitorsNeeded_product": "Visitors needed (product page)",
+        "visitorsNeeded_service": "Visitors needed (service landing page)",
+        "addToCartCount_product": "Add-to-cart count needed",
+        "addToCartCount_service": "Quotes or bookings needed",
+        "maxCPP_product": "Maximum cost per purchase (CPP)",
+        "maxCPP_service": "Maximum cost per closed sale (CPP)",
+        "enterValues_product": "Enter target sales, AOV, and product-page conversion rate to see results.",
+        "enterValues_service": "Enter target sales, AOV, and landing-page conversion rate to see results."
     },
     "funnel6": {
         "inputsTitle": "Your inputs",
@@ -464,7 +659,29 @@
         "roas": "Return on ad spend (ROAS)",
         "primaryMetricHint": "Traffic light uses max CPL vs PRD bands: green < RM 33.60, yellow RM 33.60–42, red > RM 42.",
         "reset": "Reset",
-        "enterValues": "Enter target sales, AOV, and both conversion rates to see results."
+        "enterValues": "Enter target sales, AOV, and both conversion rates to see results.",
+        "averageOrderValue_product": "Average order per customer (AOV)",
+        "averageOrderValue_service": "Average order per customer (AOV)",
+        "averageOrderValueTooltip_product": "Average order value.",
+        "averageOrderValueTooltip_service": "Average order value.",
+        "leadsToAppointmentRate_product": "Conversion rate (leads to demo)",
+        "leadsToAppointmentRate_service": "Conversion rate (leads to appointment)",
+        "leadsToAppointmentRateTooltip_product": "Share of leads that book a demo or visit (e.g. 20 = 20%).",
+        "leadsToAppointmentRateTooltip_service": "Share of leads that book an appointment (e.g. 20 = 20%).",
+        "appointmentToCustomerRate_product": "Conversion rate (demo to customer)",
+        "appointmentToCustomerRate_service": "Conversion rate (appointment to customer)",
+        "appointmentToCustomerRateTooltip_product": "Share of demos or visits that convert to a sale (e.g. 50 = 50%).",
+        "appointmentToCustomerRateTooltip_service": "Share of appointments that become paying clients (e.g. 50 = 50%).",
+        "cogs_product": "Cost of goods sold (per unit sold)",
+        "cogs_service": "Cost of goods sold (per service)",
+        "cogsTooltip_product": "COGS per unit sold.",
+        "cogsTooltip_service": "Cost of service / COGS per customer.",
+        "totalCustomers_product": "Total customers needed",
+        "totalCustomers_service": "Total clients needed",
+        "appointmentsNeeded_product": "Demos or visits needed",
+        "appointmentsNeeded_service": "Appointments needed",
+        "maxCPP_product": "Maximum cost per purchase (CPP)",
+        "maxCPP_service": "Maximum cost per closed sale (CPP)"
     },
     "funnel7": {
         "inputsTitle": "Your inputs",
@@ -494,6 +711,20 @@
         "roas": "Return on ad spend (ROAS)",
         "primaryMetricHint": "Traffic light uses max CPC vs PRD bands: green < RM 24, yellow RM 24–30, red > RM 30.",
         "reset": "Reset",
-        "enterValues": "Enter target sales, AOV, and sales-page conversion rate to see results."
+        "enterValues": "Enter target sales, AOV, and sales-page conversion rate to see results.",
+        "conversionRateSalesPage_product": "Conversion rate (sales page to customer)",
+        "conversionRateSalesPage_service": "Conversion rate (sales page to client)",
+        "conversionRateSalesPageTooltip_product": "Share of clicks that convert to a sale (e.g. 20 = 20%).",
+        "conversionRateSalesPageTooltip_service": "Share of clicks that convert to a booked service or sale (e.g. 20 = 20%).",
+        "cogs_product": "Cost of goods sold (per product)",
+        "cogs_service": "Marginal fulfillment cost (per sale)",
+        "cogsTooltip_product": "Cost per unit (0 typical for pure digital).",
+        "cogsTooltip_service": "Marginal fulfillment cost per sale (0 if none).",
+        "totalCustomers_product": "Total customers needed",
+        "totalCustomers_service": "Total clients needed",
+        "maxCPP_product": "Maximum cost per purchase (CPP)",
+        "maxCPP_service": "Maximum cost per conversion (CPP)",
+        "enterValues_product": "Enter target sales, AOV, and sales-page conversion rate to see results.",
+        "enterValues_service": "Enter target sales, AOV, and sales-page conversion rate to see results."
     }
 }

@@ -1,12 +1,12 @@
 "use client";
 
 import { useFunnel3Calculator } from "@/hooks/useFunnel3Calculator";
-import { useLanguage } from "@/lib/i18n/context";
+import { useT } from "@/lib/i18n/useT";
 import { InputsSection } from "./InputsSection";
 import { ResultsSection } from "./ResultsSection";
 
 export default function Funnel3Calculator() {
-    const { t } = useLanguage();
+    const t = useT();
     const {
         targetMonthlyCommission,
         commissionPerNewClient,
