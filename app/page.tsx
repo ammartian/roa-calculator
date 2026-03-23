@@ -5,12 +5,14 @@ import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
 import Calculator from "./components/calculator/index";
 import BasicCalculators from "./components/basic-calculators/index";
+import Funnel1Calculator from "./components/funnel1/index";
+import Funnel2Calculator from "./components/funnel2/index";
 import EducationalContent from "./components/educational-content";
 import Footer from "./components/footer";
 import { AppSidebar } from "./components/AppSidebar";
 import { useLanguage } from "@/lib/i18n/context";
 
-type Section = "roa" | "basic";
+type Section = "roa" | "basic" | "funnel1" | "funnel2";
 
 export default function Home() {
     const { t } = useLanguage();
@@ -42,6 +44,12 @@ export default function Home() {
                         </div>
                         <div hidden={activeSection !== "basic"}>
                             <BasicCalculators />
+                        </div>
+                        <div hidden={activeSection !== "funnel1"}>
+                            <Funnel1Calculator />
+                        </div>
+                        <div hidden={activeSection !== "funnel2"}>
+                            <Funnel2Calculator />
                         </div>
                     </div>
                 </main>

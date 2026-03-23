@@ -46,6 +46,16 @@ export function formatCurrency(value: number, currencyCode: string): string {
     }).format(value);
 }
 
+/** Malaysian Ringgit display (RM prefix) for marketing funnel calculators. */
+export function formatRinggit(value: number): string {
+    return new Intl.NumberFormat("ms-MY", {
+        style: "currency",
+        currency: "MYR",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    }).format(value);
+}
+
 export function getCurrencySymbol(
     currencies: Currency[],
     currencyCode: string

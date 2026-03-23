@@ -105,6 +105,14 @@
         "basic": {
             "title": "Kalkulator Asas",
             "description": "Alat pengiraan perniagaan penting untuk kegunaan harian."
+        },
+        "funnel1": {
+            "title": "Funnel 1 — Runcit (WhatsApp / Telepemasaran)",
+            "description": "Tukar sasaran jualan kepada bilangan lead, CPL maksimum, dan bajet pemasaran."
+        },
+        "funnel2": {
+            "title": "Funnel 2 — Rekrut ejen",
+            "description": "Simulasi yuran pendaftaran: CPA, CPL, bajet, dan ROAS daripada LTV stok semula."
         }
     },
     "footer": {
@@ -231,5 +239,70 @@
             "title": "Kalkulator Sasaran Jualan & Anggaran Keuntungan",
             "description": "Kira sasaran jualan yang diperlukan untuk mencapai matlamat keuntungan"
         }
+    },
+    "funnel1": {
+        "inputsTitle": "Input anda",
+        "resultsTitle": "Keputusan",
+        "trafficLightTitle": "Kesihatan bajet (CPL maks)",
+        "trafficLightHealthy": "Hijau — sihat",
+        "trafficLightBorderline": "Kuning — sempadan",
+        "trafficLightOver": "Merah — melebihi bajet",
+        "trafficLightNeutral": "Masukkan input yang sah",
+        "targetSales": "Sasaran jualan (bulanan)",
+        "targetSalesTooltip": "Monthly sales target, e.g. RM 100,000.",
+        "averageOrderValue": "Purata nilai pesanan (AOV)",
+        "averageOrderValueTooltip": "Average order value per customer.",
+        "conversionRate": "Kadar penukaran (lead → pelanggan)",
+        "conversionRateTooltip": "Share of leads that become customers (e.g. 20 = 20%).",
+        "cogs": "Kos barang terjual (setiap produk)",
+        "cogsTooltip": "Cost of goods sold for one unit.",
+        "marketingBudgetPercent": "Bajet pemasaran (% keuntungan kasar)",
+        "marketingBudgetPercentTooltip": "Percent of gross profit allocated to marketing (e.g. 50 = 50%).",
+        "percentSuffix": "%",
+        "totalCustomers": "Jumlah pelanggan diperlukan",
+        "leadsNeeded": "Bilangan lead diperlukan",
+        "grossProfitMargin": "Keuntungan kasar setiap produk",
+        "maxCPP": "Kos maksimum setiap pembelian (CPP)",
+        "maxCPL": "Kos maksimum setiap lead (CPL)",
+        "totalMarketingBudget": "Jumlah bajet pemasaran",
+        "roas": "Pulangan belanja iklan (ROAS)",
+        "primaryMetricHint": "Isyarat trafik berdasarkan CPL maks vs jadual PRD: hijau < RM 20, kuning RM 20–25, merah > RM 25.",
+        "reset": "Tetapkan semula",
+        "enterValues": "Masukkan sasaran jualan, AOV, dan kadar penukaran untuk melihat keputusan."
+    },
+    "funnel2": {
+        "inputsTitle": "Input anda",
+        "resultsTitle": "Keputusan",
+        "trafficLightTitle": "Kesihatan bajet (CPL maks)",
+        "trafficLightHealthy": "Hijau — sihat",
+        "trafficLightBorderline": "Kuning — sempadan",
+        "trafficLightOver": "Merah — melebihi bajet",
+        "trafficLightNeutral": "Masukkan input yang sah",
+        "registrationFee": "Yuran pendaftaran setiap ejen",
+        "registrationFeeTooltip": "Registration fee per new agent.",
+        "targetAgents": "Sasaran bilangan ejen baharu",
+        "targetAgentsTooltip": "How many new agents you want to recruit.",
+        "conversionRate": "Kadar penukaran (lead → ejen baharu)",
+        "conversionRateTooltip": "Share of leads that become agents (e.g. 20 = 20%).",
+        "activeAgentPercent": "% ejen aktif",
+        "activeAgentPercentTooltip": "Percent of recruited agents who stay active (e.g. 20 = 20%).",
+        "restockValue": "Purata nilai stok semula (setiap ejen)",
+        "restockValueTooltip": "Average restock order value per agent.",
+        "restockFrequency": "Kekerapan stok semula (setahun)",
+        "restockFrequencyTooltip": "How many restocks per year per agent.",
+        "marketingBudgetPercent": "Bajet pemasaran (% yuran pendaftaran)",
+        "marketingBudgetPercentTooltip": "Percent of registration fee for marketing (e.g. 50 = 50%).",
+        "percentSuffix": "%",
+        "totalRegFeeCollected": "Jumlah yuran pendaftaran dikutip",
+        "leadsRequired": "Lead diperlukan",
+        "potentialActiveAgents": "Anggaran ejen aktif",
+        "ltv": "Purata LTV (stok semula × kekerapan)",
+        "maxCPA": "Kos maksimum setiap ejen baharu (CPA)",
+        "maxCPL": "Kos maksimum setiap lead (CPL)",
+        "totalMarketingBudget": "Jumlah bajet pemasaran",
+        "roasPerYear": "ROAS setahun (aktif × LTV ÷ bajet)",
+        "primaryMetricHint": "Isyarat trafik berdasarkan CPL maks vs jadual PRD: hijau < RM 480, kuning RM 480–600, merah > RM 600.",
+        "reset": "Tetapkan semula",
+        "enterValues": "Masukkan sasaran ejen dan kadar penukaran untuk melihat keputusan."
     }
 }

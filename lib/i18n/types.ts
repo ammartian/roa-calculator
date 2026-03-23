@@ -108,6 +108,14 @@ export interface Translations {
             title: string;
             description: string;
         };
+        funnel1: {
+            title: string;
+            description: string;
+        };
+        funnel2: {
+            title: string;
+            description: string;
+        };
     };
     footer: {
         copyright: string;
@@ -233,5 +241,70 @@ export interface Translations {
             title: string;
             description: string;
         };
+    };
+    funnel1: {
+        inputsTitle: string;
+        resultsTitle: string;
+        trafficLightTitle: string;
+        trafficLightHealthy: string;
+        trafficLightBorderline: string;
+        trafficLightOver: string;
+        trafficLightNeutral: string;
+        targetSales: string;
+        targetSalesTooltip: string;
+        averageOrderValue: string;
+        averageOrderValueTooltip: string;
+        conversionRate: string;
+        conversionRateTooltip: string;
+        cogs: string;
+        cogsTooltip: string;
+        marketingBudgetPercent: string;
+        marketingBudgetPercentTooltip: string;
+        percentSuffix: string;
+        totalCustomers: string;
+        leadsNeeded: string;
+        grossProfitMargin: string;
+        maxCPP: string;
+        maxCPL: string;
+        totalMarketingBudget: string;
+        roas: string;
+        primaryMetricHint: string;
+        reset: string;
+        enterValues: string;
+    };
+    funnel2: {
+        inputsTitle: string;
+        resultsTitle: string;
+        trafficLightTitle: string;
+        trafficLightHealthy: string;
+        trafficLightBorderline: string;
+        trafficLightOver: string;
+        trafficLightNeutral: string;
+        registrationFee: string;
+        registrationFeeTooltip: string;
+        targetAgents: string;
+        targetAgentsTooltip: string;
+        conversionRate: string;
+        conversionRateTooltip: string;
+        activeAgentPercent: string;
+        activeAgentPercentTooltip: string;
+        restockValue: string;
+        restockValueTooltip: string;
+        restockFrequency: string;
+        restockFrequencyTooltip: string;
+        marketingBudgetPercent: string;
+        marketingBudgetPercentTooltip: string;
+        percentSuffix: string;
+        totalRegFeeCollected: string;
+        leadsRequired: string;
+        potentialActiveAgents: string;
+        ltv: string;
+        maxCPA: string;
+        maxCPL: string;
+        totalMarketingBudget: string;
+        roasPerYear: string;
+        primaryMetricHint: string;
+        reset: string;
+        enterValues: string;
     };
 }

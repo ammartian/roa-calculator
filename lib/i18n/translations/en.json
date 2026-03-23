@@ -105,6 +105,14 @@
         "basic": {
             "title": "Basic Calculators",
             "description": "Essential business calculation tools for everyday use."
+        },
+        "funnel1": {
+            "title": "Funnel 1 — Retail (WhatsApp / Telemarketing)",
+            "description": "Turn sales targets into lead volume, max CPL, and marketing budget."
+        },
+        "funnel2": {
+            "title": "Funnel 2 — Agent recruitment",
+            "description": "Model registration-fee funnels: CPA, CPL, budget, and ROAS from restock LTV."
         }
     },
     "footer": {
@@ -231,5 +239,70 @@
             "title": "Sales Target & Profit Estimation Calculator",
             "description": "Calculate sales targets needed to achieve profit goals"
         }
+    },
+    "funnel1": {
+        "inputsTitle": "Your inputs",
+        "resultsTitle": "Results",
+        "trafficLightTitle": "Budget health (max CPL)",
+        "trafficLightHealthy": "Healthy",
+        "trafficLightBorderline": "Borderline",
+        "trafficLightOver": "Over budget",
+        "trafficLightNeutral": "Enter valid inputs",
+        "targetSales": "Target sales (monthly)",
+        "targetSalesTooltip": "Jualan sasaran bulanan, contoh RM 100,000.",
+        "averageOrderValue": "Average order value (AOV)",
+        "averageOrderValueTooltip": "Purata nilai pesanan setiap pelanggan.",
+        "conversionRate": "Conversion rate (lead → customer)",
+        "conversionRateTooltip": "Peratusan lead menjadi pelanggan (contoh: 20 = 20%).",
+        "cogs": "Cost of goods sold (per product)",
+        "cogsTooltip": "Kos barang terjual bagi satu unit.",
+        "marketingBudgetPercent": "Marketing budget (% of gross profit)",
+        "marketingBudgetPercentTooltip": "Peratus keuntungan kasar untuk pemasaran (contoh: 50 = 50%).",
+        "percentSuffix": "%",
+        "totalCustomers": "Total customers needed",
+        "leadsNeeded": "Leads needed",
+        "grossProfitMargin": "Gross profit per product",
+        "maxCPP": "Max cost per purchase (CPP)",
+        "maxCPL": "Max cost per lead (CPL)",
+        "totalMarketingBudget": "Total marketing budget",
+        "roas": "Return on ad spend (ROAS)",
+        "primaryMetricHint": "Traffic light uses max CPL vs PRD bands: green < RM 20, yellow RM 20–25, red > RM 25.",
+        "reset": "Reset",
+        "enterValues": "Enter target sales, AOV, and conversion rate to see results."
+    },
+    "funnel2": {
+        "inputsTitle": "Your inputs",
+        "resultsTitle": "Results",
+        "trafficLightTitle": "Budget health (max CPL)",
+        "trafficLightHealthy": "Healthy",
+        "trafficLightBorderline": "Borderline",
+        "trafficLightOver": "Over budget",
+        "trafficLightNeutral": "Enter valid inputs",
+        "registrationFee": "Registration fee per agent",
+        "registrationFeeTooltip": "Yuran pendaftaran bagi setiap ejen baharu.",
+        "targetAgents": "Target number of new agents",
+        "targetAgentsTooltip": "Bilangan ejen baharu yang ingin direkrut.",
+        "conversionRate": "Conversion rate (lead → new agent)",
+        "conversionRateTooltip": "Peratusan lead menjadi ejen (contoh: 20 = 20%).",
+        "activeAgentPercent": "% of active agents",
+        "activeAgentPercentTooltip": "Peratus ejen yang aktif daripada sasaran (contoh: 20 = 20%).",
+        "restockValue": "Average restock value (per agent)",
+        "restockValueTooltip": "Purata nilai stok semula setiap ejen.",
+        "restockFrequency": "Restock frequency (per year)",
+        "restockFrequencyTooltip": "Berapa kali stok semula setahun bagi seorang ejen.",
+        "marketingBudgetPercent": "Marketing budget (% of registration fee)",
+        "marketingBudgetPercentTooltip": "Peratus yuran pendaftaran untuk pemasaran (contoh: 50 = 50%).",
+        "percentSuffix": "%",
+        "totalRegFeeCollected": "Total registration fees collected",
+        "leadsRequired": "Leads required",
+        "potentialActiveAgents": "Potential active agents",
+        "ltv": "Average LTV (restock × frequency)",
+        "maxCPA": "Max cost per new agent (CPA)",
+        "maxCPL": "Max cost per lead (CPL)",
+        "totalMarketingBudget": "Total marketing budget",
+        "roasPerYear": "ROAS per year (active × LTV ÷ budget)",
+        "primaryMetricHint": "Traffic light uses max CPL vs PRD bands: green < RM 480, yellow RM 480–600, red > RM 600.",
+        "reset": "Reset",
+        "enterValues": "Enter target agents and conversion rate to see results."
     }
 }
