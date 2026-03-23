@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Documentation
+
+- **[PRD.md](./PRD.md)** — Main product requirements: architecture, data flow, feature modules, and known gaps
+- **[MVP-PRD.md](./MVP-PRD.md)** — MVP feature specification
+- **[AGENTS.md](./AGENTS.md)** — Build commands and contributor guidelines
+
 ## Getting Started
 
 First, run the development server:
