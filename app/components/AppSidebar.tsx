@@ -11,6 +11,9 @@ import {
     LayoutGrid,
     Presentation,
     Tv,
+    ShoppingCart,
+    Wrench,
+    BookOpen,
 } from "lucide-react";
 import {
     Sidebar,
@@ -34,7 +37,16 @@ import { useLanguage } from "@/lib/i18n/context";
 import type { Language } from "@/lib/i18n/types";
 import { cn } from "@/lib/utils";
 
-type Section = "roa" | "basic" | "funnel1" | "funnel2" | "funnel3" | "funnel4";
+type Section =
+    | "roa"
+    | "basic"
+    | "funnel1"
+    | "funnel2"
+    | "funnel3"
+    | "funnel4"
+    | "funnel5"
+    | "funnel6"
+    | "funnel7";
 
 interface AppSidebarProps {
     activeSection: Section;
@@ -80,6 +92,21 @@ export function AppSidebar({ activeSection, onSectionChange }: AppSidebarProps) 
             id: "funnel4" as Section,
             label: t.tabs.funnel4.title,
             icon: Tv,
+        },
+        {
+            id: "funnel5" as Section,
+            label: t.tabs.funnel5.title,
+            icon: ShoppingCart,
+        },
+        {
+            id: "funnel6" as Section,
+            label: t.tabs.funnel6.title,
+            icon: Wrench,
+        },
+        {
+            id: "funnel7" as Section,
+            label: t.tabs.funnel7.title,
+            icon: BookOpen,
         },
     ];
 

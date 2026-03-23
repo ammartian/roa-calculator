@@ -29,6 +29,24 @@ export const FUNNEL4_SIGNUP_THRESHOLDS: CplThresholds = {
     yellowMax: 20,
 };
 
+/** PRD Funnel 5 — Cost per purchase (CPP) traffic light bands (RM). */
+export const FUNNEL5_CPP_THRESHOLDS: CplThresholds = {
+    yellowMin: 20.4,
+    yellowMax: 25.5,
+};
+
+/** PRD Funnel 6 — Cost per lead (CPL) traffic light bands (RM). */
+export const FUNNEL6_CPL_THRESHOLDS: CplThresholds = {
+    yellowMin: 33.6,
+    yellowMax: 42,
+};
+
+/** PRD Funnel 7 — Cost per click (CPC) traffic light bands (RM). */
+export const FUNNEL7_CPC_THRESHOLDS: CplThresholds = {
+    yellowMin: 24,
+    yellowMax: 30,
+};
+
 export function trafficLightFromCpl(
     cpl: number,
     hasValidMetric: boolean,
@@ -372,6 +390,240 @@ export function computeFunnel4(
         grossProfitPerCustomer,
         maxCPA,
         maxCostPerSignup,
+        totalMarketingBudget,
+        roas,
+        trafficLight,
+        isValid: true,
+    };
+}
+
+export interface Funnel5Computation {
+    totalCustomers: number;
+    visitorsNeeded: number;
+    addToCartCount: number;
+    ltv: number;
+    maxCPP: number;
+    totalMarketingBudget: number;
+    roas: number;
+    trafficLight: TrafficLightLevel;
+    isValid: boolean;
+}
+
+/**
+ * Funnel 5 — E-commerce product page (PRD §10).
+ * Gross profit margin is a direct RM input. Percentages as whole numbers (e.g. 4 = 4%).
+ */
+export function computeFunnel5(
+    targetSales: number,
+    aov: number,
+    grossProfitMarginPerProduct: number,
+    addToCartRatePercent: number,
+    conversionRatePercent: number,
+    repurchaseValue: number,
+    repurchaseFrequency: number,
+    marketingBudgetPercent: number
+): Funnel5Computation {
+    const isValid =
+        targetSales > 0 &&
+        aov > 0 &&
+        conversionRatePercent > 0 &&
+        conversionRatePercent <= 100;
+
+    if (!isValid) {
+        return {
+            totalCustomers: 0,
+            visitorsNeeded: 0,
+            addToCartCount: 0,
+            ltv: 0,
+            maxCPP: 0,
+            totalMarketingBudget: 0,
+            roas: 0,
+            trafficLight: "neutral",
+            isValid: false,
+        };
+    }
+
+    const cr = conversionRatePercent / 100;
+    const atc = addToCartRatePercent / 100;
+    const mb = marketingBudgetPercent / 100;
+
+    const totalCustomers = targetSales / aov;
+    const visitorsNeeded = totalCustomers / cr;
+    const addToCartCount = visitorsNeeded * atc;
+    const ltv = repurchaseValue * repurchaseFrequency;
+    const maxCPP = grossProfitMarginPerProduct * mb;
+    const totalMarketingBudget = maxCPP * totalCustomers;
+    const roas =
+        totalMarketingBudget > 0 ? targetSales / totalMarketingBudget : 0;
+
+    const trafficLight = trafficLightFromCpl(
+        maxCPP,
+        Number.isFinite(maxCPP) && maxCPP > 0,
+        FUNNEL5_CPP_THRESHOLDS
+    );
+
+    return {
+        totalCustomers,
+        visitorsNeeded,
+        addToCartCount,
+        ltv,
+        maxCPP,
+        totalMarketingBudget,
+        roas,
+        trafficLight,
+        isValid: true,
+    };
+}
+
+export interface Funnel6Computation {
+    totalCustomers: number;
+    appointmentsNeeded: number;
+    leadsNeeded: number;
+    grossProfitMargin: number;
+    maxCPP: number;
+    maxCPL: number;
+    totalMarketingBudget: number;
+    roas: number;
+    trafficLight: TrafficLightLevel;
+    isValid: boolean;
+}
+
+/**
+ * Funnel 6 — Service business / interior design (PRD §11).
+ * Percentages as whole numbers (e.g. 20 = 20%).
+ */
+export function computeFunnel6(
+    targetSales: number,
+    aov: number,
+    leadsToAppointmentCrPercent: number,
+    appointmentToCustomerCrPercent: number,
+    cogs: number,
+    marketingBudgetPercent: number
+): Funnel6Computation {
+    const isValid =
+        targetSales > 0 &&
+        aov > 0 &&
+        leadsToAppointmentCrPercent > 0 &&
+        leadsToAppointmentCrPercent <= 100 &&
+        appointmentToCustomerCrPercent > 0 &&
+        appointmentToCustomerCrPercent <= 100;
+
+    if (!isValid) {
+        return {
+            totalCustomers: 0,
+            appointmentsNeeded: 0,
+            leadsNeeded: 0,
+            grossProfitMargin: 0,
+            maxCPP: 0,
+            maxCPL: 0,
+            totalMarketingBudget: 0,
+            roas: 0,
+            trafficLight: "neutral",
+            isValid: false,
+        };
+    }
+
+    const l2a = leadsToAppointmentCrPercent / 100;
+    const a2c = appointmentToCustomerCrPercent / 100;
+    const mb = marketingBudgetPercent / 100;
+
+    const totalCustomers = targetSales / aov;
+    const appointmentsNeeded = totalCustomers / a2c;
+    const leadsNeeded = appointmentsNeeded / l2a;
+    const grossProfitMargin = aov - cogs;
+    const maxCPP = grossProfitMargin * mb;
+    const maxCPL = maxCPP * l2a * a2c;
+    const totalMarketingBudget = maxCPP * totalCustomers;
+    const roas =
+        totalMarketingBudget > 0 ? targetSales / totalMarketingBudget : 0;
+
+    const trafficLight = trafficLightFromCpl(
+        maxCPL,
+        Number.isFinite(maxCPL) && maxCPL > 0,
+        FUNNEL6_CPL_THRESHOLDS
+    );
+
+    return {
+        totalCustomers,
+        appointmentsNeeded,
+        leadsNeeded,
+        grossProfitMargin,
+        maxCPP,
+        maxCPL,
+        totalMarketingBudget,
+        roas,
+        trafficLight,
+        isValid: true,
+    };
+}
+
+export interface Funnel7Computation {
+    totalCustomers: number;
+    linkClicksNeeded: number;
+    grossProfitMargin: number;
+    maxCPP: number;
+    maxCPC: number;
+    totalMarketingBudget: number;
+    roas: number;
+    trafficLight: TrafficLightLevel;
+    isValid: boolean;
+}
+
+/**
+ * Funnel 7 — Digital product / ebook (PRD §12).
+ * Percentages as whole numbers (e.g. 20 = 20%).
+ */
+export function computeFunnel7(
+    targetSales: number,
+    aov: number,
+    conversionRatePercent: number,
+    cogs: number,
+    marketingBudgetPercent: number
+): Funnel7Computation {
+    const isValid =
+        targetSales > 0 &&
+        aov > 0 &&
+        conversionRatePercent > 0 &&
+        conversionRatePercent <= 100;
+
+    if (!isValid) {
+        return {
+            totalCustomers: 0,
+            linkClicksNeeded: 0,
+            grossProfitMargin: 0,
+            maxCPP: 0,
+            maxCPC: 0,
+            totalMarketingBudget: 0,
+            roas: 0,
+            trafficLight: "neutral",
+            isValid: false,
+        };
+    }
+
+    const cr = conversionRatePercent / 100;
+    const mb = marketingBudgetPercent / 100;
+
+    const totalCustomers = targetSales / aov;
+    const linkClicksNeeded = totalCustomers / cr;
+    const grossProfitMargin = aov - cogs;
+    const maxCPP = grossProfitMargin * mb;
+    const maxCPC = maxCPP * cr;
+    const totalMarketingBudget = maxCPP * totalCustomers;
+    const roas =
+        totalMarketingBudget > 0 ? targetSales / totalMarketingBudget : 0;
+
+    const trafficLight = trafficLightFromCpl(
+        maxCPC,
+        Number.isFinite(maxCPC) && maxCPC > 0,
+        FUNNEL7_CPC_THRESHOLDS
+    );
+
+    return {
+        totalCustomers,
+        linkClicksNeeded,
+        grossProfitMargin,
+        maxCPP,
+        maxCPC,
         totalMarketingBudget,
         roas,
         trafficLight,

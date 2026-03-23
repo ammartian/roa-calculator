@@ -9,6 +9,9 @@ import Funnel1Calculator from "./components/funnel1/index";
 import Funnel2Calculator from "./components/funnel2/index";
 import Funnel3Calculator from "./components/funnel3/index";
 import Funnel4Calculator from "./components/funnel4/index";
+import Funnel5Calculator from "./components/funnel5/index";
+import Funnel6Calculator from "./components/funnel6/index";
+import Funnel7Calculator from "./components/funnel7/index";
 import EducationalContent from "./components/educational-content";
 import Footer from "./components/footer";
 import { AppSidebar } from "./components/AppSidebar";
@@ -20,7 +23,10 @@ type Section =
     | "funnel1"
     | "funnel2"
     | "funnel3"
-    | "funnel4";
+    | "funnel4"
+    | "funnel5"
+    | "funnel6"
+    | "funnel7";
 
 export default function Home() {
     const { t } = useLanguage();
@@ -64,6 +70,15 @@ export default function Home() {
                         </div>
                         <div hidden={activeSection !== "funnel4"}>
                             <Funnel4Calculator />
+                        </div>
+                        <div hidden={activeSection !== "funnel5"}>
+                            <Funnel5Calculator />
+                        </div>
+                        <div hidden={activeSection !== "funnel6"}>
+                            <Funnel6Calculator />
+                        </div>
+                        <div hidden={activeSection !== "funnel7"}>
+                            <Funnel7Calculator />
                         </div>
                     </div>
                 </main>
