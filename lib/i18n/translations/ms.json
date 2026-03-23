@@ -107,31 +107,31 @@
             "description": "Alat pengiraan perniagaan penting untuk kegunaan harian."
         },
         "funnel1": {
-            "title": "Funnel 1 — Runcit (WhatsApp / Telepemasaran)",
+            "title": "Funnel 1: Runcit (WhatsApp / Telepemasaran)",
             "description": "Tukar sasaran jualan kepada bilangan lead, CPL maksimum, dan bajet pemasaran."
         },
         "funnel2": {
-            "title": "Funnel 2 — Rekrut ejen",
+            "title": "Funnel 2: Rekrut ejen",
             "description": "Simulasi yuran pendaftaran: CPA, CPL, bajet, dan ROAS daripada LTV stok semula."
         },
         "funnel3": {
-            "title": "Funnel 3 — Affiliate webinar",
+            "title": "Funnel 3: Affiliate webinar",
             "description": "Sasaran komisen, pendaftaran webinar, kos maks setiap pendaftaran, dan ROAS."
         },
         "funnel4": {
-            "title": "Funnel 4 — Webinar percuma + upsell",
+            "title": "Funnel 4: Webinar percuma + upsell",
             "description": "Sasaran hasil premium, harga tiket, bilangan pendaftaran, dan kesihatan bajet."
         },
         "funnel5": {
-            "title": "Funnel 5 — Halaman produk e-dagang",
+            "title": "Funnel 5: Halaman produk e-dagang",
             "description": "Trafik, tambah troli, CPP, LTV, dan ROAS untuk iklan ke halaman produk."
         },
         "funnel6": {
-            "title": "Funnel 6 — Perkhidmatan / reka bentuk dalaman",
+            "title": "Funnel 6: Perkhidmatan / reka bentuk dalaman",
             "description": "Lead, temu janji, CPL, CPP, dan ROAS untuk jualan perkhidmatan berperingkat."
         },
         "funnel7": {
-            "title": "Funnel 7 — Produk digital / ebook",
+            "title": "Funnel 7: Produk digital / ebook",
             "description": "Klik halaman jualan, CPC, CPP, dan ROAS untuk produk digital."
         }
     },

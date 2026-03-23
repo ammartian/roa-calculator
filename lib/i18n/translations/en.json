@@ -107,31 +107,31 @@
             "description": "Essential business calculation tools for everyday use."
         },
         "funnel1": {
-            "title": "Funnel 1 — Retail (WhatsApp / Telemarketing)",
+            "title": "Funnel 1: Retail (WhatsApp / Telemarketing)",
             "description": "Turn sales targets into lead volume, max CPL, and marketing budget."
         },
         "funnel2": {
-            "title": "Funnel 2 — Agent recruitment",
+            "title": "Funnel 2: Agent recruitment",
             "description": "Model registration-fee funnels: CPA, CPL, budget, and ROAS from restock LTV."
         },
         "funnel3": {
-            "title": "Funnel 3 — Webinar affiliate",
+            "title": "Funnel 3: Webinar affiliate",
             "description": "Commission targets, signups, max cost per signup, and ROAS for affiliate webinars."
         },
         "funnel4": {
-            "title": "Funnel 4 — Free webinar + upsell",
+            "title": "Funnel 4: Free webinar + upsell",
             "description": "Premium revenue target, ticket price, signup volume, and budget health."
         },
         "funnel5": {
-            "title": "Funnel 5 — E-commerce product page",
+            "title": "Funnel 5: E-commerce product page",
             "description": "Traffic, add-to-cart, CPP, LTV, and ROAS for product-page funnels."
         },
         "funnel6": {
-            "title": "Funnel 6 — Service / interior design",
+            "title": "Funnel 6: Service / interior design",
             "description": "Leads, appointments, CPL, CPP, and ROAS for multi-step service sales."
         },
         "funnel7": {
-            "title": "Funnel 7 — Digital product / ebook",
+            "title": "Funnel 7: Digital product / ebook",
             "description": "Sales page clicks, CPC, CPP, and ROAS for digital products."
         }
     },

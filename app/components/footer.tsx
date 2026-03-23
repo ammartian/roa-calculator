@@ -6,7 +6,7 @@ export default function Footer() {
     const { t } = useLanguage();
 
     return (
-        <footer className="w-full mt-12 text-center text-sm text-muted-foreground">
+        <footer className="w-full mt-12 mb-6 text-center text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} {t.footer.copyright}
         </footer>
     );
